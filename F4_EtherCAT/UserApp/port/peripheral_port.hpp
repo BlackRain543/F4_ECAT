@@ -145,6 +145,11 @@ namespace Port
 		public:
 			SPIComm(SPI_HandleTypeDef *hspi):hspi_(hspi){}
 			~SPIComm(){}
+			HAL_StatusTypeDef Transmit(uint8_t *pTxData, uint16_t Size,uint32_t Timeout)
+			{
+				return HAL_SPI_Transmit(hspi_,pTxData,Size,Timeout);
+			}
+
 			HAL_StatusTypeDef TransmitReceive(uint8_t *pTxData, uint8_t *pRxData, uint16_t Size,uint32_t Timeout)
 			{
 				return HAL_SPI_TransmitReceive(hspi_,pTxData,pRxData,Size,Timeout);

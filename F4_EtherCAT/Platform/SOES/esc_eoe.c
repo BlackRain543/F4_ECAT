@@ -9,8 +9,8 @@
  */
 
 #include <cc.h>
+#include <esc_soes.h>
 #include <string.h>
-#include "esc.h"
 #include "esc_eoe.h"
 
 

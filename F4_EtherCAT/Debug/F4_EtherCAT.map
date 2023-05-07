@@ -94,8 +94,16 @@ e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cu
                               ./Platform/EtherCAT/src/objdef.o (strlen)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-strncmp.o)
                               ./Platform/SOES/esc_foe.o (strncmp)
+e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o)
+                              ./UserApp/drivers/lan9252.o (lseek)
+e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o)
+                              ./UserApp/drivers/lan9252.o (read)
+e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o)
+                              ./UserApp/drivers/lan9252.o (write)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wbuf.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-vfprintf.o) (__swbuf_r)
+e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
+                              e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o) (_write_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wsetup.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-vfprintf.o) (__swsetup_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-fflush.o)
@@ -108,6 +116,8 @@ e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cu
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-findfp.o) (_fwalk)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lock.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-findfp.o) (__retarget_lock_init_recursive)
+e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
+                              e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o) (_lseek_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-makebuf.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wsetup.o) (__smakebuf_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memchr.o)
@@ -118,24 +128,20 @@ e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cu
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-freer.o) (__malloc_lock)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-reallocr.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-fvwrite.o) (_realloc_r)
+e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
+                              e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o) (_read_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o) (errno)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-stdio.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-findfp.o) (__sread)
-e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
-                              e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-stdio.o) (_write_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-closer.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-stdio.o) (_close_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-fstatr.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-makebuf.o) (_fstat_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-isattyr.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-makebuf.o) (_isatty_r)
-e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
-                              e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-stdio.o) (_lseek_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-msizer.o)
                               e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-reallocr.o) (_malloc_usable_size_r)
-e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
-                              e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-stdio.o) (_read_r)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
                               ./UserApp/port/math_port.o (__aeabi_dmul)
 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
@@ -6840,7 +6846,6 @@ Discarded input sections
  .debug_ranges  0x0000000000000000       0x70 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000      0x1a6 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000      0xaa8 ./Platform/SOES/ecat_slv.o
- .debug_macro   0x0000000000000000      0x174 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x4c ./Platform/SOES/ecat_slv.o
@@ -6853,6 +6858,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x6a ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000      0x1df ./Platform/SOES/ecat_slv.o
+ .debug_macro   0x0000000000000000      0x174 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x35 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000      0x460 ./Platform/SOES/ecat_slv.o
@@ -6871,192 +6877,13 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x774 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/ecat_slv.o
  .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/ecat_slv.o
- .debug_line    0x0000000000000000      0x999 ./Platform/SOES/ecat_slv.o
+ .debug_line    0x0000000000000000      0x99e ./Platform/SOES/ecat_slv.o
  .debug_str     0x0000000000000000     0x9caf ./Platform/SOES/ecat_slv.o
  .comment       0x0000000000000000       0x54 ./Platform/SOES/ecat_slv.o
  .debug_frame   0x0000000000000000      0x1c8 ./Platform/SOES/ecat_slv.o
  .ARM.attributes
                 0x0000000000000000       0x34 ./Platform/SOES/ecat_slv.o
  COMMON         0x0000000000000000      0x497 ./Platform/SOES/ecat_slv.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .group         0x0000000000000000        0xc ./Platform/SOES/esc.o
- .text          0x0000000000000000        0x0 ./Platform/SOES/esc.o
- .data          0x0000000000000000        0x0 ./Platform/SOES/esc.o
- .bss           0x0000000000000000        0x0 ./Platform/SOES/esc.o
- .text.ESC_ALerror
-                0x0000000000000000       0x34 ./Platform/SOES/esc.o
- .text.ESC_ALstatus
-                0x0000000000000000       0x38 ./Platform/SOES/esc.o
- .text.ESC_ALstatusgotoerror
-                0x0000000000000000       0xb8 ./Platform/SOES/esc.o
- .text.ESC_ALeventmaskwrite
-                0x0000000000000000       0x24 ./Platform/SOES/esc.o
- .text.ESC_ALeventmaskread
-                0x0000000000000000       0x1e ./Platform/SOES/esc.o
- .text.ESC_ALeventwrite
-                0x0000000000000000       0x24 ./Platform/SOES/esc.o
- .text.ESC_ALeventread
-                0x0000000000000000       0x1e ./Platform/SOES/esc.o
- .text.ESC_SMack
-                0x0000000000000000       0x2c ./Platform/SOES/esc.o
- .text.ESC_SMstatus
-                0x0000000000000000       0x40 ./Platform/SOES/esc.o
- .text.ESC_SMwritepdi
-                0x0000000000000000       0x40 ./Platform/SOES/esc.o
- .text.ESC_SMenable
-                0x0000000000000000       0x3c ./Platform/SOES/esc.o
- .text.ESC_SMdisable
-                0x0000000000000000       0x3c ./Platform/SOES/esc.o
- .text.ESC_address
-                0x0000000000000000       0x28 ./Platform/SOES/esc.o
- .text.ESC_WDstatus
-                0x0000000000000000       0x24 ./Platform/SOES/esc.o
- .text.ESC_SYNCactivation
-                0x0000000000000000       0x1e ./Platform/SOES/esc.o
- .text.ESC_SYNC0cycletime
-                0x0000000000000000       0x22 ./Platform/SOES/esc.o
- .text.ESC_SYNC1cycletime
-                0x0000000000000000       0x22 ./Platform/SOES/esc.o
- .text.ESC_checkDC
-                0x0000000000000000       0x54 ./Platform/SOES/esc.o
- .text.ESC_checkmbx
-                0x0000000000000000       0xec ./Platform/SOES/esc.o
- .text.ESC_startmbx
-                0x0000000000000000       0x8c ./Platform/SOES/esc.o
- .text.ESC_startmbxboot
-                0x0000000000000000       0x8c ./Platform/SOES/esc.o
- .text.ESC_stopmbx
-                0x0000000000000000       0xac ./Platform/SOES/esc.o
- .text.ESC_readmbx
-                0x0000000000000000       0x8c ./Platform/SOES/esc.o
- .text.ESC_writembx
-                0x0000000000000000       0x90 ./Platform/SOES/esc.o
- .text.ESC_ackmbxread
-                0x0000000000000000       0x30 ./Platform/SOES/esc.o
- .text.ESC_claimbuffer
-                0x0000000000000000       0xd4 ./Platform/SOES/esc.o
- .text.ESC_outreqbuffer
-                0x0000000000000000       0x34 ./Platform/SOES/esc.o
- .text.MBX_error
-                0x0000000000000000       0x70 ./Platform/SOES/esc.o
- .text.ESC_mbxprocess
-                0x0000000000000000      0x270 ./Platform/SOES/esc.o
- .text.ESC_xoeprocess
-                0x0000000000000000       0x68 ./Platform/SOES/esc.o
- .text.ESC_checkSM23
-                0x0000000000000000      0x11c ./Platform/SOES/esc.o
- .text.ESC_startinput
-                0x0000000000000000       0xf8 ./Platform/SOES/esc.o
- .text.ESC_stopinput
-                0x0000000000000000       0x44 ./Platform/SOES/esc.o
- .text.ESC_startoutput
-                0x0000000000000000       0x48 ./Platform/SOES/esc.o
- .text.ESC_stopoutput
-                0x0000000000000000       0x30 ./Platform/SOES/esc.o
- .text.ESC_sm_act_event
-                0x0000000000000000      0x168 ./Platform/SOES/esc.o
- .text.ESC_check_id_request
-                0x0000000000000000       0x64 ./Platform/SOES/esc.o
- .text.ESC_load_device_id
-                0x0000000000000000       0x50 ./Platform/SOES/esc.o
- .text.ESC_state
-                0x0000000000000000      0x4d4 ./Platform/SOES/esc.o
- .text.ESC_config
-                0x0000000000000000       0xfc ./Platform/SOES/esc.o
- .data.mb0.6712
-                0x0000000000000000        0x8 ./Platform/SOES/esc.o
- .data.mb1.6713
-                0x0000000000000000        0x8 ./Platform/SOES/esc.o
- .data.mbboot0.6714
-                0x0000000000000000        0x8 ./Platform/SOES/esc.o
- .data.mbboot1.6715
-                0x0000000000000000        0x8 ./Platform/SOES/esc.o
- .debug_info    0x0000000000000000     0x1d19 ./Platform/SOES/esc.o
- .debug_abbrev  0x0000000000000000      0x3a9 ./Platform/SOES/esc.o
- .debug_aranges
-                0x0000000000000000      0x158 ./Platform/SOES/esc.o
- .debug_ranges  0x0000000000000000      0x148 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x1e3 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0xaa8 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x4c ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x18 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x94 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x3c ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x34 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x174 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x16 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x43 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x57 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x34 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x58 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x71 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x1c ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x12a ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x339 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x35 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x20 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x16 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x103 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x6a ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x1df ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x460 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x7c ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x1c ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x52 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x2e ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x82 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x172 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0xc4 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000      0x774 ./Platform/SOES/esc.o
- .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc.o
- .debug_line    0x0000000000000000     0x1360 ./Platform/SOES/esc.o
- .debug_str     0x0000000000000000     0xb7ee ./Platform/SOES/esc.o
- .comment       0x0000000000000000       0x54 ./Platform/SOES/esc.o
- .debug_frame   0x0000000000000000      0x5ac ./Platform/SOES/esc.o
- .ARM.attributes
-                0x0000000000000000       0x34 ./Platform/SOES/esc.o
  .group         0x0000000000000000        0xc ./Platform/SOES/esc_coe.o
  .group         0x0000000000000000        0xc ./Platform/SOES/esc_coe.o
  .group         0x0000000000000000        0xc ./Platform/SOES/esc_coe.o
@@ -7213,7 +7040,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x172 ./Platform/SOES/esc_coe.o
  .debug_macro   0x0000000000000000       0xc4 ./Platform/SOES/esc_coe.o
  .debug_macro   0x0000000000000000      0x774 ./Platform/SOES/esc_coe.o
- .debug_line    0x0000000000000000     0x1a41 ./Platform/SOES/esc_coe.o
+ .debug_line    0x0000000000000000     0x1a46 ./Platform/SOES/esc_coe.o
  .debug_str     0x0000000000000000     0xbc18 ./Platform/SOES/esc_coe.o
  .comment       0x0000000000000000       0x54 ./Platform/SOES/esc_coe.o
  .debug_frame   0x0000000000000000      0x48c ./Platform/SOES/esc_coe.o
@@ -7271,6 +7098,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x1e3 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000      0xaa8 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc_eep.o
+ .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x4c ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x18 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x94 ./Platform/SOES/esc_eep.o
@@ -7295,7 +7123,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x2e ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x82 ./Platform/SOES/esc_eep.o
- .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000      0x172 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0xc4 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000      0x774 ./Platform/SOES/esc_eep.o
@@ -7307,7 +7134,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x12a ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_eep.o
  .debug_macro   0x0000000000000000       0x20 ./Platform/SOES/esc_eep.o
- .debug_line    0x0000000000000000      0x76d ./Platform/SOES/esc_eep.o
+ .debug_line    0x0000000000000000      0x772 ./Platform/SOES/esc_eep.o
  .debug_str     0x0000000000000000     0xb52e ./Platform/SOES/esc_eep.o
  .comment       0x0000000000000000       0x54 ./Platform/SOES/esc_eep.o
  .debug_frame   0x0000000000000000       0x34 ./Platform/SOES/esc_eep.o
@@ -7441,6 +7268,10 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_eoe.o
  .debug_macro   0x0000000000000000       0x2e ./Platform/SOES/esc_eoe.o
  .debug_macro   0x0000000000000000       0x82 ./Platform/SOES/esc_eoe.o
+ .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc_eoe.o
+ .debug_macro   0x0000000000000000      0x172 ./Platform/SOES/esc_eoe.o
+ .debug_macro   0x0000000000000000       0xc4 ./Platform/SOES/esc_eoe.o
+ .debug_macro   0x0000000000000000      0x774 ./Platform/SOES/esc_eoe.o
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_eoe.o
  .debug_macro   0x0000000000000000       0x58 ./Platform/SOES/esc_eoe.o
  .debug_macro   0x0000000000000000       0x71 ./Platform/SOES/esc_eoe.o
@@ -7448,11 +7279,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x12a ./Platform/SOES/esc_eoe.o
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_eoe.o
  .debug_macro   0x0000000000000000       0x20 ./Platform/SOES/esc_eoe.o
- .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc_eoe.o
- .debug_macro   0x0000000000000000      0x172 ./Platform/SOES/esc_eoe.o
- .debug_macro   0x0000000000000000       0xc4 ./Platform/SOES/esc_eoe.o
- .debug_macro   0x0000000000000000      0x774 ./Platform/SOES/esc_eoe.o
- .debug_line    0x0000000000000000      0xfc0 ./Platform/SOES/esc_eoe.o
+ .debug_line    0x0000000000000000      0xfc5 ./Platform/SOES/esc_eoe.o
  .debug_str     0x0000000000000000     0xc2df ./Platform/SOES/esc_eoe.o
  .comment       0x0000000000000000       0x54 ./Platform/SOES/esc_eoe.o
  .debug_frame   0x0000000000000000      0x3a8 ./Platform/SOES/esc_eoe.o
@@ -7570,12 +7397,191 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x12a ./Platform/SOES/esc_foe.o
  .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_foe.o
  .debug_macro   0x0000000000000000       0x20 ./Platform/SOES/esc_foe.o
- .debug_line    0x0000000000000000      0xaa8 ./Platform/SOES/esc_foe.o
+ .debug_line    0x0000000000000000      0xaad ./Platform/SOES/esc_foe.o
  .debug_str     0x0000000000000000     0xb69a ./Platform/SOES/esc_foe.o
  .comment       0x0000000000000000       0x54 ./Platform/SOES/esc_foe.o
  .debug_frame   0x0000000000000000      0x198 ./Platform/SOES/esc_foe.o
  .ARM.attributes
                 0x0000000000000000       0x34 ./Platform/SOES/esc_foe.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .group         0x0000000000000000        0xc ./Platform/SOES/esc_soes.o
+ .text          0x0000000000000000        0x0 ./Platform/SOES/esc_soes.o
+ .data          0x0000000000000000        0x0 ./Platform/SOES/esc_soes.o
+ .bss           0x0000000000000000        0x0 ./Platform/SOES/esc_soes.o
+ .text.ESC_ALerror
+                0x0000000000000000       0x34 ./Platform/SOES/esc_soes.o
+ .text.ESC_ALstatus
+                0x0000000000000000       0x38 ./Platform/SOES/esc_soes.o
+ .text.ESC_ALstatusgotoerror
+                0x0000000000000000       0xb8 ./Platform/SOES/esc_soes.o
+ .text.ESC_ALeventmaskwrite
+                0x0000000000000000       0x24 ./Platform/SOES/esc_soes.o
+ .text.ESC_ALeventmaskread
+                0x0000000000000000       0x1e ./Platform/SOES/esc_soes.o
+ .text.ESC_ALeventwrite
+                0x0000000000000000       0x24 ./Platform/SOES/esc_soes.o
+ .text.ESC_ALeventread
+                0x0000000000000000       0x1e ./Platform/SOES/esc_soes.o
+ .text.ESC_SMack
+                0x0000000000000000       0x2c ./Platform/SOES/esc_soes.o
+ .text.ESC_SMstatus
+                0x0000000000000000       0x40 ./Platform/SOES/esc_soes.o
+ .text.ESC_SMwritepdi
+                0x0000000000000000       0x40 ./Platform/SOES/esc_soes.o
+ .text.ESC_SMenable
+                0x0000000000000000       0x3c ./Platform/SOES/esc_soes.o
+ .text.ESC_SMdisable
+                0x0000000000000000       0x3c ./Platform/SOES/esc_soes.o
+ .text.ESC_address
+                0x0000000000000000       0x28 ./Platform/SOES/esc_soes.o
+ .text.ESC_WDstatus
+                0x0000000000000000       0x24 ./Platform/SOES/esc_soes.o
+ .text.ESC_SYNCactivation
+                0x0000000000000000       0x1e ./Platform/SOES/esc_soes.o
+ .text.ESC_SYNC0cycletime
+                0x0000000000000000       0x22 ./Platform/SOES/esc_soes.o
+ .text.ESC_SYNC1cycletime
+                0x0000000000000000       0x22 ./Platform/SOES/esc_soes.o
+ .text.ESC_checkDC
+                0x0000000000000000       0x54 ./Platform/SOES/esc_soes.o
+ .text.ESC_checkmbx
+                0x0000000000000000       0xec ./Platform/SOES/esc_soes.o
+ .text.ESC_startmbx
+                0x0000000000000000       0x8c ./Platform/SOES/esc_soes.o
+ .text.ESC_startmbxboot
+                0x0000000000000000       0x8c ./Platform/SOES/esc_soes.o
+ .text.ESC_stopmbx
+                0x0000000000000000       0xac ./Platform/SOES/esc_soes.o
+ .text.ESC_readmbx
+                0x0000000000000000       0x8c ./Platform/SOES/esc_soes.o
+ .text.ESC_writembx
+                0x0000000000000000       0x90 ./Platform/SOES/esc_soes.o
+ .text.ESC_ackmbxread
+                0x0000000000000000       0x30 ./Platform/SOES/esc_soes.o
+ .text.ESC_claimbuffer
+                0x0000000000000000       0xd4 ./Platform/SOES/esc_soes.o
+ .text.ESC_outreqbuffer
+                0x0000000000000000       0x34 ./Platform/SOES/esc_soes.o
+ .text.MBX_error
+                0x0000000000000000       0x70 ./Platform/SOES/esc_soes.o
+ .text.ESC_mbxprocess
+                0x0000000000000000      0x270 ./Platform/SOES/esc_soes.o
+ .text.ESC_xoeprocess
+                0x0000000000000000       0x68 ./Platform/SOES/esc_soes.o
+ .text.ESC_checkSM23
+                0x0000000000000000      0x11c ./Platform/SOES/esc_soes.o
+ .text.ESC_startinput
+                0x0000000000000000       0xf8 ./Platform/SOES/esc_soes.o
+ .text.ESC_stopinput
+                0x0000000000000000       0x44 ./Platform/SOES/esc_soes.o
+ .text.ESC_startoutput
+                0x0000000000000000       0x48 ./Platform/SOES/esc_soes.o
+ .text.ESC_stopoutput
+                0x0000000000000000       0x30 ./Platform/SOES/esc_soes.o
+ .text.ESC_sm_act_event
+                0x0000000000000000      0x168 ./Platform/SOES/esc_soes.o
+ .text.ESC_check_id_request
+                0x0000000000000000       0x64 ./Platform/SOES/esc_soes.o
+ .text.ESC_load_device_id
+                0x0000000000000000       0x50 ./Platform/SOES/esc_soes.o
+ .text.ESC_state
+                0x0000000000000000      0x4d4 ./Platform/SOES/esc_soes.o
+ .text.ESC_config
+                0x0000000000000000       0xfc ./Platform/SOES/esc_soes.o
+ .data.mb0.6712
+                0x0000000000000000        0x8 ./Platform/SOES/esc_soes.o
+ .data.mb1.6713
+                0x0000000000000000        0x8 ./Platform/SOES/esc_soes.o
+ .data.mbboot0.6714
+                0x0000000000000000        0x8 ./Platform/SOES/esc_soes.o
+ .data.mbboot1.6715
+                0x0000000000000000        0x8 ./Platform/SOES/esc_soes.o
+ .debug_info    0x0000000000000000     0x1d19 ./Platform/SOES/esc_soes.o
+ .debug_abbrev  0x0000000000000000      0x3a9 ./Platform/SOES/esc_soes.o
+ .debug_aranges
+                0x0000000000000000      0x158 ./Platform/SOES/esc_soes.o
+ .debug_ranges  0x0000000000000000      0x148 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x1e3 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0xaa8 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x4c ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x18 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x94 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x3c ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x34 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x174 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x16 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x43 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x57 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x34 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x58 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x71 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x1c ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x12a ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x339 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x35 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x20 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x16 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x103 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x6a ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x1df ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x460 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x7c ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x1c ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x52 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x2e ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x82 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x22 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x172 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0xc4 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000      0x774 ./Platform/SOES/esc_soes.o
+ .debug_macro   0x0000000000000000       0x10 ./Platform/SOES/esc_soes.o
+ .debug_line    0x0000000000000000     0x136a ./Platform/SOES/esc_soes.o
+ .debug_str     0x0000000000000000     0xb7f3 ./Platform/SOES/esc_soes.o
+ .comment       0x0000000000000000       0x54 ./Platform/SOES/esc_soes.o
+ .debug_frame   0x0000000000000000      0x5ac ./Platform/SOES/esc_soes.o
+ .ARM.attributes
+                0x0000000000000000       0x34 ./Platform/SOES/esc_soes.o
  .group         0x0000000000000000        0xc ./UserApp/drivers/et1100.o
  .group         0x0000000000000000        0xc ./UserApp/drivers/et1100.o
  .group         0x0000000000000000        0xc ./UserApp/drivers/et1100.o
@@ -7684,13 +7690,17 @@ Discarded input sections
                 0x0000000000000000       0x20 ./UserApp/drivers/et1100.o
  .text._ZN6ET1100D0Ev
                 0x0000000000000000       0x20 ./UserApp/drivers/et1100.o
+ .text._ZN6ET11008WriteRegEv
+                0x0000000000000000       0x16 ./UserApp/drivers/et1100.o
+ .text._ZN6ET11007ReadRegEv
+                0x0000000000000000       0x16 ./UserApp/drivers/et1100.o
  .rodata._ZTV6ET1100
                 0x0000000000000000       0x10 ./UserApp/drivers/et1100.o
- .debug_info    0x0000000000000000     0x3fc4 ./UserApp/drivers/et1100.o
- .debug_abbrev  0x0000000000000000      0x523 ./UserApp/drivers/et1100.o
+ .debug_info    0x0000000000000000     0x403a ./UserApp/drivers/et1100.o
+ .debug_abbrev  0x0000000000000000      0x544 ./UserApp/drivers/et1100.o
  .debug_aranges
-                0x0000000000000000       0x30 ./UserApp/drivers/et1100.o
- .debug_ranges  0x0000000000000000       0x20 ./UserApp/drivers/et1100.o
+                0x0000000000000000       0x40 ./UserApp/drivers/et1100.o
+ .debug_ranges  0x0000000000000000       0x30 ./UserApp/drivers/et1100.o
  .debug_macro   0x0000000000000000      0x419 ./UserApp/drivers/et1100.o
  .debug_macro   0x0000000000000000      0xb86 ./UserApp/drivers/et1100.o
  .debug_macro   0x0000000000000000       0x1c ./UserApp/drivers/et1100.o
@@ -7775,12 +7785,310 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xd6 ./UserApp/drivers/et1100.o
  .debug_macro   0x0000000000000000       0xbe ./UserApp/drivers/et1100.o
  .debug_macro   0x0000000000000000       0x3c ./UserApp/drivers/et1100.o
- .debug_line    0x0000000000000000      0xfb8 ./UserApp/drivers/et1100.o
- .debug_str     0x0000000000000000    0xd3b05 ./UserApp/drivers/et1100.o
+ .debug_line    0x0000000000000000      0xfdc ./UserApp/drivers/et1100.o
+ .debug_str     0x0000000000000000    0xd3b2d ./UserApp/drivers/et1100.o
  .comment       0x0000000000000000       0x54 ./UserApp/drivers/et1100.o
- .debug_frame   0x0000000000000000       0x84 ./UserApp/drivers/et1100.o
+ .debug_frame   0x0000000000000000       0xd4 ./UserApp/drivers/et1100.o
  .ARM.attributes
                 0x0000000000000000       0x34 ./UserApp/drivers/et1100.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .group         0x0000000000000000        0xc ./UserApp/drivers/lan9252.o
+ .text          0x0000000000000000        0x0 ./UserApp/drivers/lan9252.o
+ .data          0x0000000000000000        0x0 ./UserApp/drivers/lan9252.o
+ .bss           0x0000000000000000        0x0 ./UserApp/drivers/lan9252.o
+ .rodata._ZL7math_PI
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .rodata._ZL12math_PI_by_2
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .rodata._ZL14math_PI_3_by_2
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .rodata._ZL8math_2PI
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .rodata._ZL12one_by_sqrt3
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .rodata._ZL12two_by_sqrt3
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .rodata._ZL10sqrt3_by_2
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .rodata._ZL10sqrt3_by_3
+                0x0000000000000000        0x4 ./UserApp/drivers/lan9252.o
+ .text._ZN4Port7SPIComm8TransmitEPhtm
+                0x0000000000000000       0x28 ./UserApp/drivers/lan9252.o
+ .text._ZN4Port7SPIComm15TransmitReceiveEPhS1_tm
+                0x0000000000000000       0x2c ./UserApp/drivers/lan9252.o
+ .text._ZN4Port4GPIO8WritePinE13GPIO_PinState
+                0x0000000000000000       0x24 ./UserApp/drivers/lan9252.o
+ .text._ZN4Port2CS6SelectEv
+                0x0000000000000000       0x2e ./UserApp/drivers/lan9252.o
+ .text._ZN4Port2CS7ReleaseEv
+                0x0000000000000000       0x2e ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN9252C2ERN4Port7SPICommERNS0_2CSERNS0_4EXITES6_S6_RNS0_3TIME
+                0x0000000000000000       0x4c ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN9252D2Ev
+                0x0000000000000000       0x20 ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN9252D0Ev
+                0x0000000000000000       0x20 ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN92527EscInitEPK7esc_cfg
+                0x0000000000000000       0x36 ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN92525WriteEtm
+                0x0000000000000000       0x82 ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN92524ReadEm
+                0x0000000000000000       0x8c ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN925210EscReadCsrEtPvt
+                0x0000000000000000       0x6c ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN925211EscWriteCsrEtPvt
+                0x0000000000000000       0x76 ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN925211EscReadPramEtPvt
+                0x0000000000000000      0x24a ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN925212EscWritePramEtPvt
+                0x0000000000000000      0x25a ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN92527EscReadEtPvt
+                0x0000000000000000       0xcc ./UserApp/drivers/lan9252.o
+ .text._ZN7LAN92528EscWriteEtPvt
+                0x0000000000000000       0xcc ./UserApp/drivers/lan9252.o
+ .rodata._ZTV7LAN9252
+                0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_info    0x0000000000000000     0x5777 ./UserApp/drivers/lan9252.o
+ .debug_abbrev  0x0000000000000000      0x688 ./UserApp/drivers/lan9252.o
+ .debug_aranges
+                0x0000000000000000       0xa0 ./UserApp/drivers/lan9252.o
+ .debug_ranges  0x0000000000000000       0x90 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x5b3 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0xb86 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x1c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x22 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x8e ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x51 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x103 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x6a ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x1df ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x17b ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x2e ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x2f ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x1c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x22 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xdf ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000     0x102d ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x11f ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000    0x1426d ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x6d ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x2b9 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000     0x3666 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x5c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x8a7 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x9fe ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x116 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x130 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xa5 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x174 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x287 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x5f ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x236 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0xb5b ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x38b ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x176 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xf9 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x40f ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x122 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xa6 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x12c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x21e ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x2e ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x1b5 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xd6 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x11a ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x7e ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x89 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x225 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x8d1 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x47 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x295 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x12d ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x22 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x52 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x18 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x3c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x34 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x16 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x43 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x34 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x58 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x71 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x16 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x12a ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x356 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x35 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x20 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x12 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x12 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x17c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x41e ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x18 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x1a2 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x16 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x16 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x29 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x3c7 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xd6 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xbe ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x3c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x16 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x460 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x7c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x1c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x52 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x2e ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x82 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x172 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xc4 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x774 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x22a ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x22 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x40 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xd5 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x1c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x3d ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x16 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x41 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x12c ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x10 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xf0 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0x16 ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000      0x51a ./UserApp/drivers/lan9252.o
+ .debug_macro   0x0000000000000000       0xa6 ./UserApp/drivers/lan9252.o
+ .debug_line    0x0000000000000000     0x195b ./UserApp/drivers/lan9252.o
+ .debug_str     0x0000000000000000    0xda54b ./UserApp/drivers/lan9252.o
+ .comment       0x0000000000000000       0x54 ./UserApp/drivers/lan9252.o
+ .debug_frame   0x0000000000000000      0x288 ./UserApp/drivers/lan9252.o
+ .ARM.attributes
+                0x0000000000000000       0x34 ./UserApp/drivers/lan9252.o
  .group         0x0000000000000000        0xc ./UserApp/drivers/led.o
  .group         0x0000000000000000        0xc ./UserApp/drivers/led.o
  .group         0x0000000000000000        0xc ./UserApp/drivers/led.o
@@ -9234,6 +9542,27 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x28 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-strncmp.o)
  .ARM.attributes
                 0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-strncmp.o)
+ .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o)
+ .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o)
+ .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o)
+ .text.lseek    0x0000000000000000       0x14 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o)
+ .debug_frame   0x0000000000000000       0x20 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syslseek.o)
+ .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o)
+ .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o)
+ .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o)
+ .text.read     0x0000000000000000       0x14 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o)
+ .debug_frame   0x0000000000000000       0x20 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sysread.o)
+ .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o)
+ .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o)
+ .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o)
+ .text.write    0x0000000000000000       0x14 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o)
+ .debug_frame   0x0000000000000000       0x20 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-syswrite.o)
  .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wbuf.o)
  .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wbuf.o)
  .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wbuf.o)
@@ -9243,6 +9572,14 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x40 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wbuf.o)
  .ARM.attributes
                 0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wbuf.o)
+ .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
+ .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
+ .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
+ .text._write_r
+                0x0000000000000000       0x24 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
+ .debug_frame   0x0000000000000000       0x2c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
  .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wsetup.o)
  .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wsetup.o)
  .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-wsetup.o)
@@ -9326,6 +9663,14 @@ Discarded input sections
                 0x0000000000000000        0x4 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lock.o)
  .text.__retarget_lock_release
                 0x0000000000000000        0x2 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lock.o)
+ .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
+ .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
+ .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
+ .text._lseek_r
+                0x0000000000000000       0x24 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
+ .debug_frame   0x0000000000000000       0x2c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
  .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-makebuf.o)
  .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-makebuf.o)
  .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-makebuf.o)
@@ -9359,6 +9704,13 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x3c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-reallocr.o)
  .ARM.attributes
                 0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-reallocr.o)
+ .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
+ .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
+ .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
+ .text._read_r  0x0000000000000000       0x24 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
+ .debug_frame   0x0000000000000000       0x2c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
+ .ARM.attributes
+                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
  .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
  .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
  .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
@@ -9380,14 +9732,6 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x88 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-stdio.o)
  .ARM.attributes
                 0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-stdio.o)
- .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
- .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
- .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
- .text._write_r
-                0x0000000000000000       0x24 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
- .debug_frame   0x0000000000000000       0x2c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
- .ARM.attributes
-                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-writer.o)
  .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-closer.o)
  .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-closer.o)
  .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-closer.o)
@@ -9412,14 +9756,6 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x2c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-isattyr.o)
  .ARM.attributes
                 0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-isattyr.o)
- .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
- .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
- .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
- .text._lseek_r
-                0x0000000000000000       0x24 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
- .debug_frame   0x0000000000000000       0x2c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
- .ARM.attributes
-                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-lseekr.o)
  .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-msizer.o)
  .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-msizer.o)
  .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-msizer.o)
@@ -9428,13 +9764,6 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x20 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-msizer.o)
  .ARM.attributes
                 0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-msizer.o)
- .text          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
- .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
- .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
- .text._read_r  0x0000000000000000       0x24 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
- .debug_frame   0x0000000000000000       0x2c e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
- .ARM.attributes
-                0x0000000000000000       0x34 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-readr.o)
  .text          0x0000000000000000      0x254 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
  .data          0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
  .bss           0x0000000000000000        0x0 e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
@@ -9554,12 +9883,13 @@ LOAD ./Platform/EtherCAT/src/mailbox.o
 LOAD ./Platform/EtherCAT/src/objdef.o
 LOAD ./Platform/EtherCAT/src/sdoserv.o
 LOAD ./Platform/SOES/ecat_slv.o
-LOAD ./Platform/SOES/esc.o
 LOAD ./Platform/SOES/esc_coe.o
 LOAD ./Platform/SOES/esc_eep.o
 LOAD ./Platform/SOES/esc_eoe.o
 LOAD ./Platform/SOES/esc_foe.o
+LOAD ./Platform/SOES/esc_soes.o
 LOAD ./UserApp/drivers/et1100.o
+LOAD ./UserApp/drivers/lan9252.o
 LOAD ./UserApp/drivers/led.o
 LOAD ./UserApp/main.o
 LOAD ./UserApp/port/math_port.o
@@ -11150,7 +11480,7 @@ LOAD e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.st
 LOAD e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x0000000000000000    0x38397
+.debug_info     0x0000000000000000    0x383f3
  .debug_info    0x0000000000000000     0x27b3 ./Core/Src/main.o
  .debug_info    0x00000000000027b3     0x2708 ./Core/Src/stm32f4xx_hal_msp.o
  .debug_info    0x0000000000004ebb      0xaf4 ./Core/Src/stm32f4xx_it.o
@@ -11180,9 +11510,9 @@ LOAD e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.st
  .debug_info    0x00000000000236b6     0x1ab5 ./Platform/EtherCAT/src/objdef.o
  .debug_info    0x000000000002516b     0x1c6d ./Platform/EtherCAT/src/sdoserv.o
  .debug_info    0x0000000000026dd8     0x3358 ./UserApp/drivers/led.o
- .debug_info    0x000000000002a130     0x58fd ./UserApp/main.o
- .debug_info    0x000000000002fa2d     0x573e ./UserApp/port/var_port.o
- .debug_info    0x000000000003516b     0x322c ./UserApp/utils/cqueue.o
+ .debug_info    0x000000000002a130     0x592b ./UserApp/main.o
+ .debug_info    0x000000000002fa5b     0x576c ./UserApp/port/var_port.o
+ .debug_info    0x00000000000351c7     0x322c ./UserApp/utils/cqueue.o
 
 .debug_abbrev   0x0000000000000000     0x5aac
  .debug_abbrev  0x0000000000000000      0x2fb ./Core/Src/main.o
@@ -11528,7 +11858,7 @@ LOAD e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.st
  .debug_line    0x0000000000023816     0x1234 ./UserApp/port/var_port.o
  .debug_line    0x0000000000024a4a     0x13f8 ./UserApp/utils/cqueue.o
 
-.debug_str      0x0000000000000000    0xe4a02
+.debug_str      0x0000000000000000    0xe4a21
  .debug_str     0x0000000000000000    0xd1f53 ./Core/Src/main.o
                                       0xd283e (size before relaxing)
  .debug_str     0x00000000000d1f53      0x14a ./Core/Src/stm32f4xx_hal_msp.o
@@ -11587,11 +11917,11 @@ LOAD e:/program file/stm32cube/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.st
                                       0xd4e5b (size before relaxing)
  .debug_str     0x00000000000dede5     0x460a ./UserApp/drivers/led.o
                                       0xd2be0 (size before relaxing)
- .debug_str     0x00000000000e33ef     0x1311 ./UserApp/main.o
-                                      0xd7e0b (size before relaxing)
- .debug_str     0x00000000000e4700      0x22d ./UserApp/port/var_port.o
-                                      0xd5393 (size before relaxing)
- .debug_str     0x00000000000e492d       0xd5 ./UserApp/utils/cqueue.o
+ .debug_str     0x00000000000e33ef     0x1330 ./UserApp/main.o
+                                      0xd7e2a (size before relaxing)
+ .debug_str     0x00000000000e471f      0x22d ./UserApp/port/var_port.o
+                                      0xd53b2 (size before relaxing)
+ .debug_str     0x00000000000e494c       0xd5 ./UserApp/utils/cqueue.o
                                       0xd281f (size before relaxing)
 
 .comment        0x0000000000000000       0x53

@@ -6,14 +6,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../UserApp/drivers/et1100.cpp \
+../UserApp/drivers/lan9252.cpp \
 ../UserApp/drivers/led.cpp 
 
 OBJS += \
 ./UserApp/drivers/et1100.o \
+./UserApp/drivers/lan9252.o \
 ./UserApp/drivers/led.o 
 
 CPP_DEPS += \
 ./UserApp/drivers/et1100.d \
+./UserApp/drivers/lan9252.d \
 ./UserApp/drivers/led.d 
 
 

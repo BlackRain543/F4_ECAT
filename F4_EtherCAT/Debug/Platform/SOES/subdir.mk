@@ -6,27 +6,27 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Platform/SOES/ecat_slv.c \
-../Platform/SOES/esc.c \
 ../Platform/SOES/esc_coe.c \
 ../Platform/SOES/esc_eep.c \
 ../Platform/SOES/esc_eoe.c \
-../Platform/SOES/esc_foe.c 
+../Platform/SOES/esc_foe.c \
+../Platform/SOES/esc_soes.c 
 
 C_DEPS += \
 ./Platform/SOES/ecat_slv.d \
-./Platform/SOES/esc.d \
 ./Platform/SOES/esc_coe.d \
 ./Platform/SOES/esc_eep.d \
 ./Platform/SOES/esc_eoe.d \
-./Platform/SOES/esc_foe.d 
+./Platform/SOES/esc_foe.d \
+./Platform/SOES/esc_soes.d 
 
 OBJS += \
 ./Platform/SOES/ecat_slv.o \
-./Platform/SOES/esc.o \
 ./Platform/SOES/esc_coe.o \
 ./Platform/SOES/esc_eep.o \
 ./Platform/SOES/esc_eoe.o \
-./Platform/SOES/esc_foe.o 
+./Platform/SOES/esc_foe.o \
+./Platform/SOES/esc_soes.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes

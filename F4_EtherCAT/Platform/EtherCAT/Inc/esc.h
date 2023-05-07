@@ -104,9 +104,9 @@ V5.01 : Start file change log
 #define ESC_SYNCMAN_ACTIVE_OFFSET               0x0806                              /**< \brief Register Description: SyncManager Activation Register*/
 
 
-#define    ESC_SYSTEMTIME_OFFSET                0x0910                              /**< \brief Register Description: Local copy of the System Time*/
+#define ESC_SYSTEMTIME_OFFSET                	0x0910                              /**< \brief Register Description: Local copy of the System Time*/
 
-#define    ESC_DC_UNIT_CONTROL_OFFSET           0x0980                              /**< \brief Register Description: Control registers for Cycle and Sync Unit (can be predefined with the "AssignActivate" Element in the device description, for further information see ETG.2000)*/
+#define ESC_DC_UNIT_CONTROL_OFFSET           	0x0980                              /**< \brief Register Description: Control registers for Cycle and Sync Unit (can be predefined with the "AssignActivate" Element in the device description, for further information see ETG.2000)*/
 #define ESC_DC_SYNC_UNIT_ACTIVE_MASK            0x0100                              /**< \brief Description (0x980.8): Sync Out Unit is activated*/
 #define ESC_DC_SYNC0_ACTIVE_MASK                0x0200                              /**< \brief Description (0x980.9): Sync0 generation is activated*/
 #define ESC_DC_SYNC1_ACTIVE_MASK                0x0400                              /**< \brief Description (0x980.10): Sync1 generation is activated*/

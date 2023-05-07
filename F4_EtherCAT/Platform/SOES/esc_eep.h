@@ -12,7 +12,7 @@
 #define __esc_eep__
 
 #include <cc.h>
-#include "esc.h"
+#include <esc_soes.h>
 
 /* EEPROM commands */
 #define EEP_CMD_IDLE        0x0

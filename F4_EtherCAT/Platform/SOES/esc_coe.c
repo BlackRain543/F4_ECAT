@@ -15,7 +15,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <cc.h>
-#include "esc.h"
+#include <esc_soes.h>
 #include "esc_coe.h"
 
 #define BITS2BYTES(b) ((b + 7U) >> 3)

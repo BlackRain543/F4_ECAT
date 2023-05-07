@@ -1,0 +1,180 @@
+
+#include <drivers/lan9252.h>
+
+LAN9252::LAN9252(
+		Port::SPIComm 	&spi,
+		Port::CS 		&cs,
+		Port::EXIT 		&spiIrq,
+		Port::EXIT 		&sync0,
+		Port::EXIT 		&sync1,
+		Port::TIM		&tim
+		)
+: spi_(spi),
+  cs_(cs),
+  spiIrq_(spiIrq),
+  sync0_(sync0),
+  sync1_(sync1),
+  tim_(tim)
+{
+
+
+}
+
+LAN9252::~LAN9252()
+{
+
+}
+
+void LAN9252::Write(uint16_t address, uint32_t val)
+{
+	spiTxData_[0] = ESC_CMD_SERIAL_WRITE;
+	spiTxData_[1] = ((address >> 8) & 0xFF);
+	spiTxData_[2] = (address & 0xFF);
+	spiTxData_[3] = (val & 0xFF);
+	spiTxData_[4] = ((val >> 8) & 0xFF);
+	spiTxData_[5] = ((val >> 16) & 0xFF);
+	spiTxData_[6] = ((val >> 24) & 0xFF);
+
+
+	cs_.Select();
+	spi_.Transmit(spiTxData_, 7, 100);
+    cs_.Release();
+}
+
+uint32_t LAN9252::Read(uint32_t address)
+{
+	spiTxData_[0] = ESC_CMD_FAST_READ;
+	spiTxData_[1] = ((address >> 8) & 0xFF);
+	spiTxData_[2] = (address & 0xFF);
+	spiTxData_[3] = ESC_CMD_FAST_READ_DUMMY;
+
+	cs_.Select();
+	spi_.TransmitReceive(spiTxData_, spiRxData_, 4, 100);
+	cs_.Release();
+
+	regVal_ = (spiRxData_[3] << 24) |  (spiRxData_[2] << 16) | (spiRxData_[1] << 8) | spiRxData_[0];
+
+	return regVal_;
+}
+
+void LAN9252::EscReadCsr(uint16_t address, void *buf, uint16_t len)
+{
+	uint32_t value;
+
+	value = (ESC_CSR_CMD_READ | ESC_CSR_CMD_SIZE(len) | address);
+	Write(ESC_CSR_CMD_REG, value);
+
+	do
+	{
+	  value = Read(ESC_CSR_CMD_REG);
+	} while(value & ESC_CSR_CMD_BUSY);
+
+	value = Read(ESC_CSR_DATA_REG);
+	memcpy(buf, (uint8_t *)&value, len);
+}
+
+void LAN9252::EscWriteCsr(uint16_t address, void *buf, uint16_t len)
+{
+	uint32_t value;
+
+	memcpy((uint8_t*)&value, buf,len);
+	Write(ESC_CSR_DATA_REG, value);
+
+	value = ESC_CSR_CMD_WRITE;
+	value |= (uint32_t)ESC_CSR_CMD_SIZE(len);
+	value |= address;
+	Write(ESC_CSR_CMD_REG, value);
+
+	do
+	{
+	  value = Read(ESC_CSR_CMD_REG);
+	} while(value & ESC_CSR_CMD_BUSY);
+}
+
+/* ESC read process data ram function */
+void LAN9252::EscReadPram (uint16_t address, void *buf, uint16_t len)
+{
+   uint32_t value;
+   uint8_t *temp_buf = buf;
+
+   uint16_t byte_offset = 0;
+   uint8_t fifo_cnt, first_byte_position, temp_len;
+   uint8_t *buffer;
+   size_t i, array_size, size;
+   float quotient,remainder;
+   uint32_t temp;
+   ssize_t n;
+
+   value = ESC_PRAM_CMD_ABORT;
+   Write(ESC_PRAM_RD_CMD_REG, value);
+
+   do
+   {
+      value = Read(ESC_PRAM_RD_CMD_REG);
+   }while(value & ESC_PRAM_CMD_BUSY);
+
+   value = (uint32_t)(ESC_PRAM_SIZE(len) | ESC_PRAM_ADDR(address));
+   Write(ESC_PRAM_RD_ADDR_LEN_REG, value);
+
+   value = ESC_PRAM_CMD_BUSY;
+   Write(ESC_PRAM_RD_CMD_REG, value);
+
+   do
+   {
+      value = Read(ESC_PRAM_RD_CMD_REG);
+   }while((value & ESC_PRAM_CMD_AVAIL) == 0);
+
+   /* Fifo count */
+   fifo_cnt = (uint8_t)ESC_PRAM_CMD_CNT(value);
+
+   /* Read first value from FIFO */
+   value = lan9252_read_32(ESC_PRAM_RD_FIFO_REG);
+   fifo_cnt--;
+
+   /* Find out first byte position and adjust the copy from that
+    * according to LAN9252 datasheet and MicroChip SDK code
+    */
+   first_byte_position = (address & 0x03);
+   temp_len = ((4 - first_byte_position) > len) ? (uint8_t)len : (uint8_t)(4 - first_byte_position);
+
+   memcpy(temp_buf ,((uint8_t *)&value + first_byte_position), temp_len);
+   len = (uint16_t)(len - temp_len);
+   byte_offset = (uint16_t)(byte_offset + temp_len);
+
+   /* Continue reading until we have read len */
+    if (len > 0){
+
+        quotient = (float)(len/4);
+        remainder = (float)(len%4);
+
+        if (remainder == 0)
+            array_size = (size_t)quotient;
+        else
+            array_size = (size_t)quotient+1;
+
+        size = 4*array_size;
+
+        buffer = (uint8_t *)malloc(size);
+        buffer[0] = (uint8_t)size;
+        memset(buffer,0,size);
+
+        lseek (lan9252, ESC_PRAM_RD_FIFO_REG, SEEK_SET);
+        n = read (lan9252, buffer, size);
+        (void)n;
+
+        while(len > 0)
+        {
+
+            for (i=0; i<size; i=i+4) {
+                temp_len = (len > 4) ? 4: (uint8_t)len;
+
+                temp = (uint32_t)(buffer[i] | (buffer[i+1] << 8) | (buffer[i+2] << 16) | (buffer[i+3] << 24));
+                memcpy(temp_buf + byte_offset ,&temp, temp_len);
+                fifo_cnt--;
+                len = (uint16_t)(len - temp_len);
+                byte_offset = (uint16_t)(byte_offset + temp_len);
+            }
+        }
+        free(buffer);
+    }
+}

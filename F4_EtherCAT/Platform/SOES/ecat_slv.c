@@ -2,8 +2,8 @@
  * Licensed under the GNU General Public License version 2 with exceptions. See
  * LICENSE file in the project root for full license information
  */
+#include <esc_soes.h>
 #include <stddef.h>
-#include "esc.h"
 #include "esc_coe.h"
 #include "esc_foe.h"
 #include "esc_eoe.h"

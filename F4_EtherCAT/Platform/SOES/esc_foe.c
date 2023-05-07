@@ -10,7 +10,7 @@
 
 
 #include <cc.h>
-#include "esc.h"
+#include <esc_soes.h>
 #include "esc_foe.h"
 #include <string.h>
 

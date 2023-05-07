@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;F4_EtherCAT/Platform/SOES/esc.h&apos; to &apos;esc_soes.h&apos;" description="Rename resource &apos;esc.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Platform/SOES/esc.h" name="esc_soes.h" stamp="1683466356197" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;F4_EtherCAT/Platform/SOES/esc.c&apos; to &apos;esc_soes.c&apos;" description="Rename resource &apos;esc.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Platform/SOES/esc.c" name="esc_soes.c" stamp="1683466372761" updateReferences="true"/>
+</session>

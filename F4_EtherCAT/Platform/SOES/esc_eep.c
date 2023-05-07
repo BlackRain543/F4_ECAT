@@ -8,8 +8,8 @@
  * ESI EEPROM emulator module.
  */
 
+#include <esc_soes.h>
 #include "cc.h"
-#include "esc.h"
 #include "esc_eep.h"
 
 #include <string.h>

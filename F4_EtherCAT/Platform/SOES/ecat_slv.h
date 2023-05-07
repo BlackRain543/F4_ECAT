@@ -6,8 +6,8 @@
 #ifndef __ECAT_SLV_H__
 #define __ECAT_SLV_H__
 
+#include <esc_soes.h>
 #include "options.h"
-#include "esc.h"
 
 /**
  * This function is called when to get input values

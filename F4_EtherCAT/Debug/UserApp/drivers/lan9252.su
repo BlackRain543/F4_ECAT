@@ -1,0 +1,17 @@
+peripheral_port.hpp:148:22:HAL_StatusTypeDef Port::SPIComm::Transmit(uint8_t*, uint16_t, uint32_t)	24	static
+peripheral_port.hpp:153:22:HAL_StatusTypeDef Port::SPIComm::TransmitReceive(uint8_t*, uint8_t*, uint16_t, uint32_t)	32	static
+peripheral_port.hpp:174:16:void Port::GPIO::WritePin(GPIO_PinState)	16	static
+peripheral_port.hpp:203:9:void Port::CS::Select()	16	static
+peripheral_port.hpp:210:9:void Port::CS::Release()	16	static
+lan9252.cpp:3:1:LAN9252::LAN9252(Port::SPIComm&, Port::CS&, Port::EXIT&, Port::EXIT&, Port::EXIT&, Port::TIM&)	24	static
+lan9252.cpp:22:1:LAN9252::~LAN9252()	16	static
+lan9252.cpp:22:1:virtual LAN9252::~LAN9252()	16	static
+lan9252.cpp:27:6:void LAN9252::EscInit(const esc_cfg_t*)	24	static
+lan9252.cpp:43:6:void LAN9252::Write(uint16_t, uint32_t)	24	static
+lan9252.cpp:59:10:uint32_t LAN9252::Read(uint32_t)	24	static
+lan9252.cpp:76:6:void LAN9252::EscReadCsr(uint16_t, void*, uint16_t)	32	static
+lan9252.cpp:93:6:void LAN9252::EscWriteCsr(uint16_t, void*, uint16_t)	32	static
+lan9252.cpp:112:6:void LAN9252::EscReadPram(uint16_t, void*, uint16_t)	72	static
+lan9252.cpp:201:6:void LAN9252::EscWritePram(uint16_t, void*, uint16_t)	72	static
+lan9252.cpp:299:6:void LAN9252::EscRead(uint16_t, void*, uint16_t)	32	static
+lan9252.cpp:355:6:void LAN9252::EscWrite(uint16_t, void*, uint16_t)	32	static
