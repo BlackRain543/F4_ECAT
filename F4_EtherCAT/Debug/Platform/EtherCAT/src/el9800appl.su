@@ -1,0 +1,13 @@
+el9800appl.c:90:9:APPL_AckErrorInd	16	static
+el9800appl.c:108:8:APPL_StartMailboxHandler	4	static
+el9800appl.c:124:8:APPL_StopMailboxHandler	4	static
+el9800appl.c:145:8:APPL_StartInputHandler	16	static
+el9800appl.c:161:8:APPL_StopInputHandler	4	static
+el9800appl.c:179:8:APPL_StartOutputHandler	4	static
+el9800appl.c:195:8:APPL_StopOutputHandler	4	static
+el9800appl.c:232:8:APPL_GenerateMapping	48	static
+el9800appl.c:321:6:APPL_InputMapping	24	static
+el9800appl.c:356:6:APPL_OutputMapping	24	static
+el9800appl.c:379:6:APPL_Application	8	static
+el9800appl.c:449:7:ReadObject0x1802	32	static
+el9800appl.c:514:5:MainEtherCAT	8	static

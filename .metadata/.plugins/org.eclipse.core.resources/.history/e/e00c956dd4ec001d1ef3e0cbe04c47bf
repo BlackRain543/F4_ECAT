@@ -1,0 +1,35 @@
+
+#ifndef DRIVERS_ET1100_H_
+#define DRIVERS_ET1100_H_
+
+#include "port/typedef_port.h"
+#include "port/peripheral_port.hpp"
+
+class ET1100
+{
+	public:
+		ET1100(
+				Port::SPIComm 	&spi,
+				Port::EXIT 		&spiIrq,
+				Port::EXIT 		&sync0,
+				Port::EXIT 		&sync1,
+				Port::TIM		&tim
+				);
+		virtual ~ET1100();
+
+		ErrorStatus WriteReg();
+		ErrorStatus ReadReg();
+
+
+	private:
+		Port::SPIComm 	&spi_;
+		Port::EXIT		&spiIrq_;
+		Port::EXIT		&sync0_;
+		Port::EXIT		&sync1_;
+		Port::TIM		&tim_;
+
+		uint8_t spiTxData_;
+		uint8_t spiRxData
+};
+
+#endif

@@ -1,0 +1,15 @@
+cqueue.h:39:21:uint32_t CQueueNS::CQueue::TotalLength()	16	static
+cqueue.h:40:21:uint32_t CQueueNS::CQueue::UsedLength()	16	static
+cqueue.h:41:21:uint32_t CQueueNS::CQueue::UnusedLength()	24	static
+cqueue.cpp:10:24:uint32_t IsNotPowerOfTwo(uint32_t)	16	static
+cqueue.cpp:15:1:CQueueNS::CQueue::CQueue(uint32_t, uint8_t*)	24	static
+cqueue.cpp:40:1:CQueueNS::CQueue::~CQueue()	16	static
+cqueue.cpp:50:6:void CQueueNS::CQueue::Reset()	16	static
+cqueue.cpp:56:6:void CQueueNS::CQueue::CopyIn(uint8_t*, uint32_t, uint32_t)	40	static
+cqueue.cpp:70:24:CQueueNS::CQueueStatus CQueueNS::CQueue::In(uint8_t*, uint32_t, uint32_t)	32	static
+cqueue.cpp:79:24:CQueueNS::CQueueStatus CQueueNS::CQueue::EntirelyIn(uint8_t*, uint32_t, uint32_t)	32	static
+cqueue.cpp:91:6:void CQueueNS::CQueue::CopyOut(uint8_t*, uint32_t, uint32_t)	40	static
+cqueue.cpp:105:24:CQueueNS::CQueueStatus CQueueNS::CQueue::Out(uint8_t*, uint32_t, uint32_t)	32	static
+cqueue.cpp:114:24:CQueueNS::CQueueStatus CQueueNS::CQueue::RemoveFromFront(uint32_t)	24	static
+cqueue.cpp:122:6:void CQueueNS::CQueue::UpdateDataRecvIDLE(uint32_t)	24	static,ignoring_inline_asm
+cqueue.cpp:142:6:void CQueueNS::CQueue::UpdateDataRecvDmaTC(uint32_t)	24	static,ignoring_inline_asm

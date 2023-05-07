@@ -1,0 +1,23 @@
+
+#include <drivers/et1100.h>
+
+ET1100::ET1100(
+		Port::SPIComm &spi,
+		Port::EXIT &spiIrq,
+		Port::EXIT &sync0,
+		Port::EXIT &sync1
+		)
+: spi_(spi),
+  spiIrq_(spiIrq),
+  sync0_(sync0),
+  sync1_(sync1)
+{
+
+
+}
+
+ET1100::~ET1100()
+{
+
+}
+

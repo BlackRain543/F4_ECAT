@@ -1,0 +1,21 @@
+std_abs.h:75:3:constexpr float std::abs(float)	16	static
+cmath:87:3:constexpr float std::acos(float)	16	static
+math_port.h:90:21:float32_t MathPort::Complex::Real()	16	static
+math_port.h:91:21:float32_t MathPort::Complex::Imag()	16	static
+math_port.cpp:9:8:int8_t MathPort::Sgn(float32_t)	24	static
+math_port.cpp:19:11:float32_t MathPort::CircSubs(float32_t, float32_t)	32	static
+math_port.cpp:29:11:float32_t MathPort::Factorial(uint32_t)	24	static
+math_port.cpp:39:11:float32_t MathPort::BnmCoef(uint32_t, uint32_t)	32	static
+math_port.cpp:51:6:void MathPort::Bnm2Ployn(float32_t, float32_t, uint32_t, float32_t*)	40	static
+math_port.cpp:60:6:void MathPort::PloynMulti(float32_t*, float32_t*, uint32_t, uint32_t, float32_t*)	48	static
+math_port.cpp:86:6:void MathPort::CircleNumCalc(float32_t, float32_t, float32_t&)	24	static
+math_port.cpp:98:1:MathPort::Complex::Complex()	16	static
+math_port.cpp:103:1:MathPort::Complex::~Complex()	16	static
+math_port.cpp:107:6:void MathPort::Complex::SetVal(float32_t, float32_t)	24	static
+math_port.cpp:113:6:void MathPort::CmplxAdd(float32_t*, float32_t*, float32_t*)	24	static
+math_port.cpp:119:6:void MathPort::CmplxSub(float32_t*, float32_t*, float32_t*)	24	static
+math_port.cpp:125:6:void MathPort::CmplxScaleCmplx(float32_t*, float32_t*, float32_t*)	48	static
+math_port.cpp:138:6:void MathPort::RealScaleCmplx(float32_t*, float32_t*, float32_t*)	56	static
+math_port.cpp:155:6:void MathPort::Cmplx2MagPhase(MathPort::Complex&, float32_t*, float32_t*)	40	static
+math_port.cpp:173:6:void MathPort::PolyCmplx(MathPort::Complex*, uint32_t, float32_t*)	64	dynamic
+cmath:415:5:constexpr typename __gnu_cxx::__promote_2<_Tp, _Up>::__type std::pow(_Tp, _Up) [with _Tp = float; _Up = long unsigned int]	24	static

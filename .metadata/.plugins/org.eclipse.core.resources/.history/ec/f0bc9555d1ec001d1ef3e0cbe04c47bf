@@ -1,0 +1,18 @@
+/*
+ * et1100.cpp
+ *
+ *  Created on: 2023年5月7日
+ *      Author: R9000K
+ */
+
+#include <drivers/et1100.h>
+
+ET1100::ET1100() {
+	// TODO Auto-generated constructor stub
+
+}
+
+ET1100::~ET1100() {
+	// TODO Auto-generated destructor stub
+}
+
