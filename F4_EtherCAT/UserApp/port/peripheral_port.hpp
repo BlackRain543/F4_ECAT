@@ -145,14 +145,18 @@ namespace Port
 		public:
 			SPIComm(SPI_HandleTypeDef *hspi):hspi_(hspi){}
 			~SPIComm(){}
-			HAL_StatusTypeDef Transmit(uint8_t *pTxData, uint16_t Size,uint32_t Timeout)
+			HAL_StatusTypeDef Receive(uint8_t *pRxData, uint16_t Size)
 			{
-				return HAL_SPI_Transmit(hspi_,pTxData,Size,Timeout);
+				return HAL_SPI_Receive(hspi_,pRxData,Size,timeOut_);
+			}
+			HAL_StatusTypeDef Transmit(uint8_t *pTxData, uint16_t Size)
+			{
+				return HAL_SPI_Transmit(hspi_,pTxData,Size,timeOut_);
 			}
 
-			HAL_StatusTypeDef TransmitReceive(uint8_t *pTxData, uint8_t *pRxData, uint16_t Size,uint32_t Timeout)
+			HAL_StatusTypeDef TransmitReceive(uint8_t *pTxData, uint8_t *pRxData, uint16_t Size)
 			{
-				return HAL_SPI_TransmitReceive(hspi_,pTxData,pRxData,Size,Timeout);
+				return HAL_SPI_TransmitReceive(hspi_,pTxData,pRxData,Size,timeOut_);
 			}
 
 			HAL_StatusTypeDef TransmitReceiveDMA(uint8_t *pTxData, uint8_t *pRxData, uint16_t Size)
@@ -163,6 +167,7 @@ namespace Port
 
 		private:
 			SPI_HandleTypeDef *hspi_;
+			uint32_t timeOut_ = 100;
 	};
 
 	// *-----* GPIO *-----* //

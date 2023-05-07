@@ -7,14 +7,16 @@ ET1100::ET1100(
 		Port::EXIT 		&spiIrq,
 		Port::EXIT 		&sync0,
 		Port::EXIT 		&sync1,
-		Port::TIM		&tim
+		Port::TIM		&tim,
+		Port::GPIO		&eepromLoaded
 		)
 : spi_(spi),
   cs_(cs),
   spiIrq_(spiIrq),
   sync0_(sync0),
   sync1_(sync1),
-  tim_(tim)
+  tim_(tim),
+  eepromLoaded_(eepromLoaded)
 {
 
 
@@ -25,13 +27,4 @@ ET1100::~ET1100()
 
 }
 
-ErrorStatus ET1100::WriteReg()
-{
-
-}
-
-ErrorStatus ET1100::ReadReg()
-{
-
-}
 

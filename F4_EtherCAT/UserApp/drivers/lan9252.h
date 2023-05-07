@@ -61,11 +61,9 @@ class LAN9252
 				);
 		virtual ~LAN9252();
 
-		constexpr static int lan9252 = -1;
-
 		void 		EscInit(const esc_cfg_t * config);
-		void 		Write(uint16_t address, uint32_t val);
-		uint32_t	Read(uint32_t address);
+		void 		WriteReg(uint16_t address, uint32_t val);
+		uint32_t	ReadReg(uint32_t address);
 
 		void 		EscReadCsr(uint16_t address, void *buf, uint16_t len);
 		void 		EscWriteCsr(uint16_t address, void *buf, uint16_t len);

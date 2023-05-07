@@ -14,12 +14,13 @@ class ET1100
 				Port::EXIT 		&spiIrq,
 				Port::EXIT 		&sync0,
 				Port::EXIT 		&sync1,
-				Port::TIM		&tim
+				Port::TIM		&tim,
+				Port::GPIO		&eepromLoaded
 				);
 		virtual ~ET1100();
 
-		ErrorStatus WriteReg();
-		ErrorStatus ReadReg();
+		void 		WriteReg();
+		uint32_t 	ReadReg();
 
 
 	private:
@@ -29,6 +30,7 @@ class ET1100
 		Port::EXIT		&sync0_;
 		Port::EXIT		&sync1_;
 		Port::TIM		&tim_;
+		Port::GPIO		&eepromLoaded_;
 
 		uint8_t 		spiTxData_;
 		uint8_t 		spiRxData_;

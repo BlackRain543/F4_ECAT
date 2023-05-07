@@ -1,5 +1,3 @@
-et1100.cpp:4:1:ET1100::ET1100(Port::SPIComm&, Port::CS&, Port::EXIT&, Port::EXIT&, Port::EXIT&, Port::TIM&)	24	static
-et1100.cpp:23:1:ET1100::~ET1100()	16	static
-et1100.cpp:23:1:virtual ET1100::~ET1100()	16	static
-et1100.cpp:28:13:ErrorStatus ET1100::WriteReg()	16	static
-et1100.cpp:33:13:ErrorStatus ET1100::ReadReg()	16	static
+et1100.cpp:4:1:ET1100::ET1100(Port::SPIComm&, Port::CS&, Port::EXIT&, Port::EXIT&, Port::EXIT&, Port::TIM&, Port::GPIO&)	24	static
+et1100.cpp:25:1:ET1100::~ET1100()	16	static
+et1100.cpp:25:1:virtual ET1100::~ET1100()	16	static
