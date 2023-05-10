@@ -8,5 +8,5 @@ ecatappl.c:280:6:PDI_Isr	16	static
 ecatappl.c:370:6:Sync0_Isr	16	static
 ecatappl.c:458:6:Sync1_Isr	8	static
 ecatappl.c:490:8:MainInit	16	static
-ecatappl.c:527:6:MainLoop	16	static
-ecatappl.c:616:6:ECAT_Application	8	static
+ecatappl.c:526:6:MainLoop	16	static
+ecatappl.c:615:6:ECAT_Application	8	static

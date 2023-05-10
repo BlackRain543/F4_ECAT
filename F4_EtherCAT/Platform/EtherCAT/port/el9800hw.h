@@ -98,8 +98,6 @@ int MainEtherCAT(void);
 
 extern	uint16_t uhADCxConvertedValue;
 
-//#define SWITCH_1	HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_12)
-
 #define SWITCH_1            PCin(12)				// PORTDbits.RD7 /**< \brief Access to switch 1 input*/
 #define SWITCH_2            PCin(11)				// PORTDbits.RD6 /**< \brief Access to switch 2 input*/
 #define SWITCH_3            PCin(10)				// PORTDbits.RD5 /**< \brief Access to switch 3 input*/

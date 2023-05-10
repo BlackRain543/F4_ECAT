@@ -88,7 +88,7 @@ V4.30 : create file
 *////////////////////////////////////////////////////////////////////////////////////////
 
 void    APPL_AckErrorInd(UINT16 stateTrans)
-{ 
+{
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -100,7 +100,7 @@ void    APPL_AckErrorInd(UINT16 stateTrans)
            informs the application about the state transition, the application can refuse
            the state transition when returning an AL Status error code.
            The return code NOERROR_INWORK can be used, if the application cannot confirm
-           the state transition immediately, in that case the application need to be complete 
+           the state transition immediately, in that case the application need to be complete
            the transition by calling ECAT_StateChange.
 
 *////////////////////////////////////////////////////////////////////////////////////////
@@ -138,7 +138,7 @@ UINT16 APPL_StopMailboxHandler(void)
              informs the application about the state transition, the application can refuse
              the state transition when returning an AL Status error code.
             The return code NOERROR_INWORK can be used, if the application cannot confirm
-            the state transition immediately, in that case the application need to be complete 
+            the state transition immediately, in that case the application need to be complete
             the transition by calling ECAT_StateChange.
 *////////////////////////////////////////////////////////////////////////////////////////
 
@@ -172,7 +172,7 @@ UINT16 APPL_StopInputHandler(void)
              informs the application about the state transition, the application can refuse
              the state transition when returning an AL Status error code.
            The return code NOERROR_INWORK can be used, if the application cannot confirm
-           the state transition immediately, in that case the application need to be complete 
+           the state transition immediately, in that case the application need to be complete
            the transition by calling ECAT_StateChange.
 *////////////////////////////////////////////////////////////////////////////////////////
 
@@ -205,7 +205,7 @@ UINT16 APPL_StopOutputHandler(void)
     sDOOutputs.bLED6 = 0;
     sDOOutputs.bLED8 = 0;
 #endif
-    
+
     LED_1                        = sDOOutputs.bLED1;
     LED_2                        = sDOOutputs.bLED2;
     LED_3                        = sDOOutputs.bLED3;
@@ -328,15 +328,18 @@ void APPL_InputMapping(UINT16* pData)
    {
       switch (sTxPDOassign.aEntries[j])
       {
-      /* TxPDO 1 */
-      case 0x1A00:
-         *pTmpData++ = SWAPWORD(((UINT16 *) &sDIInputs)[1]);
-         break;
-      /* TxPDO 3 */
-      case 0x1A02:
-         *pTmpData++ = SWAPWORD(((UINT16 *) &sAIInputs)[1]);
-         *pTmpData++ = SWAPWORD(((UINT16 *) &sAIInputs)[2]);
-         break;
+		  /* TxPDO 1 */
+		  case 0x1A00:
+			 *pTmpData++ = SWAPWORD(((UINT16 *) &sDIInputs)[1]);
+			 break;
+		  /* TxPDO 3 */
+		  case 0x1A02:
+			 *pTmpData++ = SWAPWORD(((UINT16 *) &sAIInputs)[1]);
+			 *pTmpData++ = SWAPWORD(((UINT16 *) &sAIInputs)[2]);
+
+			 //TODO:ADC2
+			 *pTmpData++ = SWAPWORD(((UINT16 *) &sAIInputs)[3]);
+			 break;
       }
    }
 }
@@ -373,7 +376,7 @@ void APPL_OutputMapping(UINT16* pData)
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /**
-\brief    This function will called from the synchronisation ISR 
+\brief    This function will called from the synchronisation ISR
             or from the mainloop if no synchronisation is supported
 *////////////////////////////////////////////////////////////////////////////////////////
 void APPL_Application(void)
@@ -402,7 +405,7 @@ void APPL_Application(void)
 //	{
 //		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
 //	}
-	
+
     sDIInputs.bSwitch1    = SWITCH_1;
     sDIInputs.bSwitch2    = SWITCH_2;
     sDIInputs.bSwitch3    = SWITCH_3;
@@ -427,11 +430,14 @@ void APPL_Application(void)
 
 	/* start the conversion of the A/D converter */
 //		while(!(ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC)==SET));
-					
+
 //	sAIInputs.i16Analoginput  = uhADCxConvertedValue;
     extern uint16_t adc1Data[];
+    extern uint16_t adc2Data[];
 
-    sAIInputs.i16Analoginput = adc1Data[0];
+    sAIInputs.i16Analoginput  = adc1Data[0];
+//    sAIInputs.i16Analoginput  = 1111;
+    sAIInputs.i16Analoginput2 = adc2Data[0];
 
     /* we toggle the TxPDO Toggle after updating the data of the corresponding TxPDO */
     sAIInputs.bTxPDOToggle ^= 1;
@@ -479,9 +485,9 @@ UINT8 ReadObject0x1802( UINT16 index, UINT8 subindex, UINT32 dataSize, UINT16 MB
     {
         /*min size is one Byte*/
         UINT8 *pu8Data = (UINT8*)pData;
-        
+
         //Reset Buffer
-        *pu8Data = 0; 
+        *pu8Data = 0;
 
         *pu8Data = sAIInputs.bTxPDOState;
     }
@@ -489,9 +495,9 @@ UINT8 ReadObject0x1802( UINT16 index, UINT8 subindex, UINT32 dataSize, UINT16 MB
     {
         /*min size is one Byte*/
         UINT8 *pu8Data = (UINT8*)pData;
-        
+
         //Reset Buffer
-        *pu8Data = 0; 
+        *pu8Data = 0;
 
         *pu8Data = sAIInputs.bTxPDOToggle;
     }
@@ -535,20 +541,14 @@ void MainEtherCAT(void)
 
     MainInit();
 
-//    /*Initialize Axes structures*/
-//    CiA402_Init();
-//
-//    /*Create basic mapping*/
-//    APPL_GenerateMapping(&nPdInputSize,&nPdOutputSize);
-
     bRunApplication = TRUE;
+
     do
     {
+
         MainLoop();
 
     } while (bRunApplication == TRUE);
-
-//    CiA402_DeallocateAxis();
 
     HW_Release();
 #if _STM32_IO8

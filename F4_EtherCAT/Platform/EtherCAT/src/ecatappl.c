@@ -503,7 +503,6 @@ UINT16 MainInit(void)
     /* initialize the objects */
     COE_ObjInit();
 
-
     /*Timer initialization*/
     u16BusCycleCntMs = 0;
     StartTimerCnt = 0;
@@ -512,8 +511,8 @@ UINT16 MainInit(void)
     /*indicate that the slave stack initialization finished*/
     bInitFinished = TRUE;
 
-/*Application Init need to be called from the application layer*/
-     return Error;
+    /*Application Init need to be called from the application layer*/
+	return Error;
 }
 
 
@@ -533,11 +532,11 @@ void MainLoop(void)
     }
 
         /* FreeRun-Mode:  bEscIntEnabled = FALSE, bDcSyncActive = FALSE
-           Synchron-Mode: bEscIntEnabled = TRUE,  bDcSyncActive = FALSE
-           DC-Mode:       bEscIntEnabled = TRUE,  bDcSyncActive = TRUE */
+           Synchron-Mode: bEscIntEnabled = TRUE, bDcSyncActive = FALSE
+           DC-Mode:       bEscIntEnabled = TRUE, bDcSyncActive = TRUE */
         if (
             (!bEscIntEnabled || !bEcatFirstOutputsReceived)     /* SM-Synchronous, but not SM-event received */
-          && !bDcSyncActive                                     /* DC-Synchronous */
+			&& !bDcSyncActive                                               /* DC-Synchronous */
             )
         {
             /* if the application is running in ECAT Synchron Mode the function ECAT_Application is called
@@ -598,12 +597,12 @@ void MainLoop(void)
             }
         }
 #endif
-        /* call EtherCAT functions */
-        ECAT_Main();
+		/* call EtherCAT functions */
+		ECAT_Main();
 
-        /* call lower prior application part */
-       COE_Main();
-       CheckIfEcatError();
+		/* call lower prior application part */
+		COE_Main();
+		CheckIfEcatError();
 
 }
 

@@ -56,6 +56,7 @@ V5.01 : Start file change log
 #define     BIT6(x)                     unsigned short(x):6 /**< \brief Marco to define BIT5 object entry*/
 #define     BIT7(x)                     unsigned short(x):7 /**< \brief Marco to define BIT6 object entry*/
 #define     BIT8(x)                     unsigned short(x):8 /**< \brief Marco to define BIT7 object entry*/
+
 #define     ALIGN0(x)
 #define     ALIGN1(x)                   unsigned short(x):1; /**< \brief Marco to define ALIGN1 object entry*/
 #define     ALIGN2(x)                   unsigned short(x):2; /**< \brief Marco to define ALIGN2 object entry*/
@@ -72,6 +73,7 @@ V5.01 : Start file change log
 #define     ALIGN13(x)                  unsigned short(x):13; /**< \brief Marco to define ALIGN13 object entry*/
 #define     ALIGN14(x)                  unsigned short(x):14; /**< \brief Marco to define ALIGN14 object entry*/
 #define     ALIGN15(x)                  unsigned short(x):15; /**< \brief Marco to define ALIGN15 object entry*/
+
 #endif //_ECATAPPL_H_
 
 /* ECATCHANGE_START(V5.11) ECAT10*/

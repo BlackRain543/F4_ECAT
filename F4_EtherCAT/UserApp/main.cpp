@@ -12,15 +12,23 @@
 uint16_t adc1Data[2] = {};
 uint16_t adc2Data[2] = {};
 
+uint32_t dacData[2] = {1024,2048};
+
+extern TIM_HandleTypeDef htim2;
 extern ADC_HandleTypeDef hadc1;
 extern ADC_HandleTypeDef hadc2;
-extern TIM_HandleTypeDef htim2;
+extern DAC_HandleTypeDef hdac;
 
 void MainCpp()
 {
+
+
+	HAL_TIM_Base_Start_IT(&htim2);
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc1Data, 1);
 	HAL_ADC_Start_DMA(&hadc2, (uint32_t *)adc2Data, 1);
-	HAL_TIM_Base_Start_IT(&htim2);
+
+	HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_1, &dacData[0], 1, DAC_ALIGN_12B_R);
+	HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, &dacData[1], 1, DAC_ALIGN_12B_R);
 
 	MainEtherCAT();
 
