@@ -62,8 +62,10 @@ void Error_Handler(void);
 #define RS485_CTRL_GPIO_Port GPIOC
 #define SYNC0_Pin GPIO_PIN_0
 #define SYNC0_GPIO_Port GPIOA
+#define SYNC0_EXTI_IRQn EXTI0_IRQn
 #define SYNC1_Pin GPIO_PIN_1
 #define SYNC1_GPIO_Port GPIOA
+#define SYNC1_EXTI_IRQn EXTI1_IRQn
 #define LED7_Pin GPIO_PIN_4
 #define LED7_GPIO_Port GPIOC
 #define LED6_Pin GPIO_PIN_5
@@ -92,6 +94,7 @@ void Error_Handler(void);
 #define IN3_GPIO_Port GPIOC
 #define SPI2_IRQ_Pin GPIO_PIN_8
 #define SPI2_IRQ_GPIO_Port GPIOA
+#define SPI2_IRQ_EXTI_IRQn EXTI9_5_IRQn
 #define SPI1_NSS_Pin GPIO_PIN_15
 #define SPI1_NSS_GPIO_Port GPIOA
 #define IN2_Pin GPIO_PIN_10

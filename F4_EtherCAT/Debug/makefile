@@ -13,6 +13,7 @@ RM := rm -rf
 -include UserApp/port/subdir.mk
 -include UserApp/drivers/subdir.mk
 -include UserApp/subdir.mk
+-include Platform/SOES/cia402device/subdir.mk
 -include Platform/SOES/subdir.mk
 -include Platform/EtherCAT/src/subdir.mk
 -include Platform/EtherCAT/port/subdir.mk

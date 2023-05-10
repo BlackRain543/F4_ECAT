@@ -1,20 +1,10 @@
-22:43:58 **** Incremental Build of configuration Debug for project F4_EtherCAT ****
+13:19:44 **** Incremental Build of configuration Debug for project F4_EtherCAT ****
 make -j24 all 
-arm-none-eabi-g++ "../UserApp/drivers/lan9252.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -DARM_MATH_CM4 -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../UserApp -I../Middlewares/ST/ARM/DSP/Inc -I../Platform/EtherCAT/Inc -I../Platform/EtherCAT/port -I../Platform/SOES -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"UserApp/drivers/lan9252.d" -MT"UserApp/drivers/lan9252.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "UserApp/drivers/lan9252.o"
-arm-none-eabi-g++ -o "F4_EtherCAT.elf" @"objects.list"  -l:libarm_cortexM4lf_math.a -mcpu=cortex-m4 -T"D:\STM32CUBE\F4_EtherCAT\F4_EtherCAT\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_EtherCAT.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: F4_EtherCAT.elf
- 
 arm-none-eabi-size   F4_EtherCAT.elf 
-arm-none-eabi-objdump -h -S  F4_EtherCAT.elf  > "F4_EtherCAT.list"
-arm-none-eabi-objcopy  -O binary  F4_EtherCAT.elf  "F4_EtherCAT.bin"
    text	   data	    bss	    dec	    hex	filename
-  46728	   1472	   3808	  52008	   cb28	F4_EtherCAT.elf
+  49792	   1464	   3944	  55200	   d7a0	F4_EtherCAT.elf
 Finished building: default.size.stdout
  
-Finished building: F4_EtherCAT.bin
- 
-Finished building: F4_EtherCAT.list
- 
 
-22:43:59 Build Finished. 0 errors, 0 warnings. (took 861ms)
+13:19:44 Build Finished. 0 errors, 0 warnings. (took 247ms)
 

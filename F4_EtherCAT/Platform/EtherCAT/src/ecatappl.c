@@ -533,11 +533,11 @@ void MainLoop(void)
     }
 
         /* FreeRun-Mode:  bEscIntEnabled = FALSE, bDcSyncActive = FALSE
-           Synchron-Mode: bEscIntEnabled = TRUE, bDcSyncActive = FALSE
-           DC-Mode:       bEscIntEnabled = TRUE, bDcSyncActive = TRUE */
+           Synchron-Mode: bEscIntEnabled = TRUE,  bDcSyncActive = FALSE
+           DC-Mode:       bEscIntEnabled = TRUE,  bDcSyncActive = TRUE */
         if (
             (!bEscIntEnabled || !bEcatFirstOutputsReceived)     /* SM-Synchronous, but not SM-event received */
-          && !bDcSyncActive                                               /* DC-Synchronous */
+          && !bDcSyncActive                                     /* DC-Synchronous */
             )
         {
             /* if the application is running in ECAT Synchron Mode the function ECAT_Application is called

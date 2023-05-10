@@ -394,17 +394,14 @@ void APPL_Application(void)
     LED_8                        = sDOOutputs.bLED8;
 #endif
 
-	if(sDOOutputs.bLED1)
-	{
-//			GPIO_SetBits(GPIOB,GPIO_Pin_14);
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
-	}
-	else
-	{
-//		GPIO_ResetBits(GPIOB,GPIO_Pin_14);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
-	}
-	
+//	if(sDOOutputs.bLED1)
+//	{
+//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+//	}
+//	else
+//	{
+//		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
+//	}
 	
     sDIInputs.bSwitch1    = SWITCH_1;
     sDIInputs.bSwitch2    = SWITCH_2;
@@ -432,6 +429,9 @@ void APPL_Application(void)
 //		while(!(ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC)==SET));
 					
 //	sAIInputs.i16Analoginput  = uhADCxConvertedValue;
+    extern uint16_t adc1Data[];
+
+    sAIInputs.i16Analoginput = adc1Data[0];
 
     /* we toggle the TxPDO Toggle after updating the data of the corresponding TxPDO */
     sAIInputs.bTxPDOToggle ^= 1;
@@ -471,7 +471,9 @@ UINT8 ReadObject0x1802( UINT16 index, UINT8 subindex, UINT32 dataSize, UINT16 MB
     {
         /*clear destination buffer (no excluded TxPDO set)*/
         if(dataSize > 0)
+        {
             MBXMEMSET(pData,0x00,dataSize);
+        }
     }
     else if(subindex == 7)
     {
@@ -533,12 +535,20 @@ void MainEtherCAT(void)
 
     MainInit();
 
+//    /*Initialize Axes structures*/
+//    CiA402_Init();
+//
+//    /*Create basic mapping*/
+//    APPL_GenerateMapping(&nPdInputSize,&nPdOutputSize);
+
     bRunApplication = TRUE;
     do
     {
         MainLoop();
 
     } while (bRunApplication == TRUE);
+
+//    CiA402_DeallocateAxis();
 
     HW_Release();
 #if _STM32_IO8

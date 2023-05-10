@@ -2307,20 +2307,20 @@ void ECAT_Init(void)
 
     /*Get Maximum Number of SyncManagers and supported DPRAM size*/
     {
-    UINT16 TmpVar = 0;
+		UINT16 TmpVar = 0;
 
-    HW_EscReadWord(TmpVar, ESC_COMM_INFO_OFFSET);
+		HW_EscReadWord(TmpVar, ESC_COMM_INFO_OFFSET);
 
-    TmpVar = SWAPWORD(TmpVar);
-    nMaxSyncMan = (UINT8) ((TmpVar & ESC_SM_CHANNELS_MASK)>> ESC_SM_CHANNELS_SHIFT);
+		TmpVar = SWAPWORD(TmpVar);
+		nMaxSyncMan = (UINT8) ((TmpVar & ESC_SM_CHANNELS_MASK)>> ESC_SM_CHANNELS_SHIFT);
 
-    HW_EscReadWord(TmpVar, ESC_DPRAM_SIZE_OFFSET);
-    TmpVar = SWAPWORD(TmpVar);
+		HW_EscReadWord(TmpVar, ESC_DPRAM_SIZE_OFFSET);
+		TmpVar = SWAPWORD(TmpVar);
 
-    //get max address (register + DPRAM size in Byte (in the register it is stored in KB))
-    /* ECATCHANGE_START(V5.11) ESC1*/
-    nMaxEscAddress = (UINT16) ((TmpVar & ESC_DPRAM_SIZE_MASK) << 10) + 0xFFF;
-    /* ECATCHANGE_END(V5.11) ESC1*/
+		//get max address (register + DPRAM size in Byte (in the register it is stored in KB))
+		/* ECATCHANGE_START(V5.11) ESC1*/
+		nMaxEscAddress = (UINT16) ((TmpVar & ESC_DPRAM_SIZE_MASK) << 10) + 0xFFF;
+		/* ECATCHANGE_END(V5.11) ESC1*/
     }
 
     /* Get EEPROM loaded information */
@@ -2384,7 +2384,6 @@ void ECAT_Main(void)
     /* check if services are stored in the mailbox */
     MBX_Main();
 
-
     if ( bMbxRunning )
     {
         /* Slave is at least in PREOP, Mailbox is running */
@@ -2396,7 +2395,6 @@ void ECAT_Main(void)
     /* Read AL Event-Register from ESC */
     ALEventReg = HW_GetALEventRegister();
     ALEventReg = SWAPWORD(ALEventReg);
-
 
     if ((ALEventReg & AL_CONTROL_EVENT) && !bEcatWaitForAlControlRes)
     {

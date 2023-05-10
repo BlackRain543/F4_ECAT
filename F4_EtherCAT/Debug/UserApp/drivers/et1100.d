@@ -38,7 +38,10 @@ UserApp/drivers/et1100.o: ../UserApp/drivers/et1100.cpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../UserApp/port/peripheral_port.hpp ../UserApp/utils/cqueue.h \
- ../UserApp/port/math_port.h ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
+ ../UserApp/port/math_port.h ../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
+ ../Platform/SOES/esc_soes.h ../Platform/SOES/cc.h \
+ ../Platform/SOES/esc_coe.h ../Platform/SOES/options.h \
+ ../Platform/SOES/ecat_options.h
 
 ../UserApp/drivers/et1100.h:
 
@@ -125,3 +128,13 @@ UserApp/drivers/et1100.o: ../UserApp/drivers/et1100.cpp \
 ../UserApp/port/math_port.h:
 
 ../Middlewares/ST/ARM/DSP/Inc/arm_math.h:
+
+../Platform/SOES/esc_soes.h:
+
+../Platform/SOES/cc.h:
+
+../Platform/SOES/esc_coe.h:
+
+../Platform/SOES/options.h:
+
+../Platform/SOES/ecat_options.h:

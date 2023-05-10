@@ -8,6 +8,6 @@ el9800appl.c:195:8:APPL_StopOutputHandler	4	static
 el9800appl.c:232:8:APPL_GenerateMapping	48	static
 el9800appl.c:321:6:APPL_InputMapping	24	static
 el9800appl.c:356:6:APPL_OutputMapping	24	static
-el9800appl.c:379:6:APPL_Application	8	static
+el9800appl.c:379:6:APPL_Application	4	static
 el9800appl.c:460:7:ReadObject0x1802	32	static
-el9800appl.c:526:5:MainEtherCAT	8	static
+el9800appl.c:528:5:MainEtherCAT	8	static

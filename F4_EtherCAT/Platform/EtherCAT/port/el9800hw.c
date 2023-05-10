@@ -125,7 +125,7 @@ uint8_t WR_CMD (uint8_t cmd)
 {
 	uint8_t rxData = 0;
 
-	SELECT_SPI;
+//	SELECT_SPI;
 	HAL_SPI_TransmitReceive(&hspi2, (uint8_t *)&cmd, (uint8_t *)&rxData, 1, 100);
 //	DESELECT_SPI;
 
@@ -140,6 +140,7 @@ uint8_t WR_CMD (uint8_t cmd)
 
 #define 	DISABLE_GLOBAL_INT      __disable_irq()
 #define 	ENABLE_GLOBAL_INT       __enable_irq()
+
 #define    	DISABLE_AL_EVENT_INT 	DISABLE_GLOBAL_INT
 #define    	ENABLE_AL_EVENT_INT     ENABLE_GLOBAL_INT
 
@@ -165,7 +166,8 @@ uint8_t WR_CMD (uint8_t cmd)
 #if DC_SUPPORTED && _STM32_IO8
 
 #define    INIT_SYNC0_INT           										//EXTI1_Configuration--EXTI0_Configuration
-#define    ACK_SYNC0_INT			HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0)
+#define    ACK_SYNC0_INT			__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_PIN_0)
+//#define    ACK_SYNC0_INT			HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0)
 
 #define    Sync0Isr              	EXTI0_IRQHandler 						// primary interrupt vector name
 #define    DISABLE_SYNC0_INT  		NVIC_DisableIRQ(EXTI0_IRQn);			// {(_INT3IE)=0;}//disable interrupt source INT3
@@ -173,7 +175,8 @@ uint8_t WR_CMD (uint8_t cmd)
 
 /*ECATCHANGE_START(V5.10) HW3*/
 #define    INIT_SYNC1_INT
-#define    ACK_SYNC1_INT			HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1)
+#define    ACK_SYNC1_INT			__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_PIN_1)
+//#define    ACK_SYNC1_INT			HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1)
 
 #define    Sync1Isr                 EXTI1_IRQHandler
 #define    DISABLE_SYNC1_INT        NVIC_DisableIRQ(EXTI1_IRQn);			// {(_INT4IE)=0;}//disable interrupt source INT4
@@ -193,23 +196,23 @@ uint8_t WR_CMD (uint8_t cmd)
 #if _STM32_IO8
 
 #if ECAT_TIMER_INT
-#define 	ECAT_TIMER_ACK_INT		__HAL_TIM_CLEAR_IT(&htim2, TIM_IT_TRIGGER);
+//#define 	ECAT_TIMER_ACK_INT		__HAL_TIM_CLEAR_IT(&htim2, TIM_IT_TRIGGER)
+#define 	ECAT_TIMER_ACK_INT		__HAL_TIM_CLEAR_FLAG(&htim2, TIM_FLAG_UPDATE)
+
 #define 	ECAT_TIMER_INT_STATE
+#define	 	INIT_ECAT_TIMER
 
 #define    	TimerIsr                TIM2_IRQHandler 				//	SysTick_Handler//
 #define    	ENABLE_ECAT_TIMER_INT   NVIC_EnableIRQ(TIM2_IRQn)		//	SysTick->CTRL |= SysTick_CTRL_TICKINT_Msk;//NVIC_EnableIRQ(TIM2_IRQn) ;
 #define    	DISABLE_ECAT_TIMER_INT 	NVIC_DisableIRQ(TIM2_IRQn)		//	SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;//NVIC_DisableIRQ(SysTick_IRQn/*TIM2_IRQn*/) ;
 
-#define	 	INIT_ECAT_TIMER
-
-#define 	STOP_ECAT_TIMER         DISABLE_ECAT_TIMER_INT			/*disable timer interrupt*/
-#define 	START_ECAT_TIMER        ENABLE_ECAT_TIMER_INT			/*enable timer interrupt*/
-
+#define 	STOP_ECAT_TIMER         DISABLE_ECAT_TIMER_INT			/* disable timer interrupt*/
+#define 	START_ECAT_TIMER        ENABLE_ECAT_TIMER_INT			/* enable timer interrupt*/
 
 #else    //#if ECAT_TIMER_INT
 
-#define STOP_ECAT_TIMER             TIM_Cmd(TIM2, DISABLE);	// SysTick->CTRL  &=  ~SysTick_CTRL_ENABLE_Msk;      //
-#define START_ECAT_TIMER            TIM_Cmd(TIM2, ENABLE);// SysTick->CTRL  |=  SysTick_CTRL_ENABLE_Msk;
+#define 	STOP_ECAT_TIMER         TIM_Cmd(TIM2, DISABLE);	// SysTick->CTRL  &=  ~SysTick_CTRL_ENABLE_Msk;      //
+#define 	START_ECAT_TIMER        TIM_Cmd(TIM2, ENABLE);// SysTick->CTRL  |=  SysTick_CTRL_ENABLE_Msk;
 
 #endif //#else #if ECAT_TIMER_INT
 
@@ -279,9 +282,9 @@ static void GetInterruptRegister(void)
     SELECT_SPI;
 
 	 HW_EscReadIsr((MEM_ADDR *)&EscALEvent.Word, 0x220, 2);
+
 	/* if the SPI transmission rate is higher than 15 MBaud, the Busy detection shall be
        done here */
-
 	DESELECT_SPI;
 #if AL_EVENT_ENABLED
     ENABLE_AL_EVENT_INT;
@@ -325,7 +328,7 @@ static void AddressingEsc( UINT16 Address, UINT8 Command )
 {
     UBYTETOWORD tmp;
 
-    VARVOLATILE UINT8 dummy;
+//    VARVOLATILE UINT8 dummy;
 
     tmp.Word = ( Address << 3 ) | Command;
     /* select the SPI */
@@ -335,12 +338,12 @@ static void AddressingEsc( UINT16 Address, UINT8 Command )
     /* there have to be at least 15 ns after the SPI1_SEL signal was active (0) before
        the transmission shall be started */
     /* send the first address/command byte to the ESC */
-	dummy = 	WR_CMD(tmp.Byte[1]);
-
+//	dummy = WR_CMD(tmp.Byte[1]);
+	WR_CMD(tmp.Byte[1]);
     /* send the second address/command byte to the ESC */
 
-	dummy =	WR_CMD(tmp.Byte[0]);
-
+//	dummy =	WR_CMD(tmp.Byte[0]);
+	WR_CMD(tmp.Byte[0]);
     /* if the SPI transmission rate is higher than 15 MBaud, the Busy detection shall be
        done here */
 }
@@ -359,7 +362,7 @@ static void AddressingEsc( UINT16 Address, UINT8 Command )
 #else
 static void ISR_AddressingEsc( UINT16 Address, UINT8 Command )
 {
-    VARVOLATILE UINT8 dummy;
+//    VARVOLATILE UINT8 dummy;
 
     UBYTETOWORD tmp;
     tmp.Word = ( Address << 3 ) | Command;
@@ -371,11 +374,12 @@ static void ISR_AddressingEsc( UINT16 Address, UINT8 Command )
       the transmission shall be started */
 
     /* send the first address/command byte to the ESC */
-	dummy = WR_CMD(tmp.Byte[1]);
-
+//	dummy = WR_CMD(tmp.Byte[1]);
+	WR_CMD(tmp.Byte[1]);
    /* send the second address/command byte to the ESC */
 
-	dummy = WR_CMD(tmp.Byte[0]);
+//	dummy = WR_CMD(tmp.Byte[0]);
+	WR_CMD(tmp.Byte[0]);
     /* if the SPI transmission rate is higher than 15 MBaud, the Busy detection shall be
        done here */
 }
@@ -419,19 +423,19 @@ UINT8 HW_Init(void)
     HW_EscWriteDWord(intMask, ESC_AL_EVENTMASK_OFFSET);
 
 #if AL_EVENT_ENABLED
-    INIT_ESC_INT;
+//    INIT_ESC_INT;
     ENABLE_ESC_INT();
 #endif
 
-#if DC_SUPPORTED&& _STM32_IO8
-    INIT_SYNC0_INT
-    INIT_SYNC1_INT
+#if DC_SUPPORTED && _STM32_IO8
+//    INIT_SYNC0_INT
+//    INIT_SYNC1_INT
 
     ENABLE_SYNC0_INT;
     ENABLE_SYNC1_INT;
 #endif
 
-    INIT_ECAT_TIMER;
+//    INIT_ECAT_TIMER;
     START_ECAT_TIMER;
 
 
@@ -439,8 +443,6 @@ UINT8 HW_Init(void)
     /* enable all interrupts */
     ENABLE_GLOBAL_INT;
 #endif
-
-
 
     return 0;
 }
@@ -605,34 +607,35 @@ void HW_EscReadIsr( MEM_ADDR *pData, UINT16 Address, UINT16 Len )
 *////////////////////////////////////////////////////////////////////////////////////////
 void HW_EscWrite( MEM_ADDR *pData, UINT16 Address, UINT16 Len )
 {
-    UINT16 i = Len;
-    VARVOLATILE UINT8 dummy;
+	UINT16 i = Len;
+//    VARVOLATILE UINT8 dummy;
 
-    UINT8 *pTmpData = (UINT8 *)pData;
+	UINT8 *pTmpData = (UINT8 *)pData;
 
-    /* loop for all bytes to be written */
-    while ( i-- > 0 )
-    {
-   #if AL_EVENT_ENABLED
-        /* the reading of data from the ESC can be interrupted by the
-           AL Event ISR, so every byte will be written separate */
-        DISABLE_AL_EVENT_INT;
-#endif
-        /* HBu 24.01.06: wrong parameter ESC_RD */
-         AddressingEsc( Address, ESC_WR );
+	/* loop for all bytes to be written */
+	while ( i-- > 0 )
+	{
+	#if AL_EVENT_ENABLED
+		/* the reading of data from the ESC can be interrupted by the
+		   AL Event ISR, so every byte will be written separate */
+		DISABLE_AL_EVENT_INT;
+	#endif
+		/* HBu 24.01.06: wrong parameter ESC_RD */
+		 AddressingEsc( Address, ESC_WR );
 
-        /* enable the ESC interrupt to get the AL Event ISR the chance to interrupt */
-        /* SPI1_BUF must be read, otherwise the module will not transfer the next received data from SPIxSR to SPIxRXB.*/
-			dummy= WR_CMD(*pTmpData++);
+		/* enable the ESC interrupt to get the AL Event ISR the chance to interrupt */
+		/* SPI1_BUF must be read, otherwise the module will not transfer the next received data from SPIxSR to SPIxRXB.*/
+	//			dummy= WR_CMD(*pTmpData++);
+		WR_CMD(*pTmpData++);
 
-    #if AL_EVENT_ENABLED
-        ENABLE_AL_EVENT_INT;
-#endif
+	#if AL_EVENT_ENABLED
+		ENABLE_AL_EVENT_INT;
+	#endif
 
-        DESELECT_SPI;
-        /* next address */
-        Address++;
-    }
+		DESELECT_SPI;
+		/* next address */
+		Address++;
+	}
 }
 #if INTERRUPTS_SUPPORTED
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -651,24 +654,26 @@ void HW_EscWrite( MEM_ADDR *pData, UINT16 Address, UINT16 Len )
 #endif
 void HW_EscWriteIsr( MEM_ADDR *pData, UINT16 Address, UINT16 Len )
 {
-    UINT16 i = Len;
-    VARVOLATILE UINT16 dummy;
-    UINT8 *pTmpData = (UINT8 *)pData;
+	UINT16 i = Len;
+//    VARVOLATILE UINT16 dummy;
+	UINT8 *pTmpData = (UINT8 *)pData;
 
-    /* send the address and command to the ESC */
-     ISR_AddressingEsc( Address, ESC_WR );
-    /* loop for all bytes to be written */
-    while ( i-- > 0 )
-    {
-        /* start transmission */
-			dummy= WR_CMD(*pTmpData);
-      /* increment data pointer */
-        pTmpData++;
-    }
+	/* send the address and command to the ESC */
+	ISR_AddressingEsc( Address, ESC_WR );
 
-    /* there has to be at least 15 ns + CLK/2 after the transmission is finished
-       before the SPI1_SEL signal shall be 1 */
-    DESELECT_SPI;
+	/* loop for all bytes to be written */
+	while ( i-- > 0 )
+	{
+		/* start transmission */
+	//			dummy= WR_CMD(*pTmpData);
+		WR_CMD(*pTmpData);
+		/* increment data pointer */
+		pTmpData++;
+	}
+
+	/* there has to be at least 15 ns + CLK/2 after the transmission is finished
+	   before the SPI1_SEL signal shall be 1 */
+	DESELECT_SPI;
 }
 #endif //#if INTERRUPTS_SUPPORTED
 
@@ -716,19 +721,12 @@ void EcatIsr(void)
 void EcatIsr(void)		//void __attribute__ ((__interrupt__, no_auto_psv)) EscIsr(void)
 #endif
 {
-
-     PDI_Isr();
+	PDI_Isr();
 
     /* reset the interrupt flag */
-		ACK_ESC_INT;
+	ACK_ESC_INT;
 }
 #endif     // AL_EVENT_ENABLED
-
-
-
-
-
-
 
 #if DC_SUPPORTED&& _STM32_IO8
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -751,10 +749,10 @@ void Sync0Isr(void)
 
 void Sync1Isr(void)
 {
-			Sync1_Isr();
-			/* reset the interrupt flag */
+	Sync1_Isr();
+	/* reset the interrupt flag */
 
-			ACK_SYNC1_INT;
+	ACK_SYNC1_INT;
 }
 /*ECATCHANGE_END(V5.10) HW3*/
 #endif
@@ -763,13 +761,13 @@ void Sync1Isr(void)
 // Timer 2 ISR (0.1ms)
 void TimerIsr(void)
 {
-			DISABLE_ESC_INT();
+	DISABLE_ESC_INT();
 
-		  ECAT_CheckTimer();
+	ECAT_CheckTimer();
 
-			ECAT_TIMER_ACK_INT;
+	ECAT_TIMER_ACK_INT;
 
-			ENABLE_ESC_INT();
+	ENABLE_ESC_INT();
 }
 
 #endif

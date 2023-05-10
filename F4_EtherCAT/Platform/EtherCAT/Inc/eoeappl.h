@@ -36,13 +36,13 @@ V5.01 : Start file change log
 ------
 -----------------------------------------------------------------------------------------*/
 
-#define    ETHERNET_MAX_FRAME_LEN         1514 /**< \brief Max Ethernet frame length*/
-#define    ETHERNET_MAX_VLAN_FRAME_LEN    1518 /**< \brief Max Ethernet VLAN frame length*/
-#define    ETHERNET_MAX_FRAMEBUF_LEN      1536 /**< \brief Max Ethernet frame buffer size*/
+#define    ETHERNET_MAX_FRAME_LEN         	1514 	/**< \brief Max Ethernet frame length*/
+#define    ETHERNET_MAX_VLAN_FRAME_LEN    	1518 	/**< \brief Max Ethernet VLAN frame length*/
+#define    ETHERNET_MAX_FRAMEBUF_LEN      	1536 	/**< \brief Max Ethernet frame buffer size*/
 
-#define    ARP_HW_ADDR_SPACE_ETHERNET_SW  0x0100 /**< \brief Hardware Address Space: 1 = Ethernet*/
-#define    ETHERNET_FRAME_TYPE_IP_SW      0x0008 /**< \brief EtherType IP*/
-#define    ETHERNET_FRAME_TYPE_ARP1_SW    0x0608 /**< \brief EtherType ARP*/
+#define    ARP_HW_ADDR_SPACE_ETHERNET_SW  	0x0100 	/**< \brief Hardware Address Space: 1 = Ethernet*/
+#define    ETHERNET_FRAME_TYPE_IP_SW      	0x0008 	/**< \brief EtherType IP*/
+#define    ETHERNET_FRAME_TYPE_ARP1_SW    	0x0608 	/**< \brief EtherType ARP*/
 
 /*CODE_INSERT_START (MBX_FILE_PACKED_START)*/
 #if FC1100_HW
@@ -72,15 +72,15 @@ ETHERNET_FRAME;
  */
 typedef struct MBX_STRUCT_PACKED_START
 {
-    UINT16              hwAddrSpace;  /**< \brief Hardware Address Space: 1 = Ethernet*/
-    UINT16              protAddrSpace;  /**< \brief ETHERNET_FRAME_TYPE_IP*/
-    UINT8               lengthHwAddr;  /**< \brief Length of Hardware address (6)*/
-    UINT8               lengthProtAddr;  /**< \brief Length of Port address (4)*/
-    UINT16              opcode;  /**< \brief 1 = request, 2 = reply*/
-    ETHERNET_ADDRESS    macSource; /**< \brief Source MAC*/
-    UINT32              ipSource; /**< \brief Source IP*/
-    ETHERNET_ADDRESS    macDest; /**< \brief Destination MAC*/
-    UINT32              ipDest; /**< \brief Destination IP*/
+    UINT16              hwAddrSpace;  		/**< \brief Hardware Address Space: 1 = Ethernet*/
+    UINT16              protAddrSpace;  	/**< \brief ETHERNET_FRAME_TYPE_IP*/
+    UINT8               lengthHwAddr;  		/**< \brief Length of Hardware address (6)*/
+    UINT8               lengthProtAddr;  	/**< \brief Length of Port address (4)*/
+    UINT16              opcode;  			/**< \brief 1 = request, 2 = reply*/
+    ETHERNET_ADDRESS    macSource; 			/**< \brief Source MAC*/
+    UINT32              ipSource; 			/**< \brief Source IP*/
+    ETHERNET_ADDRESS    macDest; 			/**< \brief Destination MAC*/
+    UINT32              ipDest; 			/**< \brief Destination IP*/
 }MBX_STRUCT_PACKED_END
 ARP_IP_HEADER;
 
@@ -119,8 +119,8 @@ typedef struct MBX_STRUCT_PACKED_START
     UINT8        ttl; /**< \brief Time to live*/
     UINT8        protocol; /**< \brief following protocol*/
     UINT16       cksum; /**< \brief Checksum*/
-    UINT32       src; /**< \brief Source IP*/
-    UINT32       dest; /**< \brief Destination IP*/
+    UINT32       src; 	/**< \brief Source IP*/
+    UINT32       dest; 	/**< \brief Destination IP*/
 }MBX_STRUCT_PACKED_END
 IP_HEADER;
 
