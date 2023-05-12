@@ -7,7 +7,7 @@ ecat_slv.c:146:6:TXPDO_update	8	static
 ecat_slv.c:164:6:RXPDO_update	8	static
 ecat_slv.c:185:6:APP_setwatchdog	16	static
 ecat_slv.c:194:6:DIG_process	16	static
-ecat_slv.c:261:6:ecat_slv_worker	16	static
-ecat_slv.c:303:6:ecat_slv_poll	8	static
-ecat_slv.c:340:6:ecat_slv	8	static
-ecat_slv.c:350:6:ecat_slv_init	16	static
+ecat_slv.c:262:6:ecat_slv_worker	16	static
+ecat_slv.c:304:6:ecat_slv_poll	8	static
+ecat_slv.c:341:6:ecat_slv	8	static
+ecat_slv.c:351:6:ecat_slv_init	16	static

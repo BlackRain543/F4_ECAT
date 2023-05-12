@@ -2,8 +2,8 @@ peripheral_port.hpp:148:22:HAL_StatusTypeDef Port::SPIComm::Receive(uint8_t*, ui
 peripheral_port.hpp:152:22:HAL_StatusTypeDef Port::SPIComm::Transmit(uint8_t*, uint16_t)	24	static
 peripheral_port.hpp:157:22:HAL_StatusTypeDef Port::SPIComm::TransmitReceive(uint8_t*, uint8_t*, uint16_t)	32	static
 peripheral_port.hpp:179:16:void Port::GPIO::WritePin(GPIO_PinState)	16	static
-peripheral_port.hpp:208:9:void Port::CS::Select()	16	static
-peripheral_port.hpp:215:9:void Port::CS::Release()	16	static
+peripheral_port.hpp:211:9:void Port::CS::Select()	16	static
+peripheral_port.hpp:218:9:void Port::CS::Release()	16	static
 lan9252.cpp:3:1:LAN9252::LAN9252(Port::SPIComm&, Port::CS&, Port::EXIT&, Port::EXIT&, Port::EXIT&, Port::TIM&)	24	static
 lan9252.cpp:22:1:LAN9252::~LAN9252()	16	static
 lan9252.cpp:22:1:virtual LAN9252::~LAN9252()	16	static

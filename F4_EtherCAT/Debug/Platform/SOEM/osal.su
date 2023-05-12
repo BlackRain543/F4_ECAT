@@ -1,0 +1,9 @@
+osal.c:86:6:udelay	16	static
+osal.c:91:5:gettimeofday	16	static
+osal.c:99:5:osal_usleep	16	static
+osal.c:105:5:osal_gettimeofday	16	static
+osal.c:110:10:osal_current_time	32	static
+osal.c:121:6:osal_timer_start	40	static
+osal.c:136:9:osal_timer_is_expired	40	static
+osal.c:160:5:osal_thread_create	24	static
+osal.c:171:5:osal_thread_create_rt	24	static

@@ -17,7 +17,9 @@ ET1100::ET1100(
   sync1_(sync1),
   tim_(tim),
   eepromLoaded_(eepromLoaded)
-{}
+{
+	read_termination_[MAX_READ_SIZE - 1] = 0xFF;
+}
 
 ET1100::~ET1100(){}
 
@@ -27,7 +29,7 @@ void ET1100::EscInit (const esc_cfg_t * config)
 //   rst_high();
 //   spi_setup();
 
-   read_termination[MAX_READ_SIZE - 1] = 0xFF;
+//   read_termination_[MAX_READ_SIZE - 1] = 0xFF;
 }
 
 /** ESC enable Distributed Clocks (DC)
@@ -59,10 +61,9 @@ uint32_t ET1100::EscEnableDC()
 	if (data == SYNC_OUT_PDI_CONTROL)
 	{
 		// Sync Unit assigned to PDI, configuration needs to be finished by slave
-
-
 		// set sync start time: read system time, add offset for writing start time and activation
 		ESC_read (ESCREG_LOCALTIME, (void *) &ESCvar.Time, sizeof (ESCvar.Time));
+
 		ESCvar.Time = etohl (ESCvar.Time);
 		uint32_t startTime = ESCvar.Time + SYNC_START_OFFSET;
 
@@ -87,12 +88,14 @@ void ET1100::EscAddress (uint16_t address, uint8_t command)
 {
    /* address 12:5 */
    spiTxData_[0] = (address >> 5);
-
    /* address 4:0 and cmd 2:0 */
    spiTxData_[1] = ((address & 0x1F) << 3) | command;
 
    /* Write (and read AL interrupt register) */
-   spi_.TransmitReceive(spiTxData_, spiRxData_, 2);
+//   spi_.Transmit(spiTxData_, 2);
+//   spi_.TransmitReceive(spiTxData_, spiRxData_, 2);
+
+   spi_.TransmitReceive(spiTxData_, (uint8_t *) &ESCvar.ALevent, 2);
 
    ESCvar.ALevent = etohs (ESCvar.ALevent);
 }
@@ -113,11 +116,13 @@ void ET1100::EscRead (uint16_t address, void *buf, uint16_t len)
    /* Write address and command to device. */
    EscAddress (address, ESC_CMD_READ);
 
-   /* Here we want to read data and keep MOSI low (0x00) during
+   /*
+    * Here we want to read data and keep MOSI low (0x00) during
     * all bytes except the last one where we want to pull it high (0xFF).
     * Read (and write termination bytes).
     */
-   spi_.TransmitReceive ((uint8_t *)buf, read_termination + (MAX_READ_SIZE - len), len);
+//   spi_.Receive ((uint8_t *)buf, len);
+   spi_.TransmitReceive(read_termination_ + (MAX_READ_SIZE - len), (uint8_t *)buf, len);
 
    /* Un-select device. */
    cs_.Release();
@@ -165,7 +170,7 @@ void ET1100::EscInterruptEnable (uint32_t mask)
 	}
 	if (ESCREG_ALEVENT_DC_LATCH & mask)
 	{
-	  // mask &= ~ESCREG_ALEVENT_DC_LATCH;
+	   mask &= ~ESCREG_ALEVENT_DC_LATCH;
 	}
 
 	ESC_ALeventmaskwrite(ESC_ALeventmaskread() | mask);
@@ -191,7 +196,7 @@ void ET1100::EscInterruptDisable (uint32_t mask)
 	}
 	if (ESCREG_ALEVENT_DC_LATCH & mask)
 	{
-//	    mask &= ~ESCREG_ALEVENT_DC_LATCH;
+	    mask &= ~ESCREG_ALEVENT_DC_LATCH;
 	}
 
 	ESC_ALeventmaskwrite(~mask & ESC_ALeventmaskread());

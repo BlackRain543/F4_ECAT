@@ -222,6 +222,7 @@ void DIG_process (uint8_t flags)
       {
          RXPDO_update();
          CC_ATOMIC_SET(watchdog, ESCvar.watchdogcnt);
+
          /* Set outputs */
          cb_set_outputs();
       }
@@ -362,8 +363,11 @@ void ecat_slv_init (esc_cfg_t * config)
    /*  wait until ESC is started up */
    while ((ESCvar.DLstatus & 0x0001) == 0)
    {
-      ESC_read (ESCREG_DLSTATUS, (void *) &ESCvar.DLstatus,
-                sizeof (ESCvar.DLstatus));
+      ESC_read (
+    		  ESCREG_DLSTATUS,
+    		  (void *) &ESCvar.DLstatus,
+              sizeof (ESCvar.DLstatus)
+			  );
       ESCvar.DLstatus = etohs (ESCvar.DLstatus);
    }
 
@@ -378,11 +382,12 @@ void ecat_slv_init (esc_cfg_t * config)
 #endif
 
    /* reset ESC to init state */
-   ESC_ALstatus (ESCinit);
-   ESC_ALerror (ALERR_NONE);
-   ESC_stopmbx ();
-   ESC_stopinput ();
-   ESC_stopoutput ();
+   ESC_ALstatus 	(ESCinit);
+   ESC_ALerror 		(ALERR_NONE);
+   ESC_stopmbx 		();
+   ESC_stopinput 	();
+   ESC_stopoutput 	();
+
    /* Init Object Dictionary default values */
    COE_initDefaultValues ();
 }

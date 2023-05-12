@@ -1,6 +1,6 @@
 UserApp/main.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
- ../Platform/EtherCAT/port/el9800hw.h ../Platform/EtherCAT/Inc/esc.h \
- ../Platform/EtherCAT/Inc/ecat_def.h \
+ ../Platform/SSC/port/el9800hw.h ../Platform/SSC/port/../../SSC/Inc/esc.h \
+ ../Platform/SSC/port/../../SSC/Inc/../../SSC/Inc/ecat_def.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -38,18 +38,22 @@ UserApp/main.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../UserApp/drivers/led.h ../UserApp/port/peripheral_port.hpp \
- ../UserApp/utils/cqueue.h ../UserApp/port/typedef_port.h \
- ../UserApp/port/math_port.h ../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
- ../UserApp/port/var_port.h
+ ../Platform/SOES/esc_soes.h ../Platform/SOES/cc.h \
+ ../Platform/SOES/esc_coe.h ../Platform/SOES/options.h \
+ ../Platform/SOES/ecat_options.h ../Platform/SOES/ecat_slv.h \
+ ../Platform/SOES/app/ecat_app.h ../Platform/SOES/hw/dwt.h \
+ ../Middlewares/ST/ARM/DSP/Inc/arm_math.h ../UserApp/drivers/led.h \
+ ../UserApp/port/peripheral_port.hpp ../UserApp/utils/cqueue.h \
+ ../UserApp/port/typedef_port.h ../UserApp/port/math_port.h \
+ ../UserApp/port/var_port.h ../UserApp/drivers/et1100.h
 
 ../UserApp/common_inc.h:
 
-../Platform/EtherCAT/port/el9800hw.h:
+../Platform/SSC/port/el9800hw.h:
 
-../Platform/EtherCAT/Inc/esc.h:
+../Platform/SSC/port/../../SSC/Inc/esc.h:
 
-../Platform/EtherCAT/Inc/ecat_def.h:
+../Platform/SSC/port/../../SSC/Inc/../../SSC/Inc/ecat_def.h:
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
@@ -125,6 +129,24 @@ UserApp/main.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
+../Platform/SOES/esc_soes.h:
+
+../Platform/SOES/cc.h:
+
+../Platform/SOES/esc_coe.h:
+
+../Platform/SOES/options.h:
+
+../Platform/SOES/ecat_options.h:
+
+../Platform/SOES/ecat_slv.h:
+
+../Platform/SOES/app/ecat_app.h:
+
+../Platform/SOES/hw/dwt.h:
+
+../Middlewares/ST/ARM/DSP/Inc/arm_math.h:
+
 ../UserApp/drivers/led.h:
 
 ../UserApp/port/peripheral_port.hpp:
@@ -135,6 +157,6 @@ UserApp/main.o: ../UserApp/main.cpp ../UserApp/common_inc.h \
 
 ../UserApp/port/math_port.h:
 
-../Middlewares/ST/ARM/DSP/Inc/arm_math.h:
-
 ../UserApp/port/var_port.h:
+
+../UserApp/drivers/et1100.h:

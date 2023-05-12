@@ -1,0 +1,9 @@
+ethercatdc.c:71:6:ecx_dcsync0	104	static
+ethercatdc.c:125:6:ecx_dcsync01	104	static
+ethercatdc.c:174:14:ecx_porttime	24	static
+ethercatdc.c:199:14:ecx_prevport	24	static
+ethercatdc.c:242:14:ecx_parentport	24	static
+ethercatdc.c:278:9:ecx_configdc	144	static
+ethercatdc.c:458:6:ec_dcsync0	32	static
+ethercatdc.c:463:6:ec_dcsync01	32	static
+ethercatdc.c:468:9:ec_configdc	8	static

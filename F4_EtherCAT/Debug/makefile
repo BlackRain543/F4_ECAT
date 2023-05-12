@@ -13,10 +13,15 @@ RM := rm -rf
 -include UserApp/port/subdir.mk
 -include UserApp/drivers/subdir.mk
 -include UserApp/subdir.mk
--include Platform/SOES/cia402device/subdir.mk
+-include Platform/SSC/src/subdir.mk
+-include Platform/SSC/port/subdir.mk
+-include Platform/SOES/hw/subdir.mk
+-include Platform/SOES/cia402/subdir.mk
+-include Platform/SOES/app/subdir.mk
 -include Platform/SOES/subdir.mk
--include Platform/EtherCAT/src/subdir.mk
--include Platform/EtherCAT/port/subdir.mk
+-include Platform/SOEM/soem/subdir.mk
+-include Platform/SOEM/oshw/subdir.mk
+-include Platform/SOEM/osal/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -84,8 +89,8 @@ all: main-build
 main-build: F4_EtherCAT.elf secondary-outputs
 
 # Tool invocations
-F4_EtherCAT.elf: $(OBJS) $(USER_OBJS) D:\STM32CUBE\F4_EtherCAT\F4_EtherCAT\STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "F4_EtherCAT.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\STM32CUBE\F4_EtherCAT\F4_EtherCAT\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_EtherCAT.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+F4_EtherCAT.elf: $(OBJS) $(USER_OBJS) D:\Codes\F4_EtherCAT\F4_EtherCAT\STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "F4_EtherCAT.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Codes\F4_EtherCAT\F4_EtherCAT\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_EtherCAT.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

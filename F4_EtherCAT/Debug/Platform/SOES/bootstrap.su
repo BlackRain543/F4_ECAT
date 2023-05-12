@@ -1,0 +1,5 @@
+bootstrap.c:24:6:boot_soft_reset	4	static
+bootstrap.c:29:6:init_boothook	4	static
+bootstrap.c:35:6:boot_inithook	4	static
+bootstrap.c:90:6:bootstrap_foe_init	4	static
+bootstrap.c:131:6:bootstrap_state	8	static

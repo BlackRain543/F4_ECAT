@@ -1,0 +1,13 @@
+mailbox.c:169:7:PutInMbxQueue	24	static
+mailbox.c:202:15:GetOutOfMbxQueue	24	static
+mailbox.c:234:6:MBX_Init	16	static
+mailbox.c:280:8:MBX_StartMailboxHandler	16	static
+mailbox.c:349:6:MBX_StopMailboxHandler	16	static
+mailbox.c:421:7:MailboxServiceInd	24	static
+mailbox.c:453:6:MBX_MailboxWriteInd	24	static
+mailbox.c:509:6:MBX_MailboxReadInd	16	static
+mailbox.c:570:6:MBX_MailboxRepeatReq	16	static
+mailbox.c:634:7:MBX_MailboxSendReq	24	static
+mailbox.c:694:6:MBX_CheckAndCopyMailbox	16	static
+mailbox.c:802:7:MBX_CopyToSendMailbox	32	static
+mailbox.c:891:6:MBX_Main	16	static

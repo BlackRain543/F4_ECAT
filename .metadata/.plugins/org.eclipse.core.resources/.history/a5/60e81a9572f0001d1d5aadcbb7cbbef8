@@ -1,0 +1,205 @@
+
+#include <drivers/et1100.h>
+
+ET1100::ET1100(
+		Port::SPIComm 	&spi,
+		Port::CS 		&cs,
+		Port::EXIT 		&spiIrq,
+		Port::EXIT 		&sync0,
+		Port::EXIT 		&sync1,
+		Port::TIM		&tim,
+		Port::GPIO		&eepromLoaded
+		)
+: spi_(spi),
+  cs_(cs),
+  spiIrq_(spiIrq),
+  sync0_(sync0),
+  sync1_(sync1),
+  tim_(tim),
+  eepromLoaded_(eepromLoaded)
+{}
+
+ET1100::~ET1100(){}
+
+void ET1100::EscInit (const esc_cfg_t * config)
+{
+//   rst_setup();
+//   rst_high();
+//   spi_setup();
+
+   read_termination_[MAX_READ_SIZE - 1] = 0xFF;
+}
+
+/** ESC enable Distributed Clocks (DC)
+ *
+ * @return  SYNC0 cycle time
+ */
+uint32_t ET1100::EscEnableDC()
+{
+	uint8_t data = 0x00;
+
+	// check DC Sync Out bit: 0x140:10
+	ESC_read (ESCREG_ESC_CONFIG,  &data, sizeof(data));
+
+	if (!(data & DC_SYNC_OUT))
+	{
+	   return 0; // DC sync is not enabled in ESI
+	}
+
+	// read set SYNC0 Cycle Time from 0x09A0
+	uint32_t setsync0cycleTime = 0;
+
+	ESC_read (ESCREG_SYNC0_CYCLE_TIME, &setsync0cycleTime, sizeof(uint32_t));
+
+	setsync0cycleTime = etohl (setsync0cycleTime);
+
+	// check Sync Unit assign 0x0980:0 ( 0 for ECAT, 1 for PDI )
+	ESC_read (ESCREG_CYCLIC_UNIT_CONTROL, &data, sizeof(data));
+
+	if (data == SYNC_OUT_PDI_CONTROL)
+	{
+		// Sync Unit assigned to PDI, configuration needs to be finished by slave
+
+
+		// set sync start time: read system time, add offset for writing start time and activation
+		ESC_read (ESCREG_LOCALTIME, (void *) &ESCvar.Time, sizeof (ESCvar.Time));
+		ESCvar.Time = etohl (ESCvar.Time);
+		uint32_t startTime = ESCvar.Time + SYNC_START_OFFSET;
+
+		ESC_write (ESCREG_SYNC_START_TIME, &startTime, sizeof(startTime));
+
+		// activate cyclic operation and SYNC0
+		ESC_read (ESCREG_SYNC_ACT, &data, sizeof(data));
+		data = data | ESCREG_SYNC_ACT_ACTIVATED | ESCREG_SYNC_SYNC0_EN;
+		ESC_write (ESCREG_SYNC_ACT, &data, sizeof(data));
+		data = 0x00;
+
+		while (! (data & (ESCREG_SYNC_ACT_ACTIVATED | ESCREG_SYNC_SYNC0_EN)))
+		{
+			ESC_read (ESCREG_SYNC_ACT, &data, sizeof(data));
+		}
+	}
+
+	return setsync0cycleTime;
+}
+
+void ET1100::EscAddress (uint16_t address, uint8_t command)
+{
+   /* address 12:5 */
+   spiTxData_[0] = (address >> 5);
+
+   /* address 4:0 and cmd 2:0 */
+   spiTxData_[1] = ((address & 0x1F) << 3) | command;
+
+   /* Write (and read AL interrupt register) */
+   spi_.TransmitReceive(spiTxData_, spiRxData_, 4);
+
+   ESCvar.ALevent = etohs (ESCvar.ALevent);
+}
+
+/** ESC read function used by the Slave stack.
+ *
+ * @param[in]   address     = address of ESC register to read
+ * @param[out]  buf         = pointer to buffer to read in
+ * @param[in]   len         = number of bytes to read
+ */
+void ET1100::EscRead (uint16_t address, void *buf, uint16_t len)
+{
+    if (len > MAX_READ_SIZE) { return; }
+
+   /* Select device. */
+   cs_.Select();
+
+   /* Write address and command to device. */
+   EscAddress (address, ESC_CMD_READ);
+
+   /* Here we want to read data and keep MOSI low (0x00) during
+    * all bytes except the last one where we want to pull it high (0xFF).
+    * Read (and write termination bytes).
+    */
+   spi_.TransmitReceive ((uint8_t *)buf, read_termination_ + (MAX_READ_SIZE - len), len);
+
+   /* Un-select device. */
+   cs_.Release();
+}
+
+/** ESC write function used by the Slave stack.
+ *
+ * @param[in]   address     = address of ESC register to write
+ * @param[out]  buf         = pointer to buffer to write from
+ * @param[in]   len         = number of bytes to write
+ */
+void ET1100::EscWrite (uint16_t address, void *buf, uint16_t len)
+{
+	/* Select device. */
+	cs_.Select();
+
+	/* Write address and command to device. */
+	EscAddress (address, ESC_CMD_WRITE);
+
+	/* Write data. */
+	spi_.Transmit((uint8_t *)buf, len);
+
+	/* Un-select device. */
+	cs_.Release();
+}
+
+/** ESC interrupt enable function by the Slave stack in IRQ mode.
+ *
+ * @param[in]   mask     = of interrupts to enable
+ */
+void ET1100::EscInterruptEnable (uint32_t mask)
+{
+	// PDI interrupt
+	spiIrq_.EnableExit();
+
+	if (ESCREG_ALEVENT_DC_SYNC0 & mask)
+	{
+		sync0_.EnableExit();
+	    mask &= ~ESCREG_ALEVENT_DC_SYNC0;
+	}
+	if (ESCREG_ALEVENT_DC_SYNC1 & mask)
+	{
+		sync1_.EnableExit();
+	    mask &= ~ESCREG_ALEVENT_DC_SYNC1;
+	}
+	if (ESCREG_ALEVENT_DC_LATCH & mask)
+	{
+	  // mask &= ~ESCREG_ALEVENT_DC_LATCH;
+	}
+
+	ESC_ALeventmaskwrite(ESC_ALeventmaskread() | mask);
+}
+
+/** ESC interrupt disable function by the Slave stack in IRQ mode.
+ *
+ * @param[in]   mask     = interrupts to disable
+ */
+void ET1100::EscInterruptDisable (uint32_t mask)
+{
+	spiIrq_.DisableExit();
+
+	if (ESCREG_ALEVENT_DC_SYNC0 & mask)
+	{
+	   sync0_.DisableExit();
+	   mask &= ~ESCREG_ALEVENT_DC_SYNC0;
+	}
+	if (ESCREG_ALEVENT_DC_SYNC1 & mask)
+	{
+		sync1_.DisableExit();
+	    mask &= ~ESCREG_ALEVENT_DC_SYNC1;
+	}
+	if (ESCREG_ALEVENT_DC_LATCH & mask)
+	{
+//	    mask &= ~ESCREG_ALEVENT_DC_LATCH;
+	}
+
+	ESC_ALeventmaskwrite(~mask & ESC_ALeventmaskread());
+}
+
+
+
+
+
+
+

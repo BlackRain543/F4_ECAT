@@ -39,7 +39,10 @@ UserApp/port/var_port.o: ../UserApp/port/var_port.cpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
  ../UserApp/port/peripheral_port.hpp ../UserApp/utils/cqueue.h \
- ../UserApp/port/typedef_port.h
+ ../UserApp/port/typedef_port.h ../UserApp/drivers/et1100.h \
+ ../Platform/SOES/esc_soes.h ../Platform/SOES/cc.h \
+ ../Platform/SOES/esc_coe.h ../Platform/SOES/options.h \
+ ../Platform/SOES/ecat_options.h
 
 ../UserApp/port/var_port.h:
 
@@ -126,3 +129,15 @@ UserApp/port/var_port.o: ../UserApp/port/var_port.cpp \
 ../UserApp/utils/cqueue.h:
 
 ../UserApp/port/typedef_port.h:
+
+../UserApp/drivers/et1100.h:
+
+../Platform/SOES/esc_soes.h:
+
+../Platform/SOES/cc.h:
+
+../Platform/SOES/esc_coe.h:
+
+../Platform/SOES/options.h:
+
+../Platform/SOES/ecat_options.h:

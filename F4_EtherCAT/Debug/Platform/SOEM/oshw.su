@@ -1,0 +1,4 @@
+oshw.c:52:8:oshw_htons	24	static
+oshw.c:64:8:oshw_ntohs	24	static
+oshw.c:73:15:oshw_find_adapters	16	static
+oshw.c:86:6:oshw_free_adapters	16	static

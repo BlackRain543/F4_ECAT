@@ -29,6 +29,7 @@ void APP_setwatchdog (int watchdogcnt);
 #define DIG_PROCESS_OUTPUTS_FLAG    0x02
 #define DIG_PROCESS_WD_FLAG         0x04
 #define DIG_PROCESS_APP_HOOK_FLAG   0x08
+
 /** Implements the watch-dog counter to count if we should make a state change
  * due to missing incoming SM2 events. Updates local I/O and run the application
  * in the following order, call read EtherCAT outputs, execute user provided
@@ -37,6 +38,9 @@ void APP_setwatchdog (int watchdogcnt);
  * @param[in]   flags     = User input what to execute
  */
 void DIG_process (uint8_t flags);
+
+void TXPDO_update (void);
+void RXPDO_update (void);
 
 /**
  * Handler for SM change, SM0/1, AL CONTROL and EEPROM events, the application

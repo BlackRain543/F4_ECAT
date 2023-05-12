@@ -101,7 +101,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+   HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -640,9 +640,6 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(SPI1_NSS_GPIO_Port, SPI1_NSS_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(EEPROM_LOADED_GPIO_Port, EEPROM_LOADED_Pin, GPIO_PIN_RESET);
-
   /*Configure GPIO pin : RS485_CTRL_Pin */
   GPIO_InitStruct.Pin = RS485_CTRL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -707,9 +704,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : EEPROM_LOADED_Pin */
   GPIO_InitStruct.Pin = EEPROM_LOADED_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(EEPROM_LOADED_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/

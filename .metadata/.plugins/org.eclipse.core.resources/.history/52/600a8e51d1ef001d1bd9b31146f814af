@@ -1,0 +1,11 @@
+#ifndef __ESC_APP__
+#define __ESC_APP__
+
+// update ESCvar.ALevent by reading anything over PDI
+#define ESC_updateALevent()        ESC_read (ESCREG_LOCALTIME, (void *) &ESCvar.Time, sizeof (ESCvar.Time));
+
+void EcatAppInit(void);
+void EcatAppLoop(void);
+
+
+#endif

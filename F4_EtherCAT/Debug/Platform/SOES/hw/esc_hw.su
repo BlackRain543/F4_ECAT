@@ -1,0 +1,8 @@
+esc_hw.c:61:13:esc_address	32	static
+esc_hw.c:85:6:ESC_read	16	static
+esc_hw.c:112:6:ESC_write	16	static
+esc_hw.c:124:6:ESC_reset	4	static
+esc_hw.c:152:6:ESC_init	16	static
+esc_hw.c:179:6:ESC_interrupt_enable	16	static
+esc_hw.c:206:6:ESC_interrupt_disable	24	static
+esc_hw.c:230:10:ESC_enable_DC	24	static

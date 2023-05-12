@@ -8,8 +8,14 @@ extern "C"{
 #include "stdint-gcc.h"
 
 #include "el9800hw.h"
-
 //#include "cia402appl.h"
+
+#include "esc_soes.h"
+#include "ecat_slv.h"
+#include "app/ecat_app.h"
+#include "hw/dwt.h"
+
+#include "arm_math.h"
 
 void MainCpp();
 

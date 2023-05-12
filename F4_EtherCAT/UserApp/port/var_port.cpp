@@ -13,10 +13,12 @@ Port::GPIO			rs485_dir_gpio(H_GPIOx_RS485_DIR, H_GPIO_PIN_RS485_DIR);
 /* ET1100 */
 Port::SPIComm		et1100_spi(H_SPI_ET1100);
 Port::CS			et1100_cs(H_GPIOx_ET1100_SPI_NSS, H_GPIO_PIN_ET1100_SPI_NSS, 0);
+Port::EXIT			spi2_irq(H_GPIOx_SPI2_IRQ, H_GPIO_PIN_SPI2_IRQ, EXTI9_5_IRQn);
 Port::EXIT			sync0_exitGpio(H_GPIOx_SYNC0, H_GPIO_PIN_SYNC0, EXTI0_IRQn);
 Port::EXIT			sync1_exitGpio(H_GPIOx_SYNC1, H_GPIO_PIN_SYNC1, EXTI1_IRQn);
-Port::EXIT			spi2_irq(H_GPIOx_SPI2_IRQ, H_GPIO_PIN_SPI2_IRQ, EXTI9_5_IRQn);
+Port::TIM			ethercat_tim(H_TIM2);
 Port::GPIO			eeprom_loaded_gpio(H_GPIOx_EEPROM_LOADED, H_GPIO_PIN_EEPROM_LOADED);
+
 
 Port::GPIO			led0_gpio(H_GPIOx_LED0, H_GPIO_PIN_LED0);
 Port::GPIO			led1_gpio(H_GPIOx_LED1, H_GPIO_PIN_LED1);
@@ -37,3 +39,7 @@ Port::GPIO			in4_gpio(H_GPIOx_IN4, H_GPIO_PIN_IN4);
 Port::GPIO			in5_gpio(H_GPIOx_IN5, H_GPIO_PIN_IN5);
 Port::GPIO			in6_gpio(H_GPIOx_IN6, H_GPIO_PIN_IN6);
 Port::GPIO			in7_gpio(H_GPIOx_IN7, H_GPIO_PIN_IN7);
+
+
+
+ET1100 et1100(et1100_spi, et1100_cs, spi2_irq, sync0_exitGpio, sync1_exitGpio, ethercat_tim, eeprom_loaded_gpio);

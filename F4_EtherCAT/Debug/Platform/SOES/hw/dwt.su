@@ -1,0 +1,3 @@
+dwt.c:5:10:delay_init	16	static,ignoring_inline_asm
+dwt.c:34:6:stopwatch_start	16	static
+dwt.c:40:10:stopwatch_now_us	16	static

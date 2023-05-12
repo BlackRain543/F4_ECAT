@@ -150,9 +150,11 @@ extern Port::GPIO			rs485_dir_gpio;
 /* ET1100 */
 extern Port::SPIComm		et1100_spi;
 extern Port::CS				et1100_cs;
+extern Port::EXIT			spi2_irq;
 extern Port::EXIT			sync0_exitGpio;
 extern Port::EXIT			sync1_exitGpio;
 extern Port::GPIO			eeprom_loaded_gpio;
+extern Port::TIM			ethercat_tim;
 
 extern Port::GPIO			led0_gpio;
 extern Port::GPIO			led1_gpio;
@@ -173,5 +175,9 @@ extern Port::GPIO			in4_gpio;
 extern Port::GPIO			in5_gpio;
 extern Port::GPIO			in6_gpio;
 extern Port::GPIO			in7_gpio;
+
+#include "drivers/et1100.h"
+
+extern ET1100 et1100;
 
 #endif /* PORT_VAR_PORT_H_ */

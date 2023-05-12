@@ -1,0 +1,12 @@
+core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+core_cm4.h:1724:22:__NVIC_DisableIRQ	16	static,ignoring_inline_asm
+ecatappl.c:179:6:PDO_InputMapping	8	static
+ecatappl.c:190:6:PDO_OutputMapping	8	static
+ecatappl.c:206:6:ECAT_CheckTimer	8	static
+ecatappl.c:229:6:HandleBusCycleCalculation	24	static
+ecatappl.c:280:6:PDI_Isr	16	static
+ecatappl.c:370:6:Sync0_Isr	16	static
+ecatappl.c:458:6:Sync1_Isr	8	static
+ecatappl.c:490:8:MainInit	16	static
+ecatappl.c:526:6:MainLoop	16	static
+ecatappl.c:615:6:ECAT_Application	8	static

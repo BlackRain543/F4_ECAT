@@ -657,10 +657,12 @@ uint8_t ESC_mbxprocess (void)
 void ESC_xoeprocess (void)
 {
    _MBXh *mbh;
+
    if (ESCvar.MBXrun == 0)
    {
       return;
    }
+
    if ((ESCvar.xoe == 0) && (MBXcontrol[0].state == MBXstate_inclaim))
    {
       mbh = (_MBXh *) &MBX[0];

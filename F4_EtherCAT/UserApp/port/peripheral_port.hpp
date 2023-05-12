@@ -182,20 +182,23 @@ namespace Port
 
 			inline GPIO_PinState ReadPin()					{return HAL_GPIO_ReadPin(GPIOx_, GPIO_Pin_);}
 
-		private:
+		protected:
 			GPIO_TypeDef* GPIOx_;
 			uint16_t GPIO_Pin_;
 	};
 
-	class EXIT:public GPIO
+	class EXIT : public GPIO
 	{
 		public:
 			EXIT(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, IRQn_Type EXTIx_IRQn)
 			:GPIO::GPIO(GPIOx,GPIO_Pin),EXTIx_IRQn_(EXTIx_IRQn){}
 			~EXIT(){}
 
-			inline void DisableExit() {HAL_NVIC_DisableIRQ(EXTIx_IRQn_);}
-			inline void EnableExit()  {HAL_NVIC_EnableIRQ(EXTIx_IRQn_);}
+			inline void ClearPendingBits() 	{__HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin_);	}
+			inline void ClearPendingFlags() {__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_Pin_);	}
+			inline void DisableExit() 		{HAL_NVIC_DisableIRQ(EXTIx_IRQn_);		}
+			inline void EnableExit()  		{HAL_NVIC_EnableIRQ(EXTIx_IRQn_);		}
+
 		private:
 			IRQn_Type EXTIx_IRQn_;
 	};

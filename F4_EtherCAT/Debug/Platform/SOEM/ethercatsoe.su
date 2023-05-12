@@ -1,0 +1,7 @@
+ethercatsoe.c:83:6:ecx_SoEerror	56	static
+ethercatsoe.c:114:5:ecx_SoEread	3048	static
+ethercatsoe.c:236:5:ecx_SoEwrite	3048	static
+ethercatsoe.c:348:5:ecx_readIDNmap	200	static
+ethercatsoe.c:411:5:ec_SoEread	40	static
+ethercatsoe.c:416:5:ec_SoEwrite	40	static
+ethercatsoe.c:421:5:ec_readIDNmap	24	static

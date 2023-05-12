@@ -1,17 +1,17 @@
 peripheral_port.hpp:152:22:HAL_StatusTypeDef Port::SPIComm::Transmit(uint8_t*, uint16_t)	24	static
 peripheral_port.hpp:157:22:HAL_StatusTypeDef Port::SPIComm::TransmitReceive(uint8_t*, uint8_t*, uint16_t)	32	static
 peripheral_port.hpp:179:16:void Port::GPIO::WritePin(GPIO_PinState)	16	static
-peripheral_port.hpp:197:16:void Port::EXIT::DisableExit()	16	static
-peripheral_port.hpp:198:16:void Port::EXIT::EnableExit()	16	static
-peripheral_port.hpp:208:9:void Port::CS::Select()	16	static
-peripheral_port.hpp:215:9:void Port::CS::Release()	16	static
+peripheral_port.hpp:199:16:void Port::EXIT::DisableExit()	16	static
+peripheral_port.hpp:200:16:void Port::EXIT::EnableExit()	16	static
+peripheral_port.hpp:211:9:void Port::CS::Select()	16	static
+peripheral_port.hpp:218:9:void Port::CS::Release()	16	static
 et1100.cpp:4:1:ET1100::ET1100(Port::SPIComm&, Port::CS&, Port::EXIT&, Port::EXIT&, Port::EXIT&, Port::TIM&, Port::GPIO&)	24	static
-et1100.cpp:22:1:ET1100::~ET1100()	16	static
-et1100.cpp:22:1:virtual ET1100::~ET1100()	16	static
-et1100.cpp:24:6:void ET1100::EscInit(const esc_cfg_t*)	16	static
-et1100.cpp:37:10:uint32_t ET1100::EscEnableDC()	32	static
-et1100.cpp:86:6:void ET1100::EscAddress(uint16_t, uint8_t)	16	static
-et1100.cpp:106:6:void ET1100::EscRead(uint16_t, void*, uint16_t)	24	static
-et1100.cpp:132:6:void ET1100::EscWrite(uint16_t, void*, uint16_t)	24	static
-et1100.cpp:151:6:void ET1100::EscInterruptEnable(uint32_t)	16	static
-et1100.cpp:178:6:void ET1100::EscInterruptDisable(uint32_t)	24	static
+et1100.cpp:24:1:ET1100::~ET1100()	16	static
+et1100.cpp:24:1:virtual ET1100::~ET1100()	16	static
+et1100.cpp:26:6:void ET1100::EscInit(const esc_cfg_t*)	16	static
+et1100.cpp:39:10:uint32_t ET1100::EscEnableDC()	32	static
+et1100.cpp:87:6:void ET1100::EscAddress(uint16_t, uint8_t)	16	static
+et1100.cpp:109:6:void ET1100::EscRead(uint16_t, void*, uint16_t)	24	static
+et1100.cpp:137:6:void ET1100::EscWrite(uint16_t, void*, uint16_t)	24	static
+et1100.cpp:156:6:void ET1100::EscInterruptEnable(uint32_t)	16	static
+et1100.cpp:183:6:void ET1100::EscInterruptDisable(uint32_t)	24	static

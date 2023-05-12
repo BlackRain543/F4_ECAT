@@ -506,8 +506,8 @@ typedef struct
    /* Volatile since it may be read from ISR */
    volatile int watchdogcnt;
    volatile uint32_t Time;
-   volatile uint32_t ALevent;
    volatile int8_t synccounter;
+   volatile uint32_t ALevent;
    volatile _App App;
    uint8_t mbxdata[PREALLOC_BUFFER_SIZE];
 } _ESCvar;
@@ -711,22 +711,28 @@ typedef struct
 void ESC_config (esc_cfg_t * cfg);
 void ESC_ALerror (uint16_t errornumber);
 void ESC_ALeventwrite (uint32_t event);
-uint32_t ESC_ALeventread (void);
 void ESC_ALeventmaskwrite (uint32_t mask);
+
+uint32_t ESC_ALeventread (void);
 uint32_t ESC_ALeventmaskread (void);
+
 void ESC_ALstatus (uint8_t status);
 void ESC_ALstatusgotoerror (uint8_t status, uint16_t errornumber);
 void ESC_SMstatus (uint8_t n);
+
 uint8_t ESC_WDstatus (void);
 uint8_t ESC_claimbuffer (void);
 uint8_t ESC_startmbx (uint8_t state);
+
 void ESC_stopmbx (void);
 void MBX_error (uint16_t error);
-uint8_t ESC_mbxprocess (void);
 void ESC_xoeprocess (void);
+
 uint8_t ESC_startinput (uint8_t state);
-void ESC_stopinput (void);
 uint8_t ESC_startoutput (uint8_t state);
+uint8_t ESC_mbxprocess (void);
+
+void ESC_stopinput (void);
 void ESC_stopoutput (void);
 void ESC_state (void);
 void ESC_sm_act_event (void);
@@ -736,6 +742,10 @@ void ESC_read (uint16_t address, void *buf, uint16_t len);
 void ESC_write (uint16_t address, void *buf, uint16_t len);
 void ESC_init (const esc_cfg_t * cfg);
 void ESC_reset (void);
+
+void ESC_interrupt_enable (uint32_t mask);
+void ESC_interrupt_disable (uint32_t mask);
+uint32_t ESC_enable_DC ();
 
 /* From application */
 extern void APP_safeoutput ();

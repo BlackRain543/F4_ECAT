@@ -13,7 +13,6 @@
 
 #include <cc.h>
 
-
 typedef struct
 {
    uint16_t subindex;

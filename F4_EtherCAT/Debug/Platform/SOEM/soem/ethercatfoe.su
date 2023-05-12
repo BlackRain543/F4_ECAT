@@ -1,0 +1,6 @@
+ethercatfoe.c:92:5:ecx_FOEdefinehook	16	static
+ethercatfoe.c:109:5:ecx_FOEread	3048	static
+ethercatfoe.c:237:5:ecx_FOEwrite	3048	static
+ethercatfoe.c:387:5:ec_FOEdefinehook	16	static
+ethercatfoe.c:392:5:ec_FOEread	40	static
+ethercatfoe.c:397:5:ec_FOEwrite	40	static

@@ -36,8 +36,14 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../UserApp/common_inc.h ../Platform/EtherCAT/port/el9800hw.h \
- ../Platform/EtherCAT/Inc/esc.h ../Platform/EtherCAT/Inc/ecat_def.h
+ ../UserApp/common_inc.h ../Platform/SSC/port/el9800hw.h \
+ ../Platform/SSC/port/../../SSC/Inc/esc.h \
+ ../Platform/SSC/port/../../SSC/Inc/../../SSC/Inc/ecat_def.h \
+ ../Platform/SOES/esc_soes.h ../Platform/SOES/cc.h \
+ ../Platform/SOES/esc_coe.h ../Platform/SOES/options.h \
+ ../Platform/SOES/ecat_options.h ../Platform/SOES/ecat_slv.h \
+ ../Platform/SOES/app/ecat_app.h ../Platform/SOES/hw/dwt.h \
+ ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
 
 ../Core/Inc/main.h:
 
@@ -117,8 +123,26 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../UserApp/common_inc.h:
 
-../Platform/EtherCAT/port/el9800hw.h:
+../Platform/SSC/port/el9800hw.h:
 
-../Platform/EtherCAT/Inc/esc.h:
+../Platform/SSC/port/../../SSC/Inc/esc.h:
 
-../Platform/EtherCAT/Inc/ecat_def.h:
+../Platform/SSC/port/../../SSC/Inc/../../SSC/Inc/ecat_def.h:
+
+../Platform/SOES/esc_soes.h:
+
+../Platform/SOES/cc.h:
+
+../Platform/SOES/esc_coe.h:
+
+../Platform/SOES/options.h:
+
+../Platform/SOES/ecat_options.h:
+
+../Platform/SOES/ecat_slv.h:
+
+../Platform/SOES/app/ecat_app.h:
+
+../Platform/SOES/hw/dwt.h:
+
+../Middlewares/ST/ARM/DSP/Inc/arm_math.h:

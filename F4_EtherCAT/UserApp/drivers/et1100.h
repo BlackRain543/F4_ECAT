@@ -8,34 +8,10 @@
 #include <string.h>
 #include "esc_soes.h"
 
-#define MAX_READ_SIZE   			128
 
-#define ESC_CMD_READ    			0x02
-#define ESC_CMD_READWS  			0x03
-#define ESC_CMD_WRITE   			0x04
-#define ESC_CMD_NOP     			0x00
-#define ESC_TERM        			0xff
-#define ESC_NEXT        			0x00
-
-#define ESCREG_PDI_CONTROL         	0x0140
-#define ESCREG_ESC_CONFIG          	0x0141
-#define DC_SYNC_OUT                	0x04
-#define ESCREG_CYCLIC_UNIT_CONTROL 	0x0980
-#define SYNC_OUT_UNIT_CONTROL_MASK 	0x01
-#define SYNC_OUT_ECAT_CONTROL      	0x00
-#define SYNC_OUT_PDI_CONTROL       	0x01
-#define ESCREG_SYNC0_CYCLE_TIME    	0x09A0
-#define ESCREG_SYNC_START_TIME     	0x0990
-
-// measured with 21MHz SPI PDI
-#define SYNC_START_OFFSET     		2342840
 #define GPIO_ECAT_RESET    			1 	 /* specific function to hold ESC reset on startup
                               	  	  	  * when emulating EEPROM
                               	  	  	  */
-
-#define DELAY_1_uS      160   	// todo tweak to used clock speed
-
-static uint8_t read_termination[MAX_READ_SIZE] = { 0 };
 
 class ET1100
 {
@@ -50,6 +26,37 @@ class ET1100
 				Port::GPIO		&eepromLoaded
 				);
 		virtual ~ET1100();
+		constexpr static uint8_t MAX_READ_SIZE  = 128;
+
+		constexpr static uint8_t ESC_CMD_NOP 	= 0x00;
+		constexpr static uint8_t ESC_CMD_READ 	= 0x02;
+		constexpr static uint8_t ESC_CMD_READWS = 0x03;
+		constexpr static uint8_t ESC_CMD_WRITE 	= 0x04;
+
+		constexpr static uint8_t ESC_TERM       = 0xff;
+		constexpr static uint8_t ESC_NEXT       = 0x00;
+
+		constexpr static uint16_t ESCREG_TYPE	= 0x0001;					// ET1100:0x11
+		constexpr static uint16_t ESCREG_SYNCMANAGERS_SUPPORTED = 0x0005;	// ET1100:8
+		constexpr static uint16_t ESCREG_RAM_SIZE = 0x0006;					// ET1100:8
+
+		constexpr static uint16_t ESCREG_AL_STATUS_1	= 0x0130;
+		constexpr static uint16_t ESCREG_AL_STATUS_2 	= 0x0131;
+		constexpr static uint16_t ESCREG_PDI_CONTROL 	= 0x0140;
+		constexpr static uint16_t ESCREG_ESC_CONFIG 	= 0x0141;
+
+		constexpr static uint8_t SYNC_OUT_UNIT_CONTROL_MASK = 0x01;
+		constexpr static uint8_t SYNC_OUT_ECAT_CONTROL 		= 0x00;
+		constexpr static uint8_t SYNC_OUT_PDI_CONTROL 		= 0x01;
+
+		constexpr static uint16_t ESCREG_SYNC_START_TIME    = 0x0990;
+
+		constexpr static uint8_t  DC_SYNC_OUT                = 0x04;
+		constexpr static uint16_t ESCREG_CYCLIC_UNIT_CONTROL= 0x0980;
+
+		// measured with 21MHz SPI PDI
+		constexpr static uint32_t SYNC_START_OFFSET			= 2342840;
+
 
 		void 		EscInit(const esc_cfg_t * config);
 		uint32_t 	EscEnableDC();
@@ -70,8 +77,10 @@ class ET1100
 		Port::TIM		&tim_;
 		Port::GPIO		&eepromLoaded_;
 
-		uint8_t 		spiTxData_[4];
-		uint8_t 		spiRxData_[4];
+		uint8_t 		spiTxData_[2];
+//		uint8_t 		spiRxData_[2];
+
+		uint8_t 		read_termination_[MAX_READ_SIZE] = { 0 };
 };
 
 #endif

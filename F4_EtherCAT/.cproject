@@ -40,6 +40,7 @@
 									<listOptionValue builtIn="false" value="&quot;D:\Codes\F4_EtherCAT\F4_EtherCAT\Platform\EtherCAT\inc&quot;"/>
 									<listOptionValue builtIn="false" value="../Platform/EtherCAT/port"/>
 									<listOptionValue builtIn="false" value="../Platform/SOES"/>
+									<listOptionValue builtIn="false" value="../Platform/SOEM"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input.373400982" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input"/>
 							</tool>
@@ -50,6 +51,7 @@
 									<listOptionValue builtIn="false" value="DEBUG"/>
 									<listOptionValue builtIn="false" value="USE_HAL_DRIVER"/>
 									<listOptionValue builtIn="false" value="STM32F405xx"/>
+									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths.2078018606" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../Core/Inc"/>
@@ -59,9 +61,10 @@
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
 									<listOptionValue builtIn="false" value="../UserApp"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/ARM/DSP/Inc"/>
-									<listOptionValue builtIn="false" value="../Platform/EtherCAT/Inc"/>
-									<listOptionValue builtIn="false" value="../Platform/EtherCAT/port"/>
 									<listOptionValue builtIn="false" value="../Platform/SOES"/>
+									<listOptionValue builtIn="false" value="../Platform/SOEM"/>
+									<listOptionValue builtIn="false" value="../Platform/SSC/Inc"/>
+									<listOptionValue builtIn="false" value="../Platform/SSC/port"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1476023947" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -82,9 +85,10 @@
 									<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
 									<listOptionValue builtIn="false" value="../UserApp"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/ARM/DSP/Inc"/>
-									<listOptionValue builtIn="false" value="../Platform/EtherCAT/Inc"/>
-									<listOptionValue builtIn="false" value="../Platform/EtherCAT/port"/>
 									<listOptionValue builtIn="false" value="../Platform/SOES"/>
+									<listOptionValue builtIn="false" value="../Platform/SOEM"/>
+									<listOptionValue builtIn="false" value="../Platform/SSC/port"/>
+									<listOptionValue builtIn="false" value="../Platform/SSC/Inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1693738351" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>
@@ -116,12 +120,12 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="ST/Platform" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="UserApp"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Platform"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Library"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Library"/>
+						<entry excluding="ST/Platform" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="Platform"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="UserApp"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -218,10 +222,10 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Library"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Library"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

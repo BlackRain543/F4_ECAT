@@ -1,0 +1,8 @@
+#ifndef __ESC_APP__
+#define __ESC_APP__
+
+#include "app/ecat_app.h"
+
+
+
+#endif

@@ -1,0 +1,1006 @@
+/*
+ * peripheral_port.h
+ *
+ *  Created on: Jul 20, 2022
+ *      Author: x9355
+ */
+
+#ifndef PORT_PERIPHERAL_PORT_H_
+#define PORT_PERIPHERAL_PORT_H_
+
+
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+	#include "stm32f4xx_hal.h"
+
+#ifdef __cplusplus
+};
+#endif
+
+#include "utils/cqueue.h"
+
+namespace Port
+{
+
+	class TIM
+	{
+		public:
+			TIM(TIM_HandleTypeDef *htim):htim_(htim){}
+			~TIM(){}
+
+			virtual inline void Start() 		{HAL_TIM_Base_Start(htim_);}
+			inline void Start_IT() 				{HAL_TIM_Base_Start_IT(htim_);}
+			inline TIM_HandleTypeDef *GetPtr()	{return htim_;}
+
+			TIM_HandleTypeDef *htim_;
+	};
+
+	template<uint8_t CHANNEL_NUM>
+	class PWM: public TIM {
+		public:
+			PWM(TIM_HandleTypeDef *htim): TIM(htim){}
+			~PWM(){};
+
+			inline void SetCCR1(uint32_t val)		{WRITE_REG(htim_->Instance->CCR1, val);}
+			inline void SetCCR2(uint32_t val)		{WRITE_REG(htim_->Instance->CCR2, val);}
+			inline void SetCCR3(uint32_t val)		{WRITE_REG(htim_->Instance->CCR3, val);}
+			inline void SetCCR4(uint32_t val)		{WRITE_REG(htim_->Instance->CCR4, val);}
+			void Start()						{
+				//HAL_TIM_PWM_Start(htim_,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3 | TIM_CHANNEL_4);
+				HAL_TIM_PWM_Start(htim_,TIM_CHANNEL_1);
+				HAL_TIM_PWM_Start(htim_,TIM_CHANNEL_2);
+				HAL_TIM_PWM_Start(htim_,TIM_CHANNEL_3);
+				HAL_TIMEx_PWMN_Start(htim_,TIM_CHANNEL_1);
+				HAL_TIMEx_PWMN_Start(htim_,TIM_CHANNEL_2);
+				HAL_TIMEx_PWMN_Start(htim_,TIM_CHANNEL_3);
+				HAL_TIM_Base_Start(htim_);
+			}
+			void Stop()						{
+				//HAL_TIM_PWM_Start(htim_,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3 | TIM_CHANNEL_4);
+				HAL_TIM_PWM_Stop(htim_,TIM_CHANNEL_1);
+				HAL_TIM_PWM_Stop(htim_,TIM_CHANNEL_2);
+				HAL_TIM_PWM_Stop(htim_,TIM_CHANNEL_3);
+				HAL_TIMEx_PWMN_Stop(htim_,TIM_CHANNEL_1);
+				HAL_TIMEx_PWMN_Stop(htim_,TIM_CHANNEL_2);
+				HAL_TIMEx_PWMN_Stop(htim_,TIM_CHANNEL_3);
+				HAL_TIM_Base_Stop(htim_);
+			}
+			void DisableOutput()
+			{
+				//HAL_TIM_PWM_Start(htim_,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3 | TIM_CHANNEL_4);
+				TIM_CCxChannelCmd(htim_->Instance, TIM_CHANNEL_1, TIM_CCx_DISABLE);
+				TIM_CCxChannelCmd(htim_->Instance, TIM_CHANNEL_2, TIM_CCx_DISABLE);
+				TIM_CCxChannelCmd(htim_->Instance, TIM_CHANNEL_3, TIM_CCx_DISABLE);
+
+				TIM_CCxNChannelCmd(htim_->Instance, TIM_CHANNEL_1, TIM_CCxN_DISABLE);
+				TIM_CCxNChannelCmd(htim_->Instance, TIM_CHANNEL_2, TIM_CCxN_DISABLE);
+				TIM_CCxNChannelCmd(htim_->Instance, TIM_CHANNEL_3, TIM_CCxN_DISABLE);
+
+			}
+			void EnableOutput()
+			{
+				//HAL_TIM_PWM_Start(htim_,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3 | TIM_CHANNEL_4);
+				TIM_CCxChannelCmd(htim_->Instance, TIM_CHANNEL_1, TIM_CCx_ENABLE);
+				TIM_CCxChannelCmd(htim_->Instance, TIM_CHANNEL_2, TIM_CCx_ENABLE);
+				TIM_CCxChannelCmd(htim_->Instance, TIM_CHANNEL_3, TIM_CCx_ENABLE);
+
+				TIM_CCxNChannelCmd(htim_->Instance, TIM_CHANNEL_1, TIM_CCx_ENABLE);
+				TIM_CCxNChannelCmd(htim_->Instance, TIM_CHANNEL_2, TIM_CCx_ENABLE);
+				TIM_CCxNChannelCmd(htim_->Instance, TIM_CHANNEL_3, TIM_CCx_ENABLE);
+			}
+			void SetRatio(float* p_ratio)
+			{
+				uint32_t ARR = READ_REG(htim_->Instance->ARR);
+				memcpy(ratio_,p_ratio,CHANNEL_NUM*sizeof(float));
+				if(CHANNEL_NUM == 3)
+				{
+					SetCCR1((uint32_t)(p_ratio[0]*ARR));
+					SetCCR2((uint32_t)(p_ratio[1]*ARR));
+					SetCCR3((uint32_t)(p_ratio[2]*ARR));
+				}
+			}
+		private:
+			void TIM_CCxNChannelCmd(TIM_TypeDef *TIMx, uint32_t Channel, uint32_t ChannelNState)
+			{
+			  uint32_t tmp;
+
+			  tmp = TIM_CCER_CC1NE << (Channel & 0x1FU); /* 0x1FU = 31 bits max shift */
+
+			  /* Reset the CCxNE Bit */
+			  TIMx->CCER &=  ~tmp;
+
+			  /* Set or reset the CCxNE Bit */
+			  TIMx->CCER |= (uint32_t)(ChannelNState << (Channel & 0x1FU)); /* 0x1FU = 31 bits max shift */
+			}
+			float ratio_[CHANNEL_NUM];
+	};
+
+	// *-----* ADC *-----* //
+	template<uint8_t CHANNEL_NUM>
+	class ADC_Group
+	{
+		public:
+			ADC_Group(ADC_HandleTypeDef* hadc):hadc_(hadc){}
+			~ADC_Group(){};
+
+			void Calibrate(){}
+			void Start_DMA()
+			{
+				Calibrate();
+				HAL_ADC_Start_DMA(hadc_,(uint32_t *)val_,CHANNEL_NUM);
+			}
+			inline uint32_t *GetDataPtr()	{return val_;}
+
+		private:
+			uint32_t val_[CHANNEL_NUM];
+			ADC_HandleTypeDef* hadc_;
+
+	};
+
+	// *-----* SPI *-----* //
+
+	class SPIComm{
+		public:
+			SPIComm(SPI_HandleTypeDef *hspi):hspi_(hspi){}
+			~SPIComm(){}
+			HAL_StatusTypeDef Receive(uint8_t *pRxData, uint16_t Size)
+			{
+				return HAL_SPI_Receive(hspi_,pRxData,Size,timeOut_);
+			}
+			HAL_StatusTypeDef Transmit(uint8_t *pTxData, uint16_t Size)
+			{
+				return HAL_SPI_Transmit(hspi_,pTxData,Size,timeOut_);
+			}
+
+			HAL_StatusTypeDef TransmitReceive(uint8_t *pTxData, uint8_t *pRxData, uint16_t Size)
+			{
+				return HAL_SPI_TransmitReceive(hspi_,pTxData,pRxData,Size,timeOut_);
+			}
+
+			HAL_StatusTypeDef TransmitReceiveDMA(uint8_t *pTxData, uint8_t *pRxData, uint16_t Size)
+			{
+//				while (HAL_SPI_GetState(hspi_) != HAL_SPI_STATE_READY);
+				return HAL_SPI_TransmitReceive_DMA(hspi_,pTxData,pRxData,Size);
+			}
+
+		private:
+			SPI_HandleTypeDef *hspi_;
+			uint32_t timeOut_ = 100;
+	};
+
+	// *-----* GPIO *-----* //
+	class GPIO
+	{
+		public:
+			GPIO(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin):GPIOx_(GPIOx),GPIO_Pin_(GPIO_Pin){}
+			~GPIO(){}
+			inline void WritePin(GPIO_PinState PinState)	{HAL_GPIO_WritePin(GPIOx_, GPIO_Pin_, PinState);}
+			inline void SetPin()	{WritePin(GPIO_PIN_SET);}
+			inline void ResetPin()	{WritePin(GPIO_PIN_RESET);}
+
+			inline GPIO_PinState ReadPin()					{return HAL_GPIO_ReadPin(GPIOx_, GPIO_Pin_);}
+
+		protected:
+			GPIO_TypeDef* GPIOx_;
+			uint16_t GPIO_Pin_;
+	};
+
+	class EXIT : public GPIO
+	{
+		public:
+			EXIT(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, IRQn_Type EXTIx_IRQn)
+			:GPIO::GPIO(GPIOx,GPIO_Pin),EXTIx_IRQn_(EXTIx_IRQn){}
+			~EXIT(){}
+			inline void ClearPendingBits() 	{__HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin_);	}
+			inline void ClearPendingFlags() {__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_Pin_);	}
+			inline void DisableExit() 		{HAL_NVIC_DisableIRQ(EXTIx_IRQn_);		}
+			inline void EnableExit()  		{HAL_NVIC_EnableIRQ(EXTIx_IRQn_);		}
+
+		private:
+			IRQn_Type EXTIx_IRQn_;
+	};
+
+	class CS:GPIO
+	{
+		public:
+			CS(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin,uint8_t polarity):GPIO(GPIOx,GPIO_Pin),polarity_(polarity){}
+			~CS(){}
+			void Select()
+			{
+				if(polarity_)
+					GPIO::WritePin(GPIO_PIN_SET);
+				else
+					GPIO::WritePin(GPIO_PIN_RESET);
+			}
+			void Release()
+			{
+				if(polarity_)
+					GPIO::WritePin(GPIO_PIN_RESET);
+				else
+					GPIO::WritePin(GPIO_PIN_SET);
+			}
+		private:
+			uint8_t polarity_;
+	};
+
+	// *-----* USB *-----* //
+	#define USB_VCOM_RX_BUFFER_LENGTH 	64
+	#define USB_VCOM_TX_BUFFER_LENGTH 	128
+	#define USB_VCOM_RX_CQUEUE_LENGTH 	128
+	#define USB_VCOM_TX_CQUEUE_LENGTH 	512
+
+	typedef enum{
+		USB_VCOM_IDLE = 0,
+		USB_VCOM_BUSY = 1,
+	}USBVComStatus;
+
+	class USBVCom{
+	public:
+		USBVCom(uint8_t (*pTrans)(uint8_t*, uint16_t),
+				uint32_t rxIrqBufLen = USB_VCOM_RX_BUFFER_LENGTH,
+				uint32_t txIrqBufLen = USB_VCOM_TX_BUFFER_LENGTH,
+				uint32_t rxCQueueBufLen = USB_VCOM_RX_CQUEUE_LENGTH,
+				uint32_t txCQueueBufLen = USB_VCOM_TX_CQUEUE_LENGTH)
+			:status_(USB_VCOM_IDLE),pTrans_(pTrans),rxIrqBufLen_(rxIrqBufLen),txIrqBufLen_(txIrqBufLen),
+		pRxBuf_(NULL),pTxBuf_(NULL),rxCQueue_(rxCQueueBufLen),txCQueue_(txCQueueBufLen)
+		{
+			if(rxIrqBufLen_ <= rxCQueueBufLen && txIrqBufLen_ <= txCQueueBufLen)
+			{
+				pRxBuf_ 		= new uint8_t [rxIrqBufLen_];
+				pTxBuf_ 		= new uint8_t [txIrqBufLen_];
+			}
+
+			if(	pRxBuf_ != NULL &&
+				pTxBuf_ != NULL &&
+				rxCQueue_.InitResult == SUCCESS &&
+				txCQueue_.InitResult == SUCCESS)
+			{
+				InitResult_ = SUCCESS;
+			}
+		}
+		~USBVCom()
+		{
+			delete [] pRxBuf_;
+			delete [] pTxBuf_;
+		}
+
+		void Reset()
+		{
+			status_ =USB_VCOM_IDLE;
+			rxCQueue_.Reset();
+			txCQueue_.Reset();
+		}
+		CQueueNS::CQueueStatus ReceiveToCQueue(uint8_t *pData,uint32_t len)
+		{
+			CQueueNS::CQueueStatus result = rxCQueue_.EntirelyIn(pData, len);
+			return result;
+		}
+
+		CQueueNS::CQueueStatus Transmit(uint8_t *pData,uint32_t len)
+		{
+
+			CQueueNS::CQueueStatus result = txCQueue_.EntirelyIn(pData, len);
+			if(USB_VCOM_IDLE == status_)
+			{
+				TransFromCQueue();
+				status_ = USB_VCOM_BUSY;
+			}
+			return result;
+		}
+		void TransmitCpltCallback()
+		{
+
+			if(TransFromCQueue() == 0)
+				status_ = USB_VCOM_IDLE;
+			else
+				status_ = USB_VCOM_BUSY;
+		}
+		inline uint8_t TransmitDirectly(uint8_t* Buf, uint16_t Len){return pTrans_(Buf,Len);}
+		inline CQueueNS::CQueue& GetRxCQueue() {return rxCQueue_;}
+
+	private:
+		USBVComStatus status_;
+		uint8_t (*pTrans_)(uint8_t* Buf, uint16_t Len);
+		const uint32_t rxIrqBufLen_;
+		const uint32_t txIrqBufLen_;
+		uint8_t* pRxBuf_;
+		uint8_t* pTxBuf_;
+		CQueueNS::CQueue rxCQueue_;
+		CQueueNS::CQueue txCQueue_;
+		ErrorStatus InitResult_;
+
+
+		uint32_t TransFromCQueue()
+		{
+			uint32_t len = min(txCQueue_.UsedLength(),txIrqBufLen_);
+			txCQueue_.CopyOut(pTxBuf_, len);
+			if(len != 0)
+			{
+				TransmitDirectly(pTxBuf_,len);
+			}
+			txCQueue_.RemoveFromFront(len);
+			return len;
+		}
+
+
+	};
+
+	// *-----* UART *-----* //
+	#define RX_IRQ_BUFFER_LENGTH 	17
+	#define TX_IRQ_BUFFER_LENGTH 	17
+	#define RX_CQUEUE_BUFFER_LENGTH 64
+	#define TX_CQUEUE_BUFFER_LENGTH 64
+
+	class UartCom
+	{
+		public:
+			UartCom(UART_HandleTypeDef *huart,
+					uint32_t txBufLen = TX_IRQ_BUFFER_LENGTH,
+					uint32_t rxBufLen = RX_IRQ_BUFFER_LENGTH,
+					uint32_t txCQueueBufLen = TX_CQUEUE_BUFFER_LENGTH,
+					uint32_t rxCQueueBufLen = RX_CQUEUE_BUFFER_LENGTH
+		)
+			:huart_(huart),
+			 txBufLen_(txBufLen),
+			 rxBufLen_(rxBufLen),
+			 txCQueue_(txCQueueBufLen),
+			 rxCQueue_(rxCQueueBufLen)
+			{
+				pTxBuf_ 		= new uint8_t [txBufLen_];
+				pRxBuf_ 		= new uint8_t [rxBufLen_];
+
+			}
+			~UartCom()
+			{
+				delete [] pTxBuf_;
+				delete [] pRxBuf_;
+			}
+			void ReceiveToIdle_DMA()
+			{
+				HAL_UARTEx_ReceiveToIdle_DMA(huart_,pRxBuf_,rxBufLen_);
+				//__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
+			}
+
+			void DisableRxDma_IT_HT()
+			{
+				__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
+			}
+
+			void DisableRxDma_IT_TC()
+			{
+				__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_TC);
+			}
+
+			//void Init()
+			//{
+			//	HAL_UARTEx_ReceiveToIdle_DMA(huart_,pRxBuf_,rxBufLen_);
+			//	__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
+				//__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_TC);
+			//}
+
+			inline uint8_t* GetTxBuffPtr(){return pTxBuf_;}
+			inline uint8_t* GetRxBuffPtr(){return pRxBuf_;}
+			inline CQueueNS::CQueue& GetTxCQueue(){return txCQueue_;}
+			inline CQueueNS::CQueue& GetRxCQueue(){return rxCQueue_;}
+			inline CQueueNS::CQueue* GetPRxCQueue(){return &rxCQueue_;}
+
+			uint32_t TransFromCQueueToBuf()
+			{
+				uint32_t len = min(txCQueue_.UsedLength(),txBufLen_);
+				txCQueue_.CopyOut(pTxBuf_, len);
+				txCQueue_.RemoveFromFront(len);
+				return len;
+			}
+
+			void TransmitOneByteAndEnableTCIE(uint8_t *pData)
+			{
+				huart_->Instance->DR = *pData;
+				__HAL_UART_ENABLE_IT(huart_, UART_IT_TC);
+			}
+
+			void TransmitDirectly(uint8_t *pData,uint32_t len)
+			{
+				HAL_UART_Transmit(huart_, pData, len,0);
+			}
+
+			void AbortReceive()
+			{
+				HAL_UART_AbortReceive(huart_);
+			}
+
+			void TransmitIT(uint8_t *pData,uint32_t len)
+			{
+				HAL_UART_Transmit_IT(huart_, pData, len);
+			}
+
+			void TxClptCallback()
+			{
+				uint16_t len =TransFromCQueueToBuf();
+				if(len > 0)
+				{
+					HAL_UART_Transmit_DMA(huart_, pTxBuf_, len);
+				}
+			}
+
+			void ReceiveDMA()
+			{
+				HAL_UART_Receive_DMA(huart_,pRxBuf_,rxBufLen_);
+			}
+
+
+			CQueueNS::CQueueStatus Transmit(uint8_t *pData,uint32_t len)
+			{
+				CQueueNS::CQueueStatus result = txCQueue_.EntirelyIn(pData, len);
+				if(CQueueNS::CQUEUE_OPERATE_SUCCESS == result)
+				{
+					if(HAL_DMA_STATE_READY == HAL_DMA_GetState(huart_->hdmatx))
+					{
+						uint16_t len =TransFromCQueueToBuf();
+						if(len > 0)
+						{
+							HAL_UART_Transmit_DMA(huart_, pTxBuf_, len);
+						}
+					}
+				}
+				return result;
+			}
+
+			uint32_t RecvFromBufToCQueue()
+			{
+				uint32_t len = rxBufLen_ - huart_->hdmarx->Instance->NDTR;
+				rxCQueue_.In(pRxBuf_, len);
+				return len;
+			}
+
+			void RxDmaClptCallback()
+			{
+				uint32_t len = rxBufLen_ - huart_->hdmarx->Instance->NDTR;
+				rxCQueue_.In(pRxBuf_, len);
+
+			}
+
+			void RxEventCallback(uint16_t Size)
+			{
+
+				uint32_t len = Size;
+
+				HAL_UART_AbortReceive(huart_);
+				rxCQueue_.In(pRxBuf_, len);
+				HAL_StatusTypeDef result =  HAL_UARTEx_ReceiveToIdle_DMA(huart_,pRxBuf_,rxBufLen_);
+				__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
+				if(result != HAL_OK)
+				{
+					__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
+				}
+
+				//HAL_UART_DMAStop(huart_);
+				//HAL_UARTEx_ReceiveToIdle_DMA(huart_,pRxBuf_,rxBufLen_);
+			}
+
+			uint8_t IRQRxDmaPreProcess()
+			{
+				uint32_t dmaTCIF_rx;
+				uint32_t size;
+				DMA_HandleTypeDef *pDmaRx =huart_->hdmarx;
+
+				if(pDmaRx->StreamIndex == 0 || pDmaRx->StreamIndex == 4)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF0_4;
+					//dmaHTIF_rx = DMA_FLAG_HTIF0_4;
+				}
+				else if(pDmaRx->StreamIndex == 1 || pDmaRx->StreamIndex == 5)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF1_5;
+					//dmaHTIF_rx = DMA_FLAG_HTIF1_5;
+				}
+				else if(pDmaRx->StreamIndex == 2 || pDmaRx->StreamIndex == 6)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF2_6;
+					//dmaHTIF_rx = DMA_FLAG_HTIF2_6;
+				}
+				else if(pDmaRx->StreamIndex == 3 || pDmaRx->StreamIndex == 7)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF3_7;
+					//dmaHTIF_rx = DMA_FLAG_HTIF3_7;
+				}
+				dmaTCIF_rx = DMA_FLAG_TCIF1_5;
+				if(__HAL_DMA_GET_FLAG(pDmaRx, dmaTCIF_rx)
+				&& __HAL_DMA_GET_IT_SOURCE(pDmaRx,DMA_IT_TC))
+				{
+					__HAL_DMA_CLEAR_FLAG(pDmaRx, dmaTCIF_rx);
+					__HAL_DMA_DISABLE_IT(pDmaRx, DMA_IT_TC);
+					size = rxBufLen_ - huart_->hdmarx->Instance->NDTR;
+					RxEventCallback(size);
+					return 1;
+				}
+				return 0;
+			}
+
+			uint8_t IRQPreProcess()
+			{
+				uint32_t size;
+				if(__HAL_UART_GET_FLAG(huart_, UART_FLAG_IDLE)
+						&& __HAL_UART_GET_IT_SOURCE(huart_, UART_IT_IDLE))
+				{
+					__HAL_UART_CLEAR_FLAG(huart_, UART_FLAG_IDLE);
+					__HAL_UART_DISABLE_IT(huart_, UART_IT_IDLE);
+					size = rxBufLen_ - huart_->hdmarx->Instance->NDTR;
+					RxEventCallback(size);
+					return 1;
+				}
+				else
+				if(__HAL_UART_GET_FLAG(huart_, UART_FLAG_TC)
+				&& __HAL_UART_GET_IT_SOURCE(huart_, UART_IT_TC))
+				{
+					huart_->gState = HAL_UART_STATE_READY;
+					TxClptCallback();
+					__HAL_UART_CLEAR_FLAG(huart_, UART_FLAG_TC);
+					__HAL_UART_DISABLE_IT(huart_, UART_IT_TC);
+
+					return 1;
+				}
+				return 0;
+			}
+
+
+			UART_HandleTypeDef *huart_;
+		//private:
+
+			const uint32_t txBufLen_;
+			const uint32_t rxBufLen_;
+			uint8_t* pTxBuf_;
+			uint8_t* pRxBuf_;
+
+			CQueueNS::CQueue txCQueue_;
+			CQueueNS::CQueue rxCQueue_;
+	};
+
+	class UartCom_2{
+		public:
+			UartCom_2(UART_HandleTypeDef *huart,
+					uint32_t txBufLen = TX_IRQ_BUFFER_LENGTH,
+					uint32_t txCQueueBufLen = TX_CQUEUE_BUFFER_LENGTH,
+					uint32_t rxCQueueBufLen = RX_CQUEUE_BUFFER_LENGTH
+		):huart_(huart),txBufLen_(txBufLen),
+		txCQueue_(txCQueueBufLen),rxCQueueCdma_(rxCQueueBufLen)
+			{
+				pTxBuf_ 		= new uint8_t [txBufLen_];
+
+			}
+			~UartCom_2()
+			{
+				delete [] pTxBuf_;
+			}
+
+
+			void StartRx()
+			{
+
+				HAL_UARTEx_ReceiveToIdle_DMA(huart_,rxCQueueCdma_.pBuffer,rxCQueueCdma_.TotalLength());
+				//__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_TC);
+			}
+
+			void DisableRxDma_IT_HT()
+			{
+				__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_HT);
+			}
+
+			void DisableRxDma_IT_TC()
+			{
+				__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_TC);
+			}
+
+			void DisableRx_IT_IDLE()
+			{
+				__HAL_UART_DISABLE_IT(huart_, UART_IT_IDLE);
+			}
+
+			void DisableRxDma_IT_ERROR()
+			{
+				__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_TE);
+				__HAL_DMA_DISABLE_IT(huart_->hdmarx, DMA_IT_DME);
+			}
+
+			void DisableUart_IT_ERROR()
+			{
+				__HAL_UART_DISABLE_IT(huart_, UART_IT_ERR);
+			}
+
+			uint32_t TransFromCQueueToBuf()
+			{
+				uint32_t len = min(txCQueue_.UsedLength(),txBufLen_);
+				txCQueue_.CopyOut(pTxBuf_, len);
+				txCQueue_.RemoveFromFront(len);
+				return len;
+			}
+			void TransmitOneByteAndEnableTCIE(uint8_t *pData)
+			{
+				huart_->Instance->DR = *pData;
+				__HAL_UART_ENABLE_IT(huart_, UART_IT_TC);
+			}
+
+			void TransmitDirectly(uint8_t *pData,uint32_t len)
+			{
+				HAL_UART_Transmit(huart_, pData, len,0);
+			}
+
+			void TxClptCallback()
+			{
+				uint16_t len =TransFromCQueueToBuf();
+				if(len > 0)
+				{
+					HAL_UART_Transmit_DMA(huart_, pTxBuf_, len);
+				}
+			}
+
+
+			CQueueNS::CQueueStatus Transmit(uint8_t *pData,uint32_t len)
+			{
+				CQueueNS::CQueueStatus result = txCQueue_.EntirelyIn(pData, len);
+				if(CQueueNS::CQUEUE_OPERATE_SUCCESS == result)
+				{
+					if(HAL_DMA_STATE_READY == HAL_DMA_GetState(huart_->hdmatx))
+					{
+						uint16_t len =TransFromCQueueToBuf();
+						if(len > 0)
+						{
+							HAL_UART_Transmit_DMA(huart_, pTxBuf_, len);
+						}
+					}
+				}
+				return result;
+			}
+
+			void UpdateRxData()
+			{
+				rxCQueueCdma_.UpdateDataRecvIDLE(huart_->hdmarx->Instance->NDTR);
+			}
+
+			void RxEventCallback()
+			{
+				UpdateRxData();
+			}
+
+			uint8_t UartIRQPreProcess()
+			{
+				if(__HAL_UART_GET_FLAG(huart_, UART_FLAG_IDLE)
+						&& __HAL_UART_GET_IT_SOURCE(huart_, UART_IT_IDLE))
+				{
+					__HAL_UART_CLEAR_FLAG(huart_, UART_FLAG_IDLE);
+					__HAL_UART_DISABLE_IT(huart_, UART_IT_IDLE);
+					UpdateRxData();
+					return 1;
+				}
+				else
+				if(__HAL_UART_GET_FLAG(huart_, UART_FLAG_TC)
+				&& __HAL_UART_GET_IT_SOURCE(huart_, UART_IT_TC))
+				{
+					huart_->gState = HAL_UART_STATE_READY;
+					TxClptCallback();
+					__HAL_UART_CLEAR_FLAG(huart_, UART_FLAG_TC);
+					__HAL_UART_DISABLE_IT(huart_, UART_IT_TC);
+
+					return 1;
+				}
+				return 0;
+			}
+
+
+			UART_HandleTypeDef *huart_;
+		//private:
+
+			const uint32_t txBufLen_;
+			uint8_t* pTxBuf_;
+
+			CQueueNS::CQueue 		txCQueue_;
+			CQueueNS::CQueue 	rxCQueueCdma_;
+	};
+
+
+
+	class UartCommFast{
+		public:
+			UartCommFast(UART_HandleTypeDef *huart,
+					uint32_t txBufLen = TX_IRQ_BUFFER_LENGTH,
+					uint32_t rxBufLen = RX_IRQ_BUFFER_LENGTH,
+					uint32_t txCQueueBufLen = TX_CQUEUE_BUFFER_LENGTH,
+					uint32_t rxCQueueBufLen = RX_CQUEUE_BUFFER_LENGTH)
+			:huart_(huart),txBufLen_(txBufLen),rxBufLen_(rxBufLen),
+			 txCQueue_(txCQueueBufLen),rxCQueue_(rxCQueueBufLen)
+			{
+				pTxBuf_ 		= new uint8_t [txBufLen_];
+				pRxBuf_ 		= new uint8_t [rxBufLen_];
+
+			}
+			~UartCommFast()
+			{
+				delete [] pTxBuf_;
+				delete [] pRxBuf_;
+			}
+			void DMA_SetConfig2(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength)
+			{
+			  //Clear DBM bit
+			  hdma->Instance->CR &= (uint32_t)(~DMA_SxCR_DBM);
+
+			  /* Configure DMA Stream data length */
+			  hdma->Instance->NDTR = DataLength;
+
+			  /* Memory to Peripheral */
+			  if((hdma->Init.Direction) == DMA_MEMORY_TO_PERIPH)
+			  {
+				/* Configure DMA Stream destination address */
+				hdma->Instance->PAR = DstAddress;
+
+				/* Configure DMA Stream source address */
+				hdma->Instance->M0AR = SrcAddress;
+			  }
+			  /* Peripheral to Memory */
+			  else
+			  {
+				/* Configure DMA Stream source address */
+				hdma->Instance->PAR = SrcAddress;
+
+				/* Configure DMA Stream destination address */
+				hdma->Instance->M0AR = DstAddress;
+			  }
+			}
+			void Init()
+			{
+				// Config Rx
+				uint32_t dmaTCIF_rx;
+				uint32_t dmaHTIF_rx;
+				DMA_HandleTypeDef *pDmaRx =huart_->hdmarx;
+
+				DMA_SetConfig2(pDmaRx,
+						(uint32_t)&huart_->Instance->DR,
+						(uint32_t)pRxBuf_,
+						rxBufLen_);
+
+				if(pDmaRx->StreamIndex == 0 || pDmaRx->StreamIndex == 4)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF0_4;
+					dmaHTIF_rx = DMA_FLAG_HTIF0_4;
+				}
+				else if(pDmaRx->StreamIndex == 1 || pDmaRx->StreamIndex == 5)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF1_5;
+					dmaHTIF_rx = DMA_FLAG_HTIF1_5;
+				}
+				else if(pDmaRx->StreamIndex == 2 || pDmaRx->StreamIndex == 6)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF2_6;
+					dmaHTIF_rx = DMA_FLAG_HTIF2_6;
+				}
+				else if(pDmaRx->StreamIndex == 3 || pDmaRx->StreamIndex == 7)
+				{
+					dmaTCIF_rx = DMA_FLAG_TCIF3_7;
+					dmaHTIF_rx = DMA_FLAG_HTIF3_7;
+				}
+
+				__HAL_DMA_CLEAR_FLAG(pDmaRx,dmaTCIF_rx);
+				__HAL_DMA_CLEAR_FLAG(pDmaRx,dmaHTIF_rx);
+
+				SET_BIT(huart_->Instance->CR3, USART_CR3_DMAR); //LL_USART_EnableDMAReq_RX(uartx);
+
+				__HAL_DMA_ENABLE_IT(pDmaRx, DMA_IT_TC);
+				__HAL_DMA_ENABLE(pDmaRx);
+
+				// Config Tx
+				uint32_t dmaTCIF_tx;
+				uint32_t dmaHTIF_tx;
+				DMA_HandleTypeDef *pDmaTx =huart_->hdmatx;
+
+				if(pDmaTx->StreamIndex == 0 || pDmaTx->StreamIndex == 4)
+				{
+					dmaTCIF_tx = DMA_FLAG_TCIF0_4;
+					dmaHTIF_tx = DMA_FLAG_HTIF0_4;
+				}
+				else if(pDmaTx->StreamIndex == 1 || pDmaTx->StreamIndex == 5)
+				{
+					dmaTCIF_tx = DMA_FLAG_TCIF1_5;
+					dmaHTIF_tx = DMA_FLAG_HTIF1_5;
+				}
+				else if(pDmaTx->StreamIndex == 2 || pDmaTx->StreamIndex == 6)
+				{
+					dmaTCIF_tx = DMA_FLAG_TCIF2_6;
+					dmaHTIF_tx = DMA_FLAG_HTIF2_6;
+				}
+				else if(pDmaTx->StreamIndex == 3 || pDmaTx->StreamIndex == 7)
+				{
+					dmaTCIF_tx = DMA_FLAG_TCIF3_7;
+					dmaHTIF_tx = DMA_FLAG_HTIF3_7;
+				}
+
+				DMA_SetConfig2(pDmaTx,
+						(uint32_t)pTxBuf_,
+						(uint32_t)&huart_->Instance->DR,
+						0);
+				__HAL_DMA_CLEAR_FLAG(pDmaTx,dmaTCIF_tx);
+				__HAL_DMA_CLEAR_FLAG(pDmaTx,dmaHTIF_tx);
+
+				__HAL_DMA_ENABLE_IT(pDmaTx,DMA_IT_TC);
+				__HAL_DMA_ENABLE(pDmaTx);
+			}
+
+			CQueueNS::CQueueStatus Transmit(uint8_t *pData,uint32_t len)
+			{
+				CQueueNS::CQueueStatus result = txCQueue_.EntirelyIn(pData, len);
+
+				if(CQueueNS::CQUEUE_OPERATE_SUCCESS == result)
+				{
+					//if(!pTxDma_->IsEnabled())
+					//{
+					//	pTxDma_->SetMemoryAddress((uint32_t)pTxIrqBuf);
+					//	pTxDma_->SetDataLength(TransFromCQueue());
+					//	pTxDma_->Enable();
+					//}
+				}
+
+				return result;
+			}
+			UART_HandleTypeDef *huart_;
+		//private:
+
+			const uint32_t txBufLen_;
+			const uint32_t rxBufLen_;
+			uint8_t* pTxBuf_;
+			uint8_t* pRxBuf_;
+
+			CQueueNS::CQueue txCQueue_;
+			CQueueNS::CQueue rxCQueue_;
+	};
+
+
+	class FlashPort{
+
+		public:
+			FlashPort(){}
+			virtual ~FlashPort(){}
+
+			ErrorStatus Unlock(void)
+			{
+				if(HAL_FLASH_Unlock() == HAL_OK)
+					return SUCCESS;
+				else
+					return ERROR;
+			}
+
+			ErrorStatus Lock(void)
+			{
+				if(HAL_FLASH_Lock() == HAL_OK)
+					return SUCCESS;
+				else
+					return ERROR;
+			}
+
+			ErrorStatus Erase(uint8_t SectorId, uint32_t SectorError)
+			{
+				FLASH_EraseInitTypeDef  pEraseInit;
+
+				pEraseInit.TypeErase 	= TYPEERASE_SECTORS;
+				pEraseInit.Sector 		= SectorId;
+				pEraseInit.NbSectors 	= 1;
+				pEraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3;
+
+				if(HAL_FLASHEx_Erase(&pEraseInit, &SectorError) == HAL_OK)
+					return SUCCESS;
+				else
+					return ERROR;
+			}
+
+			ErrorStatus Program(uint32_t Address, uint64_t Data)
+			{
+				if(HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, Address, Data) == HAL_OK)
+					return SUCCESS;
+				else
+					return ERROR;
+			}
+	};
+
+	/*
+	 * PA11, PA12 	---> 	CAN1, FIFO0
+	 * PB8,  PB9 	---> 	CAN1, FIFO1
+	 */
+	class CANComm
+	{
+		public:
+			CANComm(CAN_HandleTypeDef *hcan, uint32_t rxFifo):hcan_(hcan),rxFifo_(rxFifo){}
+			virtual ~CANComm(){}
+
+			void Init(uint32_t filterId, uint32_t filterMaskId)
+			{
+				Filter(filterId, filterMaskId);
+				Start_IT();
+			}
+
+			void Start()
+			{
+				HAL_CAN_Start(hcan_);
+			}
+
+			void Start_IT()
+			{
+				HAL_CAN_Start(hcan_);
+
+				if(rxFifo_ == CAN_RX_FIFO0)
+				{
+					HAL_CAN_ActivateNotification(hcan_, CAN_IT_RX_FIFO0_MSG_PENDING);
+				}
+				else if(rxFifo_ == CAN_RX_FIFO1)
+				{
+					HAL_CAN_ActivateNotification(hcan_, CAN_IT_RX_FIFO1_MSG_PENDING);
+				}
+
+			}
+
+			void Filter(uint32_t filterId, uint32_t filterMaskId)
+			{
+				CAN_FilterTypeDef filterConfig;
+
+//				filterConfig.FilterIdHigh 			= 0x0000;
+//				filterConfig.FilterIdLow 			= 0x0000;
+//				filterConfig.FilterMaskIdHigh 		= 0x0000;
+//				filterConfig.FilterMaskIdLow 		= 0x0000;
+
+				filterConfig.FilterIdHigh 			= (filterId >> 16) 		&& 0x0000ffff;
+				filterConfig.FilterIdLow 			= filterId 				&& 0x0000ffff;
+				filterConfig.FilterMaskIdHigh 		= (filterMaskId >> 16) 	&& 0x0000ffff;
+				filterConfig.FilterMaskIdLow 		= filterMaskId 			&& 0x0000ffff;
+
+				filterConfig.FilterBank 			= 0;
+				filterConfig.SlaveStartFilterBank 	= 14;
+
+				filterConfig.FilterMode 			= CAN_FILTERMODE_IDMASK;	// CAN_FILTERMODE_IDMASK
+				filterConfig.FilterScale 			= CAN_FILTERSCALE_32BIT;	// CAN_FILTERMODE_IDLIST
+				filterConfig.FilterActivation 		= CAN_FILTER_ENABLE;
+				filterConfig.FilterFIFOAssignment 	= rxFifo_;
+
+
+				HAL_CAN_ConfigFilter(hcan_,&filterConfig);
+			}
+
+			void Transmit(uint16_t canId, uint8_t canTxData[8])
+			{
+				uint32_t txMailBox  = rxFifo_;
+
+				canTxHeader_.StdId 	= canId;
+				canTxHeader_.ExtId 	= 0x00000000;
+				canTxHeader_.IDE 	= CAN_ID_STD;
+				canTxHeader_.RTR 	= CAN_RTR_DATA;
+				canTxHeader_.DLC	= 8;
+				canTxHeader_.TransmitGlobalTime = DISABLE;
+
+				HAL_CAN_AddTxMessage(hcan_, &canTxHeader_, canTxData, &txMailBox);
+			}
+
+			void Receive(uint16_t* canId, uint8_t canRxData[8])
+			{
+
+				HAL_CAN_GetRxMessage(hcan_, rxFifo_, &canRxHeader_, canRxData);
+
+			}
+
+			uint32_t GetTxFifoFullLevel()
+			{
+				return HAL_CAN_GetTxMailboxesFreeLevel(hcan_);
+			}
+
+			uint32_t GetRxFifoFullLevel()
+			{
+				return HAL_CAN_GetRxFifoFillLevel(hcan_, rxFifo_);
+			}
+
+			CAN_RxHeaderTypeDef canRxHeader_;
+			CAN_TxHeaderTypeDef canTxHeader_;
+
+		private:
+			CAN_HandleTypeDef   *hcan_;
+			uint32_t 			rxFifo_;
+
+	};
+
+}
+
+#endif /* PORT_PERIPHERAL_PORT_H_ */

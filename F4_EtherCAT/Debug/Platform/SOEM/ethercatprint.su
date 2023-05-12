@@ -1,0 +1,6 @@
+ethercatprint.c:262:13:ec_sdoerror2string	24	static
+ethercatprint.c:280:7:ec_ALstatuscode2string	24	static
+ethercatprint.c:298:7:ec_soeerror2string	24	static
+ethercatprint.c:316:7:ec_mbxerror2string	24	static
+ethercatprint.c:334:7:ecx_elist2string	96	static
+ethercatprint.c:396:7:ec_elist2string	8	static

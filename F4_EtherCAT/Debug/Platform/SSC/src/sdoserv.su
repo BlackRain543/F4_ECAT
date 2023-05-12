@@ -1,0 +1,6 @@
+sdoserv.c:196:14:SdoDownloadSegmentInd	48	static
+sdoserv.c:387:14:SdoUploadSegmentInd	40	static
+sdoserv.c:502:6:SdoRes	24	static
+sdoserv.c:589:7:SDOS_SdoInd	72	static
+sdoserv.c:911:6:SDOS_SdoRes	48	static
+sdoserv.c:977:7:SDOS_SdoInfoInd	72	static
