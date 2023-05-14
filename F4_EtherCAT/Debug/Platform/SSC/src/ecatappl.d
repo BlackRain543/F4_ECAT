@@ -2,8 +2,8 @@ Platform/SSC/src/ecatappl.o: ../Platform/SSC/src/ecatappl.c \
  ../Platform/SSC/src/../../SSC/Inc/ecatslv.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/ecat_def.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/port/el9800hw.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -44,9 +44,9 @@ Platform/SSC/src/ecatappl.o: ../Platform/SSC/src/ecatappl.c \
  ../Platform/SSC/src/../../SSC/Inc/ecatappl.h \
  ../Platform/SSC/src/../../SSC/Inc/coeappl.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/objdef.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\sdoserv.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\sdoserv.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h \
  ../Platform/SSC/src/../../SSC/Inc/applInterface.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/esc.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/ecatslv.h \
@@ -60,9 +60,9 @@ Platform/SSC/src/ecatappl.o: ../Platform/SSC/src/ecatappl.c \
 
 ../Platform/SSC/src/../../SSC/Inc/../../SSC/port/el9800hw.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
@@ -144,11 +144,11 @@ d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
 
 ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/objdef.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\sdoserv.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\sdoserv.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h:
 
 ../Platform/SSC/src/../../SSC/Inc/applInterface.h:
 

@@ -24,9 +24,9 @@ void app_cia402_mc(void);
 /* SOES configuration */
 static esc_cfg_t config =
 {
-    .user_arg = "et1100",
+    .user_arg 					= "et1100",
     .use_interrupt 				= 1,
-    .watchdog_cnt 				= INT32_MAX,
+    .watchdog_cnt 				= 1000,
     .set_defaults_hook 			= NULL,
     .pre_state_change_hook 		= NULL,
     .post_state_change_hook 	= NULL,
@@ -44,6 +44,29 @@ static esc_cfg_t config =
     .esc_hw_eep_handler 		= NULL,
     .esc_check_dc_handler 		= check_dc_handler,
 };
+
+//static esc_cfg_t config =
+//{
+//    .user_arg 					= "et1100",
+//    .use_interrupt 				= 0,
+//    .watchdog_cnt 				= 1000,
+//    .set_defaults_hook 			= NULL,
+//    .pre_state_change_hook 		= NULL,
+//    .post_state_change_hook 	= NULL,
+//    .application_hook 			= ecatapp,
+//    .safeoutput_override 		= NULL,
+//    .pre_object_download_hook 	= NULL,
+//    .post_object_download_hook 	= NULL,
+//
+//    .rxpdo_override 			= NULL,
+//    .txpdo_override 			= NULL,
+//
+//    .esc_hw_interrupt_enable 	= NULL,
+//    .esc_hw_interrupt_disable 	= NULL,
+//
+//    .esc_hw_eep_handler 		= NULL,
+//    .esc_check_dc_handler 		= NULL,
+//};
 
 /* CiA402 motion control configuration */
 cia402_axis_t cia402axis =
@@ -77,6 +100,7 @@ uint16_t check_dc_handler (void)
     // Obj.Sync_Manager_3_Parameters.CycleTime = sync0cycleTime;
     // calculate watchdog value as 2 x SYNC0 cycle time
     int watchdog_value = 2 * sync0cycleTime;
+
     if (watchdog_value < MIN_WATCHDOG_VALUE_NS)
     {
         watchdog_value = MIN_WATCHDOG_VALUE_NS;
@@ -94,10 +118,9 @@ void ecatapp()
 void app_cia402_init(void)
 {
     /* Match CiA 402 objects to used CoE Object Dictionary implementation */
-    cia402axis.statusword = &Obj.Status_Word;
-    cia402axis.ALstatus = &ESCvar.ALstatus;
+    cia402axis.statusword 	= &Obj.Status_Word;
+    cia402axis.ALstatus 	= &ESCvar.ALstatus;
 }
-
 
 void app_cia402_mc()
 {
@@ -108,66 +131,46 @@ void app_cia402_mc()
     *(cia402axis.statusword) |= CIA402_STATUSWORD_CSP_DRIVE_FOLLOWS_COMMAND;
 }
 
-volatile uint8_t actual_value;
-
-void cb_get_inputs()
-{
-    /* SOES reqires this function but nothing to do here in CiA402 app */
-    Obj.Status_Word = actual_value;
-}
-
-static uint32_t cnt = 0;
-
-void cb_set_outputs()
-{
-    /* SOES reqires this function but nothing to do here in CiA402 app */
-	cnt++;
-
-	if(cnt % 2== 0)
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
-	else
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
-}
-
 // SYNC0
 static uint8_t sync0_irq_flag = 0;
 
-void EXTI0_IRQHandler(void)
-{
-	if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_0) != RESET)
-    {
-		__HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_0);
-        sync0_irq_flag = 1;
-    }
-}
+//void EXTI0_IRQHandler(void)
+//{
+//	if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_0) != RESET)
+//    {
+//		__HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_0);
+//        sync0_irq_flag = 1;
+//    }
+//}
 
 // SYNC1
 static uint8_t sync1_irq_flag = 0;
 
-void EXTI1_IRQHandler(void)
-{
-	if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_1) != RESET)
-    {
-		__HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_1);
-        sync1_irq_flag = 1;
-    }
-}
+//void EXTI1_IRQHandler(void)
+//{
+//	if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_1) != RESET)
+//    {
+//		__HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_1);
+//        sync1_irq_flag = 1;
+//    }
+//}
 
 // PDI
 static uint8_t pdi_irq_flag = 0;
 
-void EXTI9_5_IRQHandler(void)
-{
-	if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_8) != RESET)
-    {
-		__HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_8);
-        sync0_irq_flag = 1;
-    }
-}
-
+//void EXTI9_5_IRQHandler(void)
+//{
+//	if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_8) != RESET)
+//    {
+//		__HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_8);
+//        sync0_irq_flag = 1;
+//    }
+//}
 
 void ecatapp_loop(void)
 {
+//	ecat_slv();
+
     // stack in mixed mode
     if (sync0_irq_flag)
     {
@@ -186,7 +189,9 @@ void ecatapp_loop(void)
 
     if (pdi_irq_flag)
     {
+
         ESC_updateALevent();
+
         if (ESCvar.dcsync)
         {
             DIG_process (DIG_PROCESS_OUTPUTS_FLAG);
@@ -196,6 +201,7 @@ void ecatapp_loop(void)
             DIG_process (DIG_PROCESS_OUTPUTS_FLAG | DIG_PROCESS_APP_HOOK_FLAG | DIG_PROCESS_INPUTS_FLAG);
         }
         pdi_irq_flag = 0;
+
     }
     else
     {
@@ -207,9 +213,10 @@ void ecatapp_loop(void)
 //				);
 
         ecat_slv_poll();
-//        DIG_process(DIG_PROCESS_WD_FLAG);
-        DIG_process(DIG_PROCESS_WD_FLAG | DIG_PROCESS_OUTPUTS_FLAG |
-              DIG_PROCESS_APP_HOOK_FLAG | DIG_PROCESS_INPUTS_FLAG);
+        DIG_process(DIG_PROCESS_WD_FLAG);
+
+//        DIG_process(DIG_PROCESS_WD_FLAG | DIG_PROCESS_OUTPUTS_FLAG |
+//              DIG_PROCESS_APP_HOOK_FLAG | DIG_PROCESS_INPUTS_FLAG);
     }
 }
 
@@ -233,3 +240,26 @@ uint32_t ecatapp_benchmark_us()
 
     return elapsed_us;
 }
+
+volatile uint8_t actual_value;
+
+void cb_get_inputs()
+{
+    /* SOES reqires this function but nothing to do here in CiA402 app */
+    Obj.Status_Word = actual_value;
+}
+
+static uint32_t cnt = 0;
+
+void cb_set_outputs()
+{
+    /* SOES reqires this function but nothing to do here in CiA402 app */
+	cnt++;
+
+	if(cnt % 2== 0)
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+	else
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
+}
+
+

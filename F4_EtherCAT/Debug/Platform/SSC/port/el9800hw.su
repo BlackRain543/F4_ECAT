@@ -13,7 +13,7 @@ el9800hw.c:524:6:HW_EscRead	32	static,ignoring_inline_asm
 el9800hw.c:582:6:HW_EscReadIsr	32	static
 el9800hw.c:616:6:HW_EscWrite	24	static,ignoring_inline_asm
 el9800hw.c:663:6:HW_EscWriteIsr	24	static
-el9800hw.c:729:6:EcatIsr	8	static
-el9800hw.c:745:6:Sync0Isr	8	static
-el9800hw.c:758:6:Sync1Isr	8	static
+el9800hw.c:729:6:EXTI9_5_IRQHandler	8	static
+el9800hw.c:745:6:EXTI0_IRQHandler	8	static
+el9800hw.c:758:6:EXTI1_IRQHandler	8	static
 el9800hw.c:770:6:TIM2_IRQHandler	8	static

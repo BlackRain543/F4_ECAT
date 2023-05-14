@@ -3,8 +3,8 @@ Platform/SSC/src/sdoserv.o: ../Platform/SSC/src/sdoserv.c \
  ../Platform/SSC/src/../../SSC/Inc/ecatslv.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/ecat_def.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/port/el9800hw.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -44,8 +44,8 @@ Platform/SSC/src/sdoserv.o: ../Platform/SSC/src/sdoserv.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Platform/SSC/src/../../SSC/Inc/objdef.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/sdoserv.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h
 
 ../Platform/SSC/src/../../SSC/Inc/ecat_def.h:
 
@@ -55,9 +55,9 @@ Platform/SSC/src/sdoserv.o: ../Platform/SSC/src/sdoserv.c \
 
 ../Platform/SSC/src/../../SSC/Inc/../../SSC/port/el9800hw.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
@@ -137,6 +137,6 @@ d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
 
 ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/sdoserv.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecatcoe.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\mailbox.h:

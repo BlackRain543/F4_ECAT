@@ -5,9 +5,9 @@ ecat_slv.c:121:10:ESC_upload_post_objecthandler	16	static
 ecat_slv.c:134:6:APP_safeoutput	8	static
 ecat_slv.c:146:6:TXPDO_update	8	static
 ecat_slv.c:164:6:RXPDO_update	8	static
-ecat_slv.c:185:6:APP_setwatchdog	16	static
-ecat_slv.c:194:6:DIG_process	16	static
-ecat_slv.c:262:6:ecat_slv_worker	16	static
-ecat_slv.c:304:6:ecat_slv_poll	8	static
-ecat_slv.c:341:6:ecat_slv	8	static
-ecat_slv.c:351:6:ecat_slv_init	16	static
+ecat_slv.c:186:6:APP_setwatchdog	16	static
+ecat_slv.c:195:6:DIG_process	16	static
+ecat_slv.c:263:6:ecat_slv_worker	16	static
+ecat_slv.c:306:6:ecat_slv_poll	8	static
+ecat_slv.c:345:6:ecat_slv	8	static
+ecat_slv.c:355:6:ecat_slv_init	16	static

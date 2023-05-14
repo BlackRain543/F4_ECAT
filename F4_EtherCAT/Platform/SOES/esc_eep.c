@@ -28,7 +28,8 @@ void EEP_process (void)
      return;
    }
 
-   while (1) {
+   while (1)
+   {
       /* read eeprom status */
       ESC_read (ESCREG_EECONTSTAT, &stat, sizeof (eep_stat_t));
       stat.contstat.reg = etohs(stat.contstat.reg);

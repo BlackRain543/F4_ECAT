@@ -18,6 +18,9 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="App"/>
+			<item value="ESC_mbxprocess"/>
+			<item value="ESC_reset"/>
 			<item value="ecx_portt"/>
 			<item value="LOADED"/>
 			<item value="EEPROM_LOADED"/>

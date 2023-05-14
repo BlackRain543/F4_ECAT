@@ -1,3 +1,0 @@
-ecatcoe.c:79:6:COE_Init	4	static
-ecatcoe.c:96:7:COE_ServiceInd	24	static
-ecatcoe.c:144:7:COE_ContinueInd	16	static

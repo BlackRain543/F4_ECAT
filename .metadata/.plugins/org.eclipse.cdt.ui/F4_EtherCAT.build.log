@@ -1,10 +1,10 @@
-21:48:26 **** Incremental Build of configuration Debug for project F4_EtherCAT ****
+21:50:06 **** Incremental Build of configuration Debug for project F4_EtherCAT ****
 make -j24 all 
 arm-none-eabi-size   F4_EtherCAT.elf 
    text	   data	    bss	    dec	    hex	filename
-  50952	   1476	   4140	  56568	   dcf8	F4_EtherCAT.elf
+  50692	   1468	   4308	  56468	   dc94	F4_EtherCAT.elf
 Finished building: default.size.stdout
  
 
-21:48:27 Build Finished. 0 errors, 0 warnings. (took 228ms)
+21:50:07 Build Finished. 0 errors, 0 warnings. (took 963ms)
 

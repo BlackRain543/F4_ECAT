@@ -3,8 +3,8 @@ Platform/SSC/src/mailbox.o: ../Platform/SSC/src/mailbox.c \
  ../Platform/SSC/src/../../SSC/Inc/ecatslv.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/Inc/ecat_def.h \
  ../Platform/SSC/src/../../SSC/Inc/../../SSC/port/el9800hw.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h \
- d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h \
+ d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
@@ -54,9 +54,9 @@ Platform/SSC/src/mailbox.o: ../Platform/SSC/src/mailbox.c \
 
 ../Platform/SSC/src/../../SSC/Inc/../../SSC/port/el9800hw.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\esc.h:
 
-d:\codes\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
+d:\stm32cube\f4_ethercat\f4_ethercat\platform\ssc\inc\ecat_def.h:
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 

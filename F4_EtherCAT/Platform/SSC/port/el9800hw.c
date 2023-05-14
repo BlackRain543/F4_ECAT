@@ -149,16 +149,16 @@ uint8_t WR_CMD (uint8_t cmd)
 ------    ESC SPI Interrupt
 ------
 -----------------------------------------------------------------------------------------*/
-/* stash */
-#define    EcatIsr      EcatIsr
-#define    Sync0Isr		Sync0Isr
-#define    Sync1Isr		Sync1Isr
+///* stash */
+//#define    EcatIsr      EcatIsr
+//#define    Sync0Isr		Sync0Isr
+//#define    Sync1Isr		Sync1Isr
 
 #if AL_EVENT_ENABLED
 
 #define    	INIT_ESC_INT
 #define    	ACK_ESC_INT				HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8)
-//#define    	EcatIsr                	EXTI9_5_IRQHandler
+#define    	EcatIsr                	EXTI9_5_IRQHandler
 
 
 #endif //#if AL_EVENT_ENABLED
@@ -174,7 +174,7 @@ uint8_t WR_CMD (uint8_t cmd)
 #define    ACK_SYNC0_INT			__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_PIN_0)
 //#define    ACK_SYNC0_INT			HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0)
 
-//#define    Sync0Isr              	EXTI0_IRQHandler 						// primary interrupt vector name
+#define    Sync0Isr              	EXTI0_IRQHandler 						// primary interrupt vector name
 #define    DISABLE_SYNC0_INT  		NVIC_DisableIRQ(EXTI0_IRQn);			// {(_INT3IE)=0;}//disable interrupt source INT3
 #define    ENABLE_SYNC0_INT         NVIC_EnableIRQ(EXTI0_IRQn);				// {(_INT3IE) = 1;} //enable interrupt source INT3
 
@@ -183,7 +183,7 @@ uint8_t WR_CMD (uint8_t cmd)
 #define    ACK_SYNC1_INT			__HAL_GPIO_EXTI_CLEAR_FLAG(GPIO_PIN_1)
 //#define    ACK_SYNC1_INT			HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1)
 
-//#define    Sync1Isr                 EXTI1_IRQHandler
+#define    Sync1Isr                 EXTI1_IRQHandler
 #define    DISABLE_SYNC1_INT        NVIC_DisableIRQ(EXTI1_IRQn);			// {(_INT4IE)=0;}//disable interrupt source INT4
 #define    ENABLE_SYNC1_INT         NVIC_EnableIRQ(EXTI1_IRQn);	 			//{(_INT4IE) = 1;} //enable interrupt source INT4
 

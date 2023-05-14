@@ -1,2 +1,1 @@
-peripheral_port.hpp:200:16:void Port::EXIT::EnableExit()	16	static
 main.cpp:15:6:void MainCpp()	8	static

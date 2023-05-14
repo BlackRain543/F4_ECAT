@@ -14,7 +14,7 @@ extern DAC_HandleTypeDef hdac;
 
 void MainCpp()
 {
-//	HAL_TIM_Base_Start_IT(&htim2);	// 2000 Hz
+	HAL_TIM_Base_Start_IT(&htim2);	// 2000 Hz
 
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc1Data, 1);
 	HAL_ADC_Start_DMA(&hadc2, (uint32_t *)adc2Data, 1);
@@ -22,22 +22,23 @@ void MainCpp()
 //	HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_1, &dacData[0], 1, DAC_ALIGN_12B_R);
 //	HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_2, &dacData[1], 1, DAC_ALIGN_12B_R);
 
-//	MainEtherCAT();
+	MainEtherCAT();
 
-	ecatapp_init();
+//	ecatapp_init();
+//
+//	sync0_exitGpio.EnableExit();
+//	sync1_exitGpio.EnableExit();
+//	spi2_irq.EnableExit();
 
-	sync0_exitGpio.EnableExit();
-	sync1_exitGpio.EnableExit();
-	spi2_irq.EnableExit();
+//	dwt_init();
 
-//	delay_init();
 
-//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+
 
 	for(;;)
 	{
 
-		ecatapp_loop();
+//		ecatapp_loop();
 
 //		ecatapp_benchmark_us();
 
@@ -45,12 +46,11 @@ void MainCpp()
 	}
 }
 
-
 //	uint16_t addr = 0x0000;
-//	uint8_t  data = 0x00;
-//		ESC_read(addr, &data, sizeof(data));
-//		et1100.EscRead(addr, &data, sizeof(data));
-//		et1100.EscAddress(tx, ESC_CMD_READ);
+//	uint16_t  data = 0x00;
+//	ESC_read(addr, &data, sizeof(data));
+
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
 
 //	LED::LED led0(led0_gpio);
 //	LED::LED led1(led1_gpio);

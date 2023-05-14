@@ -39,8 +39,8 @@ void APP_setwatchdog (int watchdogcnt);
  */
 void DIG_process (uint8_t flags);
 
-void TXPDO_update (void);
-void RXPDO_update (void);
+//void TXPDO_update (void);
+//void RXPDO_update (void);
 
 /**
  * Handler for SM change, SM0/1, AL CONTROL and EEPROM events, the application

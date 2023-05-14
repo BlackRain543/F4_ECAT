@@ -2,7 +2,7 @@
 
 static uint32_t ticksPerUs = MAX_FREQ_TICKS_PER_US;  // max STM32F40x freq by default
 
-uint32_t delay_init(void)
+uint32_t dwt_init(void)
 {
 	uint32_t c;
 

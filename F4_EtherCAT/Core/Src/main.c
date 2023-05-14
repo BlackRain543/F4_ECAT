@@ -128,7 +128,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+
   MainCpp();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

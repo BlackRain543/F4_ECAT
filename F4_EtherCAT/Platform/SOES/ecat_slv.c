@@ -170,6 +170,7 @@ void RXPDO_update (void)
    else
    {
       ESC_read (ESC_SM2_sma, rxpdo, ESCvar.ESC_SM2_sml);
+
       if (MAX_MAPPINGS_SM2 > 0)
       {
          COE_pdoUnpack (rxpdo, ESCvar.sm2mappings, SMmap2);
@@ -184,7 +185,7 @@ void RXPDO_update (void)
  */
 void APP_setwatchdog (int watchdogcnt)
 {
-   CC_ATOMIC_SET(ESCvar.watchdogcnt, watchdogcnt);
+	CC_ATOMIC_SET(ESCvar.watchdogcnt, watchdogcnt);
 }
 
 /* Function to update local I/O, call read ethercat outputs, call
@@ -202,8 +203,8 @@ void DIG_process (uint8_t flags)
       }
 
       if ((CC_ATOMIC_GET(watchdog) <= 0) &&
-          ((CC_ATOMIC_GET(ESCvar.App.state) & APPSTATE_OUTPUT) > 0) &&
-           (ESCvar.ESC_SM2_sml > 0))
+          ((CC_ATOMIC_GET(ESCvar.App.state) & APPSTATE_OUTPUT) > 0))
+//           && (ESCvar.ESC_SM2_sml > 0))
       {
          DPRINT("DIG_process watchdog expired\n");
          ESC_ALstatusgotoerror((ESCsafeop | ESCerror), ALERR_WATCHDOG);
@@ -283,6 +284,7 @@ void ecat_slv_worker (uint32_t event_mask)
 #if USE_EOE
       ESC_eoeprocess_tx();
 #endif
+
       /* Call emulated eeprom handler if set */
       if (ESCvar.esc_hw_eep_handler != NULL)
       {
@@ -291,7 +293,7 @@ void ecat_slv_worker (uint32_t event_mask)
 
       CC_ATOMIC_SET(ESCvar.ALevent, ESC_ALeventread());
 
-   }while(ESCvar.ALevent & event_mask);
+   } while (ESCvar.ALevent & event_mask);
 
    ESC_ALeventmaskwrite(ESC_ALeventmaskread() | event_mask);
 }
@@ -306,6 +308,8 @@ void ecat_slv_poll (void)
    /* Read local time from ESC*/
    ESC_read (ESCREG_LOCALTIME, (void *) &ESCvar.Time, sizeof (ESCvar.Time));
    ESCvar.Time = etohl (ESCvar.Time);
+
+   CC_ATOMIC_SET(ESCvar.ALevent, ESC_ALeventread());
 
    /* Check the state machine */
    ESC_state();
